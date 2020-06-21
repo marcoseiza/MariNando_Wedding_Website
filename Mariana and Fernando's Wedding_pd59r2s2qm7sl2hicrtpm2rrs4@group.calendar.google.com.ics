@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Mariana and Fernando's Wedding
+X-WR-TIMEZONE:America/New_York
+X-WR-CALDESC:The wedding of Mariana Eizayaga and Fernando Quevedo.
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20210814
+DTEND;VALUE=DATE:20210815
+DTSTAMP:20200421T225404Z
+UID:772biife8sp54qpp6fflc8g81d@google.com
+CREATED:20200421T225356Z
+DESCRIPTION:For more details\, visit here: <span><a href="http://www.marina
+ ndo2021.com" id="ow1465" __is_owner="true">www.marinando2021.com</a></span>
+LAST-MODIFIED:20200421T225356Z
+LOCATION:Riverside\, Greenwich\, CT\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mariana and Fernando's Wedding Day
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

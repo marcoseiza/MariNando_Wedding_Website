@@ -1,0 +1,984 @@
+button {
+  outline: 0;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #E37575;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  font-family: Montserrat;
+}
+
+.dummy {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  margin: 3vh 0;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  -ms-grid-row-align: start;
+      align-self: start;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.dummy h2 {
+  font-weight: 300;
+}
+
+.dummy svg {
+  width: 50px;
+  height: 50px;
+}
+
+.dummy svg path {
+  stroke: #161925;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-height: 670px) {
+  .dummy {
+    margin: 2vh 0;
+  }
+  .dummy h2 {
+    font-size: 3vh;
+  }
+  .dummy svg {
+    width: 6vh;
+    height: 6vh;
+  }
+}
+
+@media (max-height: 575px) {
+  .dummy svg {
+    width: 0;
+    height: 0;
+  }
+}
+
+.animationEnvelope {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 600px;
+  height: 340px;
+  position: relative;
+}
+
+.animationEnvelope__flap {
+  width: 600px;
+  position: absolute;
+  top: -233.5px;
+  z-index: 1;
+}
+
+.animationEnvelope__flap__path {
+  fill: #161925;
+}
+
+.animationEnvelope__flap__path:hover {
+  cursor: pointer;
+}
+
+.animationEnvelope__body {
+  width: 600px;
+  height: 340px;
+  background-color: #FCF6ED;
+  position: relative;
+  z-index: 0;
+}
+
+.envelope {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 550px;
+  height: 290px;
+  background-color: #FCF6ED;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.envelope__content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  background-color: #FCF6ED;
+  z-index: -1;
+  opacity: 0;
+}
+
+.envelope__content * {
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.envelope__content__circle {
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  background-color: #FCF6ED;
+  display: -ms-grid;
+  display: grid;
+}
+
+.envelope__content__circle__img1, .envelope__content__circle__img2, .envelope__content__circle__img3, .envelope__content__circle__img4 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+  z-index: -1;
+  width: 55vmin;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.envelope__content__circle__img1 img, .envelope__content__circle__img2 img, .envelope__content__circle__img3 img, .envelope__content__circle__img4 img {
+  width: 100%;
+  height: 100%;
+}
+
+.envelope__content__circle__img1 {
+  top: -20vmin;
+  left: -61vmin;
+}
+
+.envelope__content__circle__img2 {
+  top: -33vmin;
+  left: 20vmin;
+  width: 100vmin;
+}
+
+.envelope__content__circle__img3 {
+  top: -1vmin;
+  left: 37vmin;
+  -webkit-transform: rotate(160deg);
+          transform: rotate(160deg);
+}
+
+.envelope__content__circle__img4 {
+  top: 26vmin;
+  left: -39vmin;
+  width: 100vmin;
+}
+
+.envelope__content__circle__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.envelope__content__circle__text * {
+  font-weight: 300;
+  white-space: pre-wrap;
+  text-align: center;
+  color: #242A40;
+}
+
+.envelope__content__circle__text h1 {
+  font-size: 6vmin;
+  margin: 1vmin 0;
+  white-space: initial;
+}
+
+.envelope__content__circle__text h1.wedding {
+  font-size: 8vmin;
+}
+
+.envelope__content__circle__text h1.names {
+  margin-bottom: 2vmin;
+}
+
+.envelope__content__circle__text h2 {
+  font-size: 2.5vmin;
+  margin: 0;
+}
+
+.envelope__content__circle__text div {
+  white-space: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.envelope__content__circle__text div h3 {
+  font-size: 1.8vmin;
+  font-weight: 400;
+  position: relative;
+}
+
+.envelope__content__circle__text div h3::before {
+  content: "AUGUST 14\A 2021";
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 10vmin;
+  margin-right: 3.5vmin;
+}
+
+.envelope__content__circle__text div h3::after {
+  content: "RECEPTION\A 5:00PM";
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 11vmin;
+  margin-left: 3.5vmin;
+}
+
+.envelope__content__circle__text div h3.no_party::after {
+  content: "TOAST\A 5:00PM";
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 7vmin;
+  margin-left: 3.5vmin;
+}
+
+.envelope__content__circle__text div svg {
+  height: 5vmin;
+  stroke: black;
+  stroke-width: 1;
+  margin: 0 1.5vmin;
+}
+
+.envelope__content__circle__text label {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 13vmin;
+  font-size: 1.8vmin;
+  font-weight: 400;
+  padding: 1vmin;
+  border: 1px solid #242A40;
+  -webkit-transition: initial;
+  transition: initial;
+  background: none;
+}
+
+.envelope__content__circle__text label:hover {
+  cursor: pointer;
+  font-weight: bold;
+  border-width: 2px;
+}
+
+.envelope__content__circle__text a {
+  text-decoration: none;
+  position: absolute;
+  bottom: 13vmin;
+  font-family: Montserrat;
+  white-space: nowrap;
+  font-size: 1.8vmin;
+  font-weight: 400;
+  padding: 1vmin;
+  border: 1px solid #242A40;
+  -webkit-transition: initial;
+  transition: initial;
+  background: none;
+}
+
+.envelope__content__circle__text a:hover {
+  cursor: pointer;
+  font-weight: bold;
+  border-width: 2px;
+}
+
+@media (max-width: 770px) {
+  .animationEnvelope {
+    width: 70vw;
+    height: 40vw;
+  }
+  .animationEnvelope__flap {
+    width: 70vw;
+    top: -27.2vw;
+  }
+  .animationEnvelope__body {
+    width: 70vw;
+    height: 40vw;
+  }
+  .envelope {
+    width: 70vw;
+    height: 40vw;
+  }
+}
+
+@media (max-width: 530px) and (min-height: 667px) {
+  .envelope__content__circle {
+    background-color: initial;
+  }
+  .envelope__content__circle__img1 {
+    opacity: 0;
+  }
+  .envelope__content__circle__img2 {
+    opacity: 0;
+  }
+  .envelope__content__circle__img3 {
+    width: 100vmin;
+    top: 28vmin;
+    left: -24vmin;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  .envelope__content__circle__img4 {
+    top: -145vmin;
+    left: -100vmin;
+    width: 200vmin;
+    -webkit-transform: rotate(110deg);
+            transform: rotate(110deg);
+  }
+  .envelope__content__circle__text h1 {
+    font-size: 13vmin;
+    white-space: pre-wrap;
+    margin: 5vmin 0;
+  }
+  .envelope__content__circle__text h1.wedding {
+    font-size: 14vmin;
+    margin-bottom: 3vmin;
+  }
+  .envelope__content__circle__text h1.names {
+    line-height: 13vmin;
+    margin-bottom: 10vmin;
+  }
+  .envelope__content__circle__text h2 {
+    font-size: 5vmin;
+  }
+  .envelope__content__circle__text div {
+    margin-top: 1px;
+    margin-bottom: 2vmin;
+  }
+  .envelope__content__circle__text div h3 {
+    font-size: 3vmin;
+    margin: 0;
+  }
+  .envelope__content__circle__text div h3::before {
+    width: 17vmin;
+  }
+  .envelope__content__circle__text div h3::after {
+    width: 25vmin;
+  }
+  .envelope__content__circle__text div h3.no_party::after {
+    width: 18vmin;
+  }
+  .envelope__content__circle__text div svg {
+    height: 9vmin;
+  }
+  .envelope__content__circle__text label {
+    font-size: 3vmin;
+    bottom: -30vmin;
+  }
+  .envelope__content__circle__text a {
+    bottom: -30vmin;
+    font-size: 4vmin;
+    font-weight: 300;
+  }
+  .envelope__content__circle__text a:hover, .envelope__content__circle__text a:focus {
+    font-weight: 400;
+  }
+}
+
+body > input {
+  display: none;
+}
+
+body > input:checked ~ .player_shadow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player_shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.player_shadow input#rsvp_checkbox {
+  display: none;
+}
+
+.player_shadow input#rsvp_checkbox:checked ~ .player {
+  -ms-grid-rows: initial;
+      grid-template-rows: initial;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.player_shadow input#rsvp_checkbox:checked ~ .player .player__rsvp {
+  width: auto;
+}
+
+.player_shadow input#rsvp_checkbox:checked ~ .player .player__content label svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.player_shadow input#rsvp_checkbox:checked ~ .player .player__content label span::after {
+  content: 'back';
+}
+
+.player_shadow .player {
+  z-index: 9999;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 0;
+      grid-template-columns: auto 0;
+}
+
+.player_shadow .player__content {
+  background-color: #FCF6ED;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: (auto)[2] 75px;
+      grid-template-rows: repeat(2, auto) 75px;
+      grid-template-areas: 'names names' 'video video' 'calender next';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+}
+
+.player_shadow .player__content > span {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: names;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 30px;
+  color: #9B9B9B;
+  text-transform: uppercase;
+}
+
+.player_shadow .player__content iframe {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: video;
+  width: 560px;
+  height: 315px;
+  margin: 30px 0;
+}
+
+.player_shadow .player__content button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: calender;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  justify-self: flex-start;
+  background: none;
+  border: none;
+}
+
+.player_shadow .player__content button div.button_content {
+  color: #303755;
+  font-size: 25px;
+  font-size: 400;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  padding: 0 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player_shadow .player__content button div.button_content:hover, .player_shadow .player__content button div.button_content:focus {
+  cursor: pointer;
+  color: #4c5786;
+}
+
+.player_shadow .player__content button div.button_content:hover svg .cls-1, .player_shadow .player__content button div.button_content:focus svg .cls-1 {
+  stroke: #4c5786;
+}
+
+.player_shadow .player__content button div.button_content div.calendar_icon {
+  position: relative;
+  margin-right: 9px;
+}
+
+.player_shadow .player__content button div.button_content #date_form {
+  position: absolute;
+  left: 50%;
+  top: 17px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.player_shadow .player__content button div.button_content svg {
+  width: 40px;
+  height: auto;
+  padding: 0;
+}
+
+.player_shadow .player__content button div.button_content svg .cls-1 {
+  fill: none;
+  stroke: #303755;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+}
+
+.player_shadow .player__content button div.button_menu {
+  height: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player_shadow .player__content button div.button_menu a {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+
+.player_shadow .player__content button div.button_menu a:hover svg, .player_shadow .player__content button div.button_menu a:focus svg {
+  fill: #4c5786;
+  cursor: pointer;
+}
+
+.player_shadow .player__content button div.button_menu a svg {
+  width: 30px;
+  fill: #303755;
+}
+
+.player_shadow .player__content #rsvp {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: next;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: flex-end;
+  text-decoration: none;
+  color: #303755;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+  padding: 3px 5px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player_shadow .player__content #rsvp span::after {
+  content: 'next';
+}
+
+.player_shadow .player__content #rsvp svg {
+  margin-left: 10px;
+  width: 21px;
+  height: 21px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.player_shadow .player__content #rsvp svg path {
+  stroke: #303755;
+  stroke-width: 9;
+}
+
+.player_shadow .player__rsvp {
+  width: 0;
+  height: auto;
+  overflow: hidden;
+  background-color: #303755;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.player_shadow .player__rsvp form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+}
+
+.player_shadow .player__rsvp form span {
+  margin-bottom: 30px;
+  font-size: 23px;
+  width: 380px;
+  height: 56px;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+.player_shadow .player__rsvp form input {
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  background-color: #363d5f;
+  border: none;
+  color: white;
+}
+
+.player_shadow .player__rsvp form input:hover, .player_shadow .player__rsvp form input:focus {
+  background-color: #4c5786;
+}
+
+.player_shadow .player__rsvp form input#rsvp_submit {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.player_shadow .player__rsvp form input#rsvp_submit:focus + label #submit_main {
+  background-color: #df6060;
+}
+
+.player_shadow .player__rsvp form label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 10px 16px;
+  margin-bottom: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #E37575;
+}
+
+.player_shadow .player__rsvp form label:hover {
+  background-color: #e78a8a;
+  cursor: pointer;
+}
+
+.player_shadow .player__rsvp form label svg {
+  margin-left: 10px;
+  width: 10px;
+}
+
+.player_shadow .player__rsvp form label svg path {
+  stroke: white;
+  stroke-width: 10;
+}
+
+@media screen and (max-width: 1200px) {
+  .player_shadow input#rsvp_checkbox {
+    display: none;
+  }
+  .player_shadow input#rsvp_checkbox:checked ~ .player {
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    -ms-grid-columns: initial;
+        grid-template-columns: initial;
+  }
+  .player_shadow input#rsvp_checkbox:checked ~ .player .player__rsvp {
+    height: auto;
+  }
+  .player_shadow input#rsvp_checkbox:checked ~ .player .player__content label svg {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .player_shadow input#rsvp_checkbox:checked ~ .player .player__content label span::after {
+    content: 'back';
+  }
+  .player_shadow .player {
+    -ms-grid-columns: initial;
+        grid-template-columns: initial;
+    -ms-grid-rows: auto 0;
+        grid-template-rows: auto 0;
+  }
+  .player_shadow .player__content {
+    padding: 27px;
+    -ms-grid-rows: (auto)[2] 67.5px;
+        grid-template-rows: repeat(2, auto) 67.5px;
+  }
+  .player_shadow .player__content > span {
+    font-size: 27px;
+  }
+  .player_shadow .player__content iframe {
+    width: 504px;
+    height: 283.5px;
+    margin: 27px 0;
+  }
+  .player_shadow .player__content button div.button_content {
+    font-size: 22.5px;
+    padding: 3.6px 8.1px;
+  }
+  .player_shadow .player__content button div.button_content div.calendar_icon {
+    margin-right: 8.1px;
+  }
+  .player_shadow .player__content button div.button_content #date_form {
+    left: 50%;
+    top: 15.3px;
+  }
+  .player_shadow .player__content button div.button_content svg {
+    width: 36px;
+  }
+  .player_shadow .player__content button div.button_menu a svg {
+    width: 27px;
+  }
+  .player_shadow .player__content #rsvp {
+    font-size: 22.5px;
+    padding: 2.7px 4.5px;
+  }
+  .player_shadow .player__content #rsvp svg {
+    margin-left: 9px;
+    width: 18.9px;
+    height: 18.9px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .player_shadow .player__rsvp {
+    width: auto;
+    height: 0;
+  }
+  .player_shadow .player__rsvp form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: (auto)[6];
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 'title title' 'name email' 'phone address' 'submit .';
+    gap: 20px;
+    padding: 27px;
+  }
+  .player_shadow .player__rsvp form span {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: title;
+    margin-bottom: 5px;
+    font-size: 23px;
+    text-align: left;
+    width: auto;
+    height: auto;
+  }
+  .player_shadow .player__rsvp form #rsvp_name {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: name;
+  }
+  .player_shadow .player__rsvp form #rsvp_email {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: email;
+  }
+  .player_shadow .player__rsvp form #rsvp_phone {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: phone;
+  }
+  .player_shadow .player__rsvp form #rsvp_address {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: address;
+  }
+  .player_shadow .player__rsvp form input {
+    padding: 9px 14.4px;
+    margin-bottom: 0;
+    font-size: 13.5px;
+  }
+  .player_shadow .player__rsvp form input#rsvp_submit {
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .player_shadow .player__rsvp form label {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: submit;
+    padding: 9px 14.4px;
+    font-size: 13.5px;
+  }
+  .player_shadow .player__rsvp form label svg {
+    margin-left: 9px;
+    width: 9px;
+  }
+}
+
+@media screen and (max-width: 631px) {
+  .player_shadow .player__content {
+    padding: 4.302vw;
+    -ms-grid-rows: (auto)[2] 10.755vw;
+        grid-template-rows: repeat(2, auto) 10.755vw;
+  }
+  .player_shadow .player__content > span {
+    font-size: 4.302vw;
+  }
+  .player_shadow .player__content iframe {
+    width: 80.304vw;
+    height: 45.171vw;
+    margin: 4.302vw 0;
+  }
+  .player_shadow .player__content button div.button_content {
+    font-size: 3.585vw;
+    padding: 0.5736vw 1.2906vw;
+  }
+  .player_shadow .player__content button div.button_content div.calendar_icon {
+    margin-right: 1.2906vw;
+  }
+  .player_shadow .player__content button div.button_content #date_form {
+    left: 50%;
+    top: 2.4378vw;
+  }
+  .player_shadow .player__content button div.button_content svg {
+    width: 5.736vw;
+  }
+  .player_shadow .player__content button div.button_menu a svg {
+    width: 3.8718vw;
+  }
+  .player_shadow .player__content #rsvp {
+    font-size: 3.585vw;
+    padding: 0.4302vw 0.717vw;
+  }
+  .player_shadow .player__content #rsvp svg {
+    margin-left: 1.434vw;
+    width: 3.0114vw;
+    height: 3.0114vw;
+  }
+  .player_shadow .player__rsvp form {
+    gap: 3.18667vw;
+    padding: 4.302vw;
+  }
+  .player_shadow .player__rsvp form span {
+    margin-bottom: 0.79667vw;
+    font-size: 3.66467vw;
+  }
+  .player_shadow .player__rsvp form input {
+    padding: 1.434vw 2.2944vw;
+    font-size: 2.151vw;
+  }
+  .player_shadow .player__rsvp form label {
+    padding: 1.434vw 2.2944vw;
+    font-size: 2.151vw;
+  }
+  .player_shadow .player__rsvp form label svg {
+    margin-left: 1.434vw;
+    width: 1.434vw;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .player_shadow .player__rsvp form {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: (auto)[6];
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 'title' 'name' 'email' 'phone' 'address' 'submit';
+    gap: 3.18667vw;
+    padding: 4.302vw;
+  }
+  .player_shadow .player__rsvp form span {
+    margin-bottom: 0.79667vw;
+    font-size: 3.66467vw;
+  }
+  .player_shadow .player__rsvp form input {
+    padding: 2.07133vw 3.31413vw;
+    font-size: 3.107vw;
+  }
+  .player_shadow .player__rsvp form label {
+    width: 18vw;
+    padding: 2.07133vw 3.31413vw;
+    font-size: 3.107vw;
+  }
+  .player_shadow .player__rsvp form label svg {
+    margin-left: 2.07133vw;
+    width: 2.07133vw;
+  }
+}
+/*# sourceMappingURL=invitation.css.map */

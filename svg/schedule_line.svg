@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="695.168" height="1480.578" viewBox="0 0 695.168 1480.578">
+  <g id="Group_41" data-name="Group 41" transform="translate(-136.832)">
+    <g id="Icon_feather-arrow-down" data-name="Icon feather-arrow-down" transform="translate(478.7)">
+      <circle id="Ellipse_8" data-name="Ellipse 8" cx="6" cy="6" r="6" transform="translate(0.3 1468.578)" fill="#242a40"/>
+      <circle id="Ellipse_7" data-name="Ellipse 7" cx="6" cy="6" r="6" fill="#242a40"/>
+      <path id="Path_9" data-name="Path 9" d="M18,7.5V1470.176" transform="translate(-11.954 1.601)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+    </g>
+    <line id="Line_17" data-name="Line 17" x1="344.567" transform="translate(484.933 553.115)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="5" stroke-dasharray="15"/>
+    <line id="Line_18" data-name="Line 18" x1="344.114" transform="translate(140.819 193.889)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="5" stroke-dasharray="15"/>
+    <line id="Line_19" data-name="Line 19" x1="344.114" transform="translate(139.332 912.341)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="5" stroke-dasharray="15"/>
+    <line id="Line_20" data-name="Line 20" x1="344.114" transform="translate(484.933 1271.567)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="5" stroke-dasharray="15"/>
+  </g>
+</svg>

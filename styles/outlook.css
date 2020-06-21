@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0 100px;
+  background-color: #FCF6ED;
+  font-family: Montserrat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #A3A3A3;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 20px;
+  color: #242A40;
+}
+
+main > a {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #424c76;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+main > a:hover, main > a:focus {
+  background-color: #4c5786;
+}
+
+main span:first-of-type {
+  font-size: 40px;
+}
+
+main span {
+  margin-bottom: 10px;
+}
+
+main span a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main span a svg {
+  width: 20px;
+  margin-right: 8px;
+  fill: #424c76;
+}
+/*# sourceMappingURL=outlook.css.map */
