@@ -1,0 +1,403 @@
+.schedule {
+  display: flex;
+  justify-content: flex-end;
+  color: color(main_text);
+  position: relative;
+  
+  &__title {
+    font-size: 250px;
+    color: color(titles);
+    opacity: 0.29;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    position: absolute;
+    right: 150px; bottom: -250px;
+  }
+
+  &__timeline {
+    background-color: color(primary);
+    width: 1000px;
+    padding: 64.705px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+
+    &__entry__time {
+      font-size: 36.24px;
+      position: absolute;
+    }
+
+    &__entry__title {
+      font-size: 36.24px;
+      margin-bottom: 15px;
+      padding: 0 30px;
+    }
+
+    &__entry__desc {
+      display: flex;
+      flex-direction: column;
+      font-size: 15.53px;
+      line-height: 29.76px;
+      margin-top: 15px;
+      padding: 0 30px;
+      span {
+        font-weight: 600;
+      }
+      span:first-child {
+        font-weight: 300;
+      }
+    }
+
+    &__wii {
+      position: absolute;
+      bottom: 15px; right: 15px;
+    }
+
+    #schedule_line {
+      width: 521.4px; height: 1110.48px;
+    }
+
+    &__wedo {
+      position: absolute;
+      text-align: right;
+      top: 139.76px; right: 489.176px + 12;
+
+      svg {
+        width: 260.7px;
+        line {
+          stroke-width: 1.2;
+        }
+      }
+
+      &__time {
+        top: 46.58px; right: 280.7px;
+      }
+    }
+
+    #schedule_cross {
+      width: 90.38px; height: 116.96px;
+      transform: scale(0.9);
+      position: absolute;
+      top: 135.88px; right: 373.6px;;
+    }
+
+    &__wetoast {
+      position: absolute;
+      text-align: left;
+      top: 408.9px; left: 489.2px + 12;
+
+      svg {
+        transform: rotateY(180deg);
+        width: 260.7px;
+        line {
+          stroke-width: 1.2;
+        }
+      }
+
+      &__time {
+        top: 46.58px; left: 280.7px;
+      }
+    }
+
+    #schedule_champagne {
+      width: 54.2px; height: 88.3px;
+      transform: scale(1.2);
+      position: absolute;
+      top: 432.2px; left: 400.7px;
+    }
+
+    &__weeat {
+      position: absolute;
+      text-align: right;
+      top: 678.1px; right: 489.2px + 12;
+
+      svg {
+        width: 260.7px;
+        line {
+          stroke-width: 1.2;
+        }
+      }
+
+      &__time {
+        top: 46.58px; right: 280.7px;
+      }
+    }
+
+    #schedule_tray {
+      width: 89.1px; height: 57.6px;
+      transform: scale(1.2);
+      position: absolute;
+      top: 720.8px; right: 363.6px;
+    }
+
+    &__weparty {
+      position: absolute;
+      text-align: left;
+      top: 947.3px; left: 489.2px + 12;
+
+      svg {
+        transform: rotateY(180deg);
+        width: 260.7px;
+        line {
+          stroke-width: 1.2;
+        }
+      }
+
+      &__time {
+        top: 46.58px; left: 280.7px;
+      }
+    }
+
+    #schedule_disco {
+      width: 119.3px; height: 100.2px;
+      transform: scale(0.9);
+      position: absolute;
+      top: 965.4px; left: 348.7px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .schedule {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__title {
+      font-size: 29vw;
+      position: relative;
+      bottom: initial; right: initial; left: 4vw;
+      transform: initial;
+    }
+    
+    &__timeline {
+      width: 70vw * (10/7);
+      padding: 5vw * (10/7) 0;
+
+      &__entry__time {
+        font-size: 2.8vw * (10/7);
+      }
+
+      &__entry__title {
+        font-size: 2.8vw * (10/7);
+        margin-bottom: 2vw * (6/7);
+        padding: 0 4vw * (6/7);
+      }
+
+      &__entry__desc {
+        font-size: 1.2vw * (10/7);
+        line-height: 2.3vw * (10/7);
+        margin-top: 2.2vw * (6/7);
+        padding: 0 4vw * (6/7);
+      }
+
+      &__wii {
+        font-size: 1.713vw;
+        bottom: 25px; right: 25px;
+      }
+
+      #schedule_line {
+        width: 40.29vw * (10/7); height: 85.81vw * (10/7);
+      }
+
+      &__wedo {
+        top: 10.8vw * (10/7); right: 50vw;
+
+        svg {
+          width: 26vw;
+        }
+
+        &__time {
+          top: 3.6vw * (10/7); right: 28vw;
+        }
+      }
+
+      #schedule_cross {
+        top: 13vw;
+        right: initial;
+        left: 53.386vw;
+      }
+
+      &__wetoast {
+        top: 31.6vw * (10/7); left: 50vw;
+
+        svg {
+          width: 26vw;
+        }
+
+        &__time {
+          top: 3.5vw * (10/7); left: 28vw;
+        }
+      }
+
+      #schedule_champagne {
+        top: 45.714vw;
+        left: initial;
+        right: 54.786vw;
+      }
+
+      &__weeat {
+        top: 52.4vw * (10/7); right: 50vw;
+
+        svg {
+          width: 26vw;
+        }
+
+        &__time {
+          top: 3.5vw * (10/7); right: 28vw;
+        }
+      }
+
+      #schedule_tray {
+        top: 78.071vw;
+        right: initial;
+        left: 55.557vw;
+      }
+
+      &__weparty {
+        top: 73.2vw * (10/7); left: 50vw;
+
+        svg {
+          width: 26vw;
+        }
+
+        &__time {
+          top: 3.4vw * (10/7); left: 28vw;
+        }
+      }
+
+      #schedule_disco {
+        top: 103.971vw;
+        left: initial;
+        right: 52.829vw;
+      }
+    }
+  }
+} 
+
+@media screen and (max-width: 600px) {
+  .schedule {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    &__timeline {
+      width: 70vw * (10/7);
+      padding: 5vw * (10/7) 0;
+
+      &__entry__time {
+        font-size: 2.8vw * (10/7) * 1.3;
+      }
+
+      &__entry__title {
+        font-size: 2.8vw * (10/7) * 1.3;
+        margin-bottom: 2vw * (6/7);
+        padding: 0 4vw * (6/7);
+      }
+
+      &__entry__desc {
+        font-size: 1.2vw * (10/7) * 1.7;
+        line-height: 2.3vw * (10/7) * 1.1;
+        margin-top: 2.2vw * (6/7);
+        padding: 0 4vw * (6/7);
+      }
+
+      &__wii {
+        font-size: 1.713vw;
+        bottom: 25px; right: 25px;
+      }
+
+      #schedule_line {
+        width: 70.29vw * (10/7); height: auto;
+      }
+
+      &__wedo {
+        top: 10.8vw * (10/7) * 1.7; right: 50vw;
+
+        svg {
+          width: 31vw;
+          line{
+            stroke-width: 2;
+          }
+        }
+
+        &__time {
+          top: 3.6vw * (10/7) * 1.5; right: 33vw;
+        }
+      }
+
+      #schedule_cross {
+        width: 20vw; height: auto;
+        top: 13vw * 1.8;
+        right: initial;
+        left: 55.386vw;
+      }
+
+      &__wetoast {
+        top: 31.6vw * (10/7) * 1.7; left: 50vw;
+
+        svg {
+          width: 31vw;
+          line{
+            stroke-width: 2;
+          }
+        }
+
+        &__time {
+          top: 3.5vw * (10/7) * 1.5; left: 33vw;
+        }
+      }
+
+      #schedule_champagne {
+        width: 13vw; height: auto;
+        top: 45.714vw * 1.7;
+        left: initial;
+        right: 56.786vw;
+      }
+
+      &__weeat {
+        top: 52.4vw * (10/7) * 1.7; right: 50vw;
+
+        svg {
+          width: 31vw;
+          line{
+            stroke-width: 2;
+          }
+        }
+
+        &__time {
+          top: 3.5vw * (10/7) * 1.5; right: 33vw;
+        }
+      }
+
+      #schedule_tray {
+        width: 20vw; height: auto;
+        top: 78.071vw * 1.7;
+        right: initial;
+        left: 57.557vw;
+      }
+
+      &__weparty {
+        top: 73.2vw * (10/7) * 1.7; left: 50vw;
+
+        svg {
+          width: 31vw;
+          line{
+            stroke-width: 2;
+          }
+        }
+        
+        &__time {
+          top: 3.4vw * (10/7) * 1.5; left: 33vw;
+        }
+      }
+
+      #schedule_disco {
+        width: 30vw; height: auto;
+        top: 103.971vw * 1.685;
+        left: initial;
+        right: 53.829vw;
+      }
+    }
+  }
+} 

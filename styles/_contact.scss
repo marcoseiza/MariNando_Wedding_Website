@@ -1,0 +1,201 @@
+.contact {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%; height: 30vw;
+  margin-top: 100px;
+
+  &__dropbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: color(primary);
+
+    span {
+      font-size: 60vw * (7/100);
+      font-weight: 300;
+      color: color(main_text);
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #Icon_feather-arrow-down {
+      width: 50vw * (7/100);
+      margin: 43vw * (7/100) 0;
+      path {
+        stroke: color(main_text);
+        stroke-width: 8;
+      }
+    }
+    a {
+      &:hover svg path, &:focus svg path{
+        fill: lighten(color(main_text), 10);
+      }
+      #Icon_awesome-inbox {
+        width: 100vw * (7/100);
+        svg path {
+          fill: color(main_text);
+        }
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: color(secondary);
+    padding-right: 65vw * (7/100);
+
+    &__topic {
+      font-size: 60vw * (7/100);
+      font-weight: 300;
+      color: white;
+      text-transform: uppercase;
+      margin: 30vw * (7/100) 0;
+    }
+
+    &__mail {
+      font-size: 40vw * (7/100);
+      font-weight: 300;
+      a {
+        text-decoration: none;
+        color: white;
+
+        &:hover, &:focus {
+          color: darken(white, 15);
+        }
+
+        &:hover svg path, &:focus svg path{
+          stroke: darken(white, 15);
+        }
+
+        svg {
+          margin-right: 15vw * (7/100);
+          margin-top: -48vw * (7/100);
+          width: 60vw * (7/100);
+        }
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    &__rsvp {
+      border: 2px solid white;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 40vw * (7/100);
+      font-weight: 400;
+      padding: 6vw * (7/100) 10vw * (7/100);
+      margin-bottom: 30vw * (7/100);
+      cursor: pointer;
+
+      &:hover, &:focus {
+        border-color: darken(white, 15);
+        color: darken(white, 15);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 738px) {
+  .contact {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    width: 100%; height: auto;
+
+    &__dropbox {
+      padding: 42px 0;
+
+      span {
+        font-size: 39px;
+      }
+  
+      #Icon_feather-arrow-down {
+        width: 32px;
+        margin: 27.5px 0;
+      }
+  
+      a #Icon_awesome-inbox {
+        width: 70px;
+      }
+    }
+    &__info {
+      padding: 20px 42px;
+  
+      &__topic {
+        font-size: 39px;
+        margin: 19.5px 0;
+      }
+  
+      &__mail {
+        font-size: 25.7px;
+        svg {
+          margin-right: 9.6px;
+          margin-top: -30.8px;
+          width: 38.5px;
+        }
+      }
+  
+      &__rsvp {
+        border: 1px solid white;
+        font-size: 22px;
+        padding: 3.9px 6.4px;
+        margin-bottom: 19.3px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 497px) {
+  .contact {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    width: 100%; height: auto;
+    margin-top: 15vw;
+  
+    &__dropbox {
+      padding: 42vw * (8.4/42) 0;
+
+      span {
+        font-size: 39vw * (8.4/42);
+      }
+  
+      #Icon_feather-arrow-down {
+        width: 32vw * (8.4/42);
+        margin: 27.5vw * (8.4/42) 0;
+      }
+  
+      a #Icon_awesome-inbox {
+        width: 70vw * (8.4/42);
+      }
+    }
+    &__info {
+      padding: 20vw * (8.4/42) 42vw * (8.4/42);
+  
+      &__topic {
+        font-size: 39vw * (8.4/42);
+        margin: 19.5vw * (8.4/42) 0;
+      }
+  
+      &__mail {
+        font-size: 25.7vw * (8.4/42);
+        svg {
+          margin-right: 9.6vw * (8.4/42);
+          margin-top: -30.8vw * (8.4/42);
+          width: 38.5vw * (8.4/42);
+        }
+      }
+  
+      &__rsvp {
+        border: 1px solid white;
+        font-size: 22vw * (8.4/42);
+        padding: 3.9vw * (8.4/42) 6.4vw * (8.4/42);
+        margin-bottom: 19.3vw * (8.4/42);
+      }
+    }
+  }
+}

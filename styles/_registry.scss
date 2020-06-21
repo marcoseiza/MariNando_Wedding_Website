@@ -1,0 +1,102 @@
+.registry {
+  display: flex; 
+  flex-direction: column;
+  margin-top: 20px;
+
+  &__title {
+    align-self: flex-start;
+    position: relative;
+    font-size: 400px;
+    line-height: 210px;
+    letter-spacing: -20px;
+    color: color(titles);
+    opacity: 0.29;
+    margin: 140px 0px -50px 15vw;
+  }
+
+  &__list {
+    position: relative;
+    align-self: center;
+    width: 91vw;
+    background-color: color(primary);
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid color(secondary);
+      padding: 25px 0;
+      margin: 0 80px;
+      &:last-of-type {
+        border: none;
+      }
+
+      span {
+        font-size: 45px;
+        font-weight: 300;
+        color: color(main_text);
+      }
+      a {
+        border: 2px solid color(main_text);
+        text-decoration: none;
+        color: color(main_text);
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 400;
+        padding: 6px 10px;
+        &:hover, &:focus {
+          border-color: lighten(color(main_text), 30);
+          color: lighten(color(main_text), 30);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1171px) {
+  .registry {
+
+    &__title {
+      font-size: 30vw;
+      line-height: 210vw * (3/40);
+      letter-spacing: -20vw * (3/40);
+      margin: 140px 0px -50vw * (3/40) 15vw;
+    }
+  }
+}
+
+@media screen and (max-width: 938px) {
+  .registry {
+    display: flex; 
+    flex-direction: column;
+  
+    &__list {
+      li {
+        border-bottom: 2vw * (4.8/45) solid color(secondary);
+        padding: 25vw * (4.8/45) 0;
+        margin: 0 80vw * (4.8/45);
+  
+        span {
+          font-size: 45vw * (4.8/45);
+        }
+        a {
+          border: 2vw * (4.8/45) solid color(main_text);
+          font-size: 25vw * (4.8/45);
+          padding: 6vw * (4.8/45) 10vw * (4.8/45);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .registry {
+
+    &__title {
+      font-size: 400vw * (5/40);
+      line-height: 210vw * (4/40);
+      letter-spacing: -20vw * (4/40);
+      margin: 18vw 0px 10vw 0vw;
+    }
+  }
+}

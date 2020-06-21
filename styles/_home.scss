@@ -1,0 +1,381 @@
+.home {
+  background-color: color(primary);
+  display: grid;
+  padding-left: 3em; padding-right: 4em;
+  grid-template-columns: auto auto;
+  grid-template-rows: 480px 300px;
+  &__img {
+    grid-area: 1 / 1 / -1 / 2;
+    width: 45.5vw;
+    object-fit: cover;
+  }
+  &__names {
+    grid-column: 2;
+    align-self: center;
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 95px;
+      color: lighten(color(main_text), 10);
+    }
+    &-plus {
+      margin: -15px 0;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0.5em;
+      margin-top: 1.3em;
+
+      a:hover svg, a:focus svg {
+        .cls-2 {
+          stroke: darken(#a3a3a3, $amount: 15)
+        }
+        .cls-4 {
+          fill: darken(#a3a3a3, $amount: 15)
+        }
+      }
+
+      #icon_feather-instagram {
+        width: 53.784px * 0.75;
+        height: 53.784px * 0.75;
+      }
+
+      #icon_feather-mail {
+        margin-left: 1em;
+        width: 67.199px * 0.75; 
+        height: 53.759px * 0.75;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+  
+      .cls-2 {
+        stroke: #a3a3a3;
+        stroke-width: 5px;
+      }
+  
+      .cls-3, .cls-4 {
+        stroke: none;
+      }
+  
+      .cls-4 {
+        fill: #a3a3a3;
+      }
+    }
+  }
+
+  &__action {
+    grid-area: 2 / 1 / -1 / -1;
+    justify-self: end;
+    background-color: color(secondary);
+    width: 920px;
+    height: 230px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 250px;
+
+    &__sendyourlove {
+      display: grid;
+      align-content: center; justify-content: center;
+      a {  
+        background-color: none;
+        font-family: Montserrat;
+        border: 2px solid white;
+        font-size: 35px; font-weight: 300;
+        padding: 0.5em;
+        color: white;
+        background: none;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover, &:focus {
+          border-color: darken(white, 20);
+          color: darken(white, 20);
+        }
+      }
+    }
+
+    &__img {
+      height: 230px; width: 250px;
+      opacity: 0.4;
+      overflow: hidden;
+      img {
+        position: relative;
+        top: -40px;
+        left: -46px;
+        width: 353px; 
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1349px) {
+  .home {
+    padding-left: 48vw * (8.2/110); padding-right: 64vw * (8.2/110);
+    grid-template-rows: 540vw * (8.2/110) 300vw * (8.2/110);
+
+    &__img {
+      grid-area: 1 / 1 / -1 / 2;
+      width: 50.5vw;
+      object-fit: cover;
+    }
+
+    &__names {
+      p {
+        font-size: 85vw * (8.2/110);
+      }
+      &-plus {
+        margin: -15vw * (8.2/110) 0;
+      }
+  
+      &__icons {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 8vw * (8.2/110);
+        margin-top: 4.23636vw;
+        #icon_feather-instagram {
+          width: 53.784vw * 0.8 * (8.8/110);
+          height: auto;
+        }
+  
+        #icon_feather-mail {
+          margin-left: 16vw * (8.2/110);
+          width: 67.199vw * 0.8 * (8.8/110); 
+          height: auto;
+        }
+      }
+    }
+  
+    &__action {
+      width: 920vw * (8.2/110);
+      height: 230vw * (8.2/110);
+      grid-template-columns: auto 250vw * (8.2/110);
+  
+      &__sendyourlove {
+        a {  
+          border: 2vw * (8.2/110) solid white;
+          font-size: 35vw * (8.2/110);
+          padding: 17.5vw * (8.2/110);
+          color: white;
+          background: none;
+          text-transform: uppercase;
+        }
+      }
+  
+      &__img {
+        height: 230vw * (8.2/110); width: 250vw * (8.2/110);
+        img {
+          top: -40vw * (8.2/110); left: -46vw * (8.2/110);
+          width: 353vw * (8.2/110); height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    padding-left: 0; padding-right: 0;
+    grid-template-columns: auto;
+    grid-template-rows: 470px 220px * 1.13;
+    position: relative;
+
+    &__img {
+      position: relative;
+      top: -50px;
+      width: 700px;
+      height: 700px;
+      object-fit: cover;
+    }
+
+    &__names {
+      position: relative;
+      grid-area: 2 / 1 / -1 / -1;
+      align-self: flex-start;
+      justify-self: end;
+      background-color: color(secondary);
+      width: 80vw; height: 270px * 1.13;
+      padding: 40px * 1.13 40px * 1.13 0 40px * 1.13;
+
+      p {
+        margin-bottom: 20px;
+        font-size: 56.65px * 0.9;
+        color: white;
+        align-items: flex-start;
+      }
+      &-plus {
+        margin: -10px * 1.13 0;
+      }
+  
+      &__icons {
+        position: absolute;
+        top: 30px; right: 50px * 1.13;
+        justify-content: flex-end;
+        margin-top: 28px;
+        margin-right: 0;
+        #icon_feather-instagram {
+          width: 30px * 1.5;
+          height: auto;
+        }
+  
+        #icon_feather-mail {
+          margin-left: 8px * 1.13;
+          width: 37px * 1.5;
+          height: auto;
+        }
+      }
+    }
+  
+    &__action {
+      grid-area: 2 / 1 / -1 / -1;
+      position: absolute;
+      bottom: 0;
+      width: auto; height: auto;
+      padding: 0 50px * 1.13 40px * 1.13 0;
+      grid-template-columns: auto;
+  
+      &__sendyourlove {
+        align-content: center; justify-content: flex-end;
+        a {  
+          border: 2px * 1.13 solid white;
+          font-size: 21px * 1.13 * 0.9;
+          padding: 10.5px * 1.13 * 0.9;
+          color: white;
+          background: none;
+          text-transform: uppercase;
+        }
+      }
+  
+      &__img {
+        display: none;
+        width: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home {
+    grid-template-rows: 86vw 58.4vw;
+
+    &__img {
+      width: 528vw * (15/110) * 1.19;
+      height: auto;
+      top: 0;
+      object-fit: initial;
+    }
+
+    &__names {
+      width: 500vw * (15/110) * 1.19;  height: 52.26818vw;
+      padding: 40vw * (15/110) * 1.19 40vw * (15/110) * 1.19 0 0;
+
+      p {
+        margin-bottom: 40vw * (15/110) * 1.19;
+        padding-left: 40vw * (15/110) * 1.19;
+        font-size: 56.65vw * (15/110) * 1.19;
+        align-items: end;
+      }
+      &-plus {
+        margin: -10vw * (15/110) * 1.19 0;
+      }
+  
+      &__icons {
+        justify-content: flex-start;
+        position: relative;
+        top: 0; right: 0;
+        display: flex;
+        margin-left: 7vw;
+        #icon_feather-instagram {
+          width: 50vw * (15/110) * 1.19;
+          height: 50vw * (15/110) * 1.19;
+        }
+  
+        #icon_feather-mail {
+          margin-left: 8vw * (15/110) * 1.19;
+          width: 62.5vw * (15/110) * 1.19;
+          height: 50vw * (15/110) * 1.19;
+        }
+      }
+    }
+  
+    &__action {
+      width: auto; 
+      padding: 0 8.79091vw 40vw * (15/110) * 1.19 0;
+  
+      &__sendyourlove {
+        a {  
+          border: 2vw * (15/110) * 1.19 solid white;
+          font-size: 21vw * (15/110) * 1.19;
+          padding: 10.5vw * (15/110) * 1.19;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home {
+    grid-template-rows: 99vw 58.4vw;
+
+    &__img {
+      width: 92.68vw;
+      height: auto;
+      top: 0;
+      object-fit: initial;
+    }
+
+    &__names {
+      width: 85.13636vw;  height: 52.26818vw;
+      padding: 40vw * (15/110) * 1.19 40vw * (15/110) * 1.19 0 0;
+
+      p {
+        margin-bottom: 40vw * (15/110) * 1.19;
+        padding-left: 40vw * (15/110) * 1.19;
+        font-size: 56.65vw * (15/110) * 1.19;
+        align-items: end;
+      }
+      &-plus {
+        margin: -10vw * (15/110) * 1.19 0;
+      }
+  
+      &__icons {
+        justify-content: flex-start;
+        position: relative;
+        top: 0; right: 0;
+        display: flex;
+        margin-left: 7vw;
+        #icon_feather-instagram {
+          width: 50vw * (15/110) * 1.19;
+          height: 50vw * (15/110) * 1.19;
+        }
+  
+        #icon_feather-mail {
+          margin-left: 8vw * (15/110) * 1.19;
+          width: 62.5vw * (15/110) * 1.19;
+          height: 50vw * (15/110) * 1.19;
+        }
+      }
+    }
+  
+    &__action {
+      width: auto; 
+      padding: 0 8.79091vw 40vw * (15/110) * 1.19 0;
+  
+      &__sendyourlove {
+        a {  
+          border: 2vw * (15/110) * 1.19 solid white;
+          font-size: 21vw * (15/110) * 1.19;
+          padding: 10.5vw * (15/110) * 1.19;
+        }
+      }
+    }
+  }
+}

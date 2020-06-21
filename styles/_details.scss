@@ -1,0 +1,333 @@
+.details {
+  position: relative;
+  display: grid;
+  grid-template-columns: 43vw 1fr;
+  grid-template-rows: 300px 54vw;
+
+  &__title{
+    grid-area: 1 / 1 / 2 / -1;
+    background-color: color(primary);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    span {
+      font-size: 300px;
+      color: color(titles);
+      opacity: 0.29;
+    }
+  }
+
+  &__date {
+    background-color: color(secondary);
+    height: 54vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4.2vw;
+
+    &__number {
+      white-space: pre;
+      color: white;
+      font-size: 8.5vw;
+      line-height: 8.5vw;
+    }
+
+    &__countdown {
+      color: #9B9B9B;
+      opacity: 0.22;
+      font-size: 6.5vw;
+      text-transform: uppercase;
+      margin-top: 1.5vw;
+      div.month {
+        margin: -1.5vw 0;
+      }
+    }
+  }
+
+  &__detes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > span {
+      display: flex;
+      justify-content: center; align-items: center;
+      margin: 6vw 0;
+    }
+
+    h3 {
+      margin: 0;
+      white-space: pre;
+      text-align: center;
+      font-size: 3.5vw;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: color(main_text)
+    }
+
+    svg {
+      height: 8.5vw;
+      stroke: black;
+      stroke-width: 0.8;
+      padding: 0 1.2vw;
+    }
+
+
+    button {
+      background: none;
+      border: none;
+      position: relative;
+
+      div.button_content {
+        padding: 0.5vw 0.8vw;
+        border: 3px solid color(main_text);
+        color: color(main_text);
+        font-size: 2.3vw; font-size: 300; font-family: Montserrat;
+        text-transform: uppercase;
+        padding: 4px 9px;
+        display: flex;
+        align-items: center;
+
+        &:hover, &:focus {
+          cursor: pointer;
+          color: lighten(color(main_text), 15);
+          border: 3px solid lighten(color(main_text), 15);
+        }
+
+        &:hover svg .cls-1, &:focus svg .cls-1 {
+          stroke: lighten(color(main_text), 15)
+        }
+  
+        div.calendar_icon {
+          position: relative;
+          margin-right: 1vw;
+        }
+  
+        #date {
+          position: absolute;
+          left: 50%; top: 1.5vw;
+          transform: translate(-50%, 0);
+        }
+  
+        svg {
+          width: 3.675vw; 
+          height: 4.32vw;
+          padding: 0;
+  
+          .cls-1 {
+            fill: none;
+            stroke: #161925;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 4px;
+          }
+        }
+      }
+
+      div.button_menu {
+        height: 0;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        a {
+          display: none;
+          align-items: center;
+          opacity: 0;
+          &:hover svg, &:focus svg {
+            fill: lighten(color(main_text), 15);
+            cursor: pointer;
+          }
+          svg {
+            width: 3vw;
+            fill: color(main_text);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .details {
+    grid-template-columns: 43vw 1fr;
+    grid-template-rows: 300vw * (33.48/300) 486px 486px;
+  
+    &__title{
+      grid-area: 1 / 1 / 2 / -1;
+      height: 150vw * (33.48/300);
+      align-items: flex-start;
+      flex-direction: row;
+      span {
+        margin-left: 5vw;
+        font-size: 300vw * (33.48/300);
+      }
+    }
+  
+    &__date {
+      grid-area: 3 / 1 / 4 / -1;
+      height: 54px * (486/54);
+      width: 43px * (486/54);
+      padding-left: 4.2px * (486/54);
+  
+      &__number {
+        font-size: 8.5px * (486/54);
+        line-height: 8.5px * (486/54);
+      }
+  
+      &__countdown {
+        font-size: 6.5px * (486/54);
+        margin-top: 1.5px * (486/54);
+        div.month {
+          margin: -1.5px * (486/54) 0;
+        }
+      }
+    }
+  
+    &__detes {
+      justify-self: end;
+      grid-area: 2 / 1 / 3 / -1;
+      width: 57px * (486/54);
+      background-color: color(primary);
+  
+      > span {
+        margin: 6px * (486/54) 0;
+      }
+  
+      h3 {
+        font-size: 3.5px * (486/54);
+      }
+  
+      svg {
+        height: 8.5px * (486/54);
+        padding: 0 1.2px * (486/54);
+      }
+
+      button {
+  
+        div.button_content {
+          padding: 0.5px * (486/54) 0.8px * (486/54);
+          border: 2px solid color(main_text);
+          font-size: 2.3px * (486/54);
+    
+          div.calendar_icon {
+            margin-right: 1px * (486/54);
+          }
+    
+          #date {
+            top: 1.5px * (486/54);
+          }
+    
+          svg {
+            width: 3.675px * (486/54); 
+            height: 4.32px * (486/54);
+          }
+        }
+  
+        div.button_menu {
+          a {
+            svg {
+              width: 3px * (486/54);
+              fill: color(main_text);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 514px) {
+  .details {
+    grid-template-columns: 100vw;
+    grid-template-rows: 600vw * (33.48/300) 54vw * (44/25) 54vw * (44/25);
+    
+    &__title{
+      grid-area: 1 / 1 / 2 / -1;
+      height: 150vw * (33.48/300);
+      align-items: flex-start;
+      flex-direction: row;
+      span {
+        margin-left: 5vw;
+        margin-top: 25vw;
+        font-size: 300vw * (33.48/300);
+      }
+    }
+
+    &__date {
+      grid-area: 3 / 1 / 4 / -1;
+      height: 54vw * (44/25);
+      width: 43vw * (44/25);
+      padding-left: 4.2vw * (44/25);
+  
+      &__number {
+        font-size: 8.5vw * (44/25);
+        line-height: 8.5vw * (44/25);
+      }
+  
+      &__countdown {
+        font-size: 6.5vw * (44/25);
+        margin-top: 1.5vw * (44/25);
+        div.month {
+          margin: -1.5vw * (44/25) 0;
+        }
+      }
+    }
+  
+    &__detes {
+      justify-self: end;
+      grid-area: 2 / 1 / 3 / -1;
+      width: 57vw * (44/25);
+      background-color: color(primary);
+  
+      > span {
+        margin: 6vw * (44/25) 0;
+      }
+  
+      h3 {
+        font-size: 3.5vw * (44/25);
+      }
+  
+      svg {
+        height: 8.5vw * (44/25);
+        padding: 0 1.2vw * (44/25);
+      }
+
+      button {
+  
+        div.button_content {
+          font-size: 2.3vw * (44/25);
+          padding: 0.5vw * (44/25) 0.8vw * (44/25);
+          border: 2px solid color(main_text);
+    
+          div.calendar_icon {
+            margin-right: 1vw * (44/25);
+          }
+    
+          #date {
+            top: 1.5vw * (44/25);
+          }
+    
+          svg {
+            width: 3.675vw * (44/25); 
+            height: 4.32vw * (44/25);
+          }
+        }
+  
+        div.button_menu {
+          a {
+            svg {
+              width: 3vw * (44/25);
+              fill: color(main_text);
+            }
+          }
+        }
+      }
+  
+      
+    }
+  }
+}
