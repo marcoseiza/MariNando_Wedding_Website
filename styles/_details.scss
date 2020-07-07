@@ -52,18 +52,50 @@
 
     > span {
       display: flex;
-      justify-content: center; align-items: center;
+      justify-content: center; align-items: start;
       margin: 6vw 0;
+
+      h3 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        &:first-child {
+          padding: 0;
+          & > span:first-child {
+            border-right: 0.2vw solid color(main_text);
+            padding: 0 1.7vw;
+          }
+        }
+      }
     }
 
     h3 {
       margin: 0;
+      padding: 0 1.7vw;
       white-space: pre;
       text-align: center;
       font-size: 3.5vw;
       font-weight: 300;
       text-transform: uppercase;
-      color: color(main_text)
+      color: color(main_text);
+
+      > .br {
+        display: block;
+        margin: -1.5em;
+      }
+      .loc {
+        margin-top: 0.3em;
+        font-size: 1.1vw;
+        .br {
+          display: block;
+          margin: 0em;
+        }
+        .brback {
+          display: block;
+          margin: -0.6em;
+        }
+      }
     }
 
     svg {
@@ -92,7 +124,7 @@
         &:hover, &:focus {
           cursor: pointer;
           color: lighten(color(main_text), 15);
-          border: 3px solid lighten(color(main_text), 15);
+          border-color: lighten(color(main_text), 15);
         }
 
         &:hover svg .cls-1, &:focus svg .cls-1 {
@@ -128,7 +160,7 @@
       div.button_menu {
         height: 0;
         position: absolute;
-        top: 100%; left: 0; right: 0;
+        top: 80%; left: 0; right: 0;
         overflow: hidden;
         display: flex;
         justify-content: space-around;
@@ -195,10 +227,23 @@
   
       > span {
         margin: 6px * (486/54) 0;
+
+        h3:first-child > span:first-child {
+          border-width: 2px;
+        }
       }
   
       h3 {
         font-size: 3.5px * (486/54);
+        > .br {
+          margin: 0em;
+        }
+        .loc {
+          font-size: 1.5px * (486/54);
+          .br {
+            margin: 0em;
+          }
+        }
       }
   
       svg {
@@ -289,6 +334,9 @@
   
       h3 {
         font-size: 3.5vw * (44/25);
+        .loc {
+          font-size: 1.5vw * (44/25);
+        }
       }
   
       svg {

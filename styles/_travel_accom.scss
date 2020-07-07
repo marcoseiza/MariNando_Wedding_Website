@@ -27,12 +27,14 @@
   &__map {
     grid-area: map;
     width: 700px;
-    justify-self: right;
+    height: 100%;
+    justify-self: end;
     display: grid;
     grid-template-rows: auto 1fr;
     background-color: color(primary);
 
     > img {
+      width: calc(100% - 40px);
       padding: 40px 20px;
     }
 
@@ -44,7 +46,7 @@
       justify-content: center;
       background-color: color(secondary);
       width: 100%; height: 100%;
-      padding: 20px 0;
+      margin: 0 0;
 
       svg {
         width: 40px;
@@ -101,6 +103,11 @@
 
     img {
       width: 35px;
+    }
+
+    svg {
+      width: 50px;
+      fill: color(secondary);
     }
 
     &__name {
@@ -349,16 +356,16 @@
 
     &__title {
       background-color: color(secondary);
-      width: 85%; height: 60vw;
-      justify-self: end;
+      width: 100%; height: 60vw;
+      justify-self: start;
       display: flex;
       align-items: center;
 
       span {
-        top: 50%; left: 7vw;
+        top: 45%; left: 2vw;
         transform: translate(0, -50%);
-        font-size: 270vw * (8.1/110) * 1.7;
-        line-height: 270vw * (8.1/110) * 1.2;
+        font-size: 270vw * (8.1/110) * 1.5;
+        line-height: 270vw * (8.1/110) * 1;
       }
     }
 

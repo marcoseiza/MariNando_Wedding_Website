@@ -27,6 +27,7 @@
     &__entry__time {
       font-size: 36.24px;
       position: absolute;
+      display: none;
     }
 
     &__entry__title {
@@ -89,7 +90,7 @@
       top: 408.9px; left: 489.2px + 12;
 
       svg {
-        transform: rotateY(180deg);
+        transform: rotate(180deg);
         width: 260.7px;
         line {
           stroke-width: 1.2;
@@ -138,7 +139,7 @@
       top: 947.3px; left: 489.2px + 12;
 
       svg {
-        transform: rotateY(180deg);
+        transform: rotate(180deg);
         width: 260.7px;
         line {
           stroke-width: 1.2;

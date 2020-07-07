@@ -3,7 +3,7 @@
   flex-direction: column;
 
   &__title {
-    align-self: flex-end;
+    align-self: center;
     font-size: 280px;
     line-height: 210px;
     letter-spacing: -20px;
@@ -66,6 +66,8 @@
         align-items: center;
         margin-top: 50px;
         margin-left: 30px;
+        text-decoration: none;
+          color: color(main_text);
 
         #Ellipse_6 {
           width: 45px; height: 45px;
@@ -94,19 +96,44 @@
           width: 470px; height: 470px;
           object-fit: cover;
           &:hover, &:focus {
-            opacity: 0.8;
+            opacity: 0.9;
           }
         }
       }
 
-      #Icon_awesome-heart {
+      .Icon_awesome-heart {
         width: 35px; height: auto;
         margin-left: 30px;
+        fill: none;
+        stroke: color(main_text);
+        stroke-width: 3;
+        cursor: pointer;
+      }
+
+      #liked {
+        animation: liked 400ms ease-in-out;
+      }
+
+      @keyframes liked {
+        0% {
+          transform: scale(0.8);
+        }
+        40% {
+          transform: scale(1.1);
+        }
+        80% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
       p {
-        strong {
+        a {
           font-weight: 500;
+          text-decoration: none;
+          color: color(main_text);
         }
         margin: 27px 30px;
         font-size: 20px;
