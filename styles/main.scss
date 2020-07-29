@@ -15,7 +15,11 @@ body {
 
 main {
   position: relative;
-  overflow-x: hidden;
+  overflow: visible;
+  [class$="contentwrapper"] {
+    margin: 0 auto;
+    max-width: 1380px;
+  }
 }
 
 .player_shadow{  
@@ -96,6 +100,7 @@ main {
         justify-self: flex-start;
         background: none;
         border: none;
+        position: relative;
 
         div.button_content {
           color: color(secondary);
@@ -104,6 +109,11 @@ main {
           padding: 0 9px;
           display: flex;
           align-items: center;
+
+          > span {
+            opacity: 1;
+            transition: opacity 100ms ease-in-out;
+          }
 
           &:hover, &:focus {
             cursor: pointer;
@@ -141,23 +151,29 @@ main {
         }
 
         div.button_menu {
-          height: 0;
-          left: 0; right: 0;
+          height: 100%;
+          width: 80%;
+          position: absolute;
+          top: 0; right: 0;
           overflow: hidden;
-          display: flex;
-          justify-content: space-around;
+          display: none;
+          justify-content: center;
           align-items: center;
+          opacity: 0;
+  
           a {
-            display: none;
+            margin: 0 1em;
+            display: flex;
             align-items: center;
-            opacity: 0;
+            
             &:hover svg, &:focus svg {
-              fill: lighten(color(secondary), 15);
+              fill: lighten(color(main_text), 15);
               cursor: pointer;
             }
             svg {
               width: 30px;
-              fill: color(secondary);
+              height: 100%;
+              fill: color(main_text);
             }
           }
         }

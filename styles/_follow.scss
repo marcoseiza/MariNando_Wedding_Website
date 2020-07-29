@@ -1,6 +1,7 @@
 .follow {
   display: flex; 
   flex-direction: column;
+  overflow: hidden;
 
   &__title {
     align-self: center;
