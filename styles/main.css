@@ -439,8 +439,7 @@ main [class$="contentwrapper"] {
   }
   .player_shadow .player__rsvp form span {
     -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
+    -ms-grid-column: 2;
     grid-area: title;
     margin-bottom: 5px;
     font-size: 23px;
@@ -703,7 +702,7 @@ header #nav {
 .side_circles {
   width: 15px;
   position: fixed;
-  right: 1.64vw;
+  right: 15px;
   z-index: 999;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -711,7 +710,7 @@ header #nav {
 }
 
 .side_circles svg {
-  margin: 0.35782vw 0;
+  margin: 3px 0;
 }
 
 .side_circles svg circle {
@@ -1181,9 +1180,220 @@ header #nav {
   }
 }
 
+.schedule__timeline {
+  font-size: 10px;
+  background-color: #FCF6ED;
+  width: auto;
+  --pd: 6em;
+  --pdt: 12em;
+  --pdb: 12em;
+  padding: var(--pdt) var(--pd) var(--pdb) var(--pd);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  row-gap: 100px;
+  text-transform: uppercase;
+}
+
+.schedule__timeline #schedule_line {
+  position: absolute;
+  left: 50%;
+  top: var(--pd);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0.4em;
+  height: calc(100% - var(--pdb));
+  background-color: #242A40;
+}
+
+.schedule__timeline #schedule_line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-43%, -50%);
+          transform: translate(-43%, -50%);
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+  background-color: #242A40;
+}
+
+.schedule__timeline #schedule_line::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-43%, 50%);
+          transform: translate(-43%, 50%);
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+  background-color: #242A40;
+}
+
+.schedule__timeline__entry__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.schedule__timeline__entry__line span {
+  font-size: 3em;
+}
+
+.schedule__timeline__entry__title {
+  font-size: 3em;
+  padding: 0 1em;
+  margin-bottom: 0.33em;
+}
+
+.schedule__timeline__entry__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.5em;
+  line-height: 1.7em;
+  margin-top: 0.6em;
+  padding: 0 2em;
+}
+
+.schedule__timeline__entry__desc span {
+  font-weight: 600;
+}
+
+.schedule__timeline__entry__desc span:first-child {
+  font-weight: 300;
+}
+
+.schedule__timeline__wii {
+  font-size: 1.5em;
+  position: absolute;
+  text-transform: capitalize;
+  bottom: 3em;
+  right: 3em;
+}
+
+.schedule__timeline > [class*="we"] {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.schedule__timeline > [class*="we"] svg {
+  width: 24em;
+  margin-left: 1.5em;
+}
+
+.schedule__timeline > [class*="we"] svg line {
+  stroke-width: 0.13em;
+}
+
+.schedule__timeline > [class*="we"]:nth-of-type(2n+1) {
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.schedule__timeline > [class*="we"]:nth-of-type(2n + 2) {
+  text-align: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.schedule__timeline > [class*="we"]:nth-of-type(2n + 2) svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-left: 0;
+  margin-right: 1.5em;
+}
+
+.schedule__timeline > svg {
+  position: relative;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  padding: 0 3em;
+  top: 1.8em;
+}
+
+.schedule__timeline > svg:nth-of-type(2n + 1) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.schedule__timeline > svg:nth-of-type(2n + 2) {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.schedule__timeline #schedule_cross {
+  width: 9em;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.schedule__timeline #schedule_champagne {
+  width: 5.5em;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.schedule__timeline #schedule_tray {
+  width: 9em;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.schedule__timeline #schedule_disco {
+  width: 12em;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@media screen and (max-width: 690px) {
+  .schedule__timeline {
+    --pd: 5vw;
+    font-size: 1.6vw;
+  }
+  .schedule__timeline > [class*="we"] svg {
+    width: 28vw;
+  }
+  .schedule__timeline > [class*="we"] svg line {
+    stroke-width: 1.3px;
+  }
+  .schedule__timeline #schedule_line {
+    width: 3px;
+  }
+  .schedule__timeline #schedule_line::after, .schedule__timeline #schedule_line::before {
+    height: 7px;
+    width: 7px;
+  }
+}
+
 .details {
   position: relative;
-  background-color: white;
   font-size: 10px;
 }
 
@@ -1199,23 +1409,31 @@ header #nav {
   display: grid;
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
-  gap: 30px;
-  padding: 60px 30px;
+  gap: 40px;
+  padding: 40px;
 }
 
 .details__date {
   position: relative;
-  height: calc(100% - 200px);
+  height: calc(100% - 100px);
 }
 
 .details__date__detes {
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  top: 40px;
+}
+
+.details__date__detes .content {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+}
+
+.details__date__detes #tab {
+  display: none;
 }
 
 .details__date__detes__basic {
@@ -1230,7 +1448,8 @@ header #nav {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #FCF6ED;
-  padding: 30px;
+  color: #242A40;
+  padding: 3em;
 }
 
 .details__date__detes__basic h3 {
@@ -1239,7 +1458,6 @@ header #nav {
   font-size: 3em;
   font-weight: 400;
   text-transform: uppercase;
-  color: #242A40;
 }
 
 .details__date__detes__countdown {
@@ -1258,7 +1476,7 @@ header #nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 34px;
+  padding: 0 1em;
 }
 
 .details__date__detes__countdown > div {
@@ -1271,16 +1489,16 @@ header #nav {
   position: absolute;
   padding: 0;
   top: calc(100% + 100px);
-  left: calc(50% - 5px);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
   overflow: hidden;
   font-size: 0.7em;
 }
 
 .details__date button div.button_content {
   padding: 0.5vw 0.8vw;
-  border: 3px solid #242A40;
+  border: 0.1em solid #242A40;
   color: #242A40;
   font-size: 4em;
   font-weight: 400;
@@ -1373,689 +1591,184 @@ header #nav {
 }
 
 .details__date button div.button_menu a svg {
-  width: 30px;
+  width: 4em;
   height: 100%;
   fill: #242A40;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1210px) {
   .details {
-    -ms-grid-columns: 43vw 1fr;
-        grid-template-columns: 43vw 1fr;
-    -ms-grid-rows: 33.48vw 486px 486px;
-        grid-template-rows: 33.48vw 486px 486px;
-  }
-  .details__title {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-area: 1 / 1 / 2 / -1;
-    height: 16.74vw;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .details__title span {
-    margin-left: 5vw;
-    font-size: 33.48vw;
-  }
-  .details__date {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-area: 3 / 1 / 4 / -1;
-    height: 486px;
-    width: 387px;
-    padding-left: 37.8px;
-  }
-  .details__date__number {
-    font-size: 76.5px;
-    line-height: 76.5px;
-  }
-  .details__date__countdown {
-    font-size: 58.5px;
-    margin-top: 13.5px;
-  }
-  .details__date__countdown div.month {
-    margin: -13.5px 0;
-  }
-  .details__detes {
-    -ms-grid-column-align: end;
-        justify-self: end;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-area: 2 / 1 / 3 / -1;
-    width: 513px;
-    background-color: #FCF6ED;
-  }
-  .details__detes > span {
-    margin: 54px 0;
-  }
-  .details__detes > span h3:first-child > span:first-child {
-    border-width: 2px;
-  }
-  .details__detes h3 {
-    font-size: 31.5px;
-  }
-  .details__detes h3 > .br {
-    margin: 0em;
-  }
-  .details__detes h3 .loc {
-    font-size: 13.5px;
-  }
-  .details__detes h3 .loc .br {
-    margin: 0em;
-  }
-  .details__detes svg {
-    height: 76.5px;
-    padding: 0 10.8px;
-  }
-  .details__detes button div.button_content {
-    padding: 4.5px 7.2px;
-    border: 2px solid #242A40;
-    font-size: 20.7px;
-  }
-  .details__detes button div.button_content div.calendar_icon {
-    margin-right: 9px;
-  }
-  .details__detes button div.button_content #date {
-    top: 13.5px;
-  }
-  .details__detes button div.button_content svg {
-    width: 33.075px;
-    height: 38.88px;
-  }
-  .details__detes button div.button_menu a svg {
-    width: 27px;
-    fill: #242A40;
-  }
-}
-
-@media screen and (max-width: 514px) {
-  .details {
-    -ms-grid-columns: 100vw;
-        grid-template-columns: 100vw;
-    -ms-grid-rows: 66.96vw 95.04vw 95.04vw;
-        grid-template-rows: 66.96vw 95.04vw 95.04vw;
-  }
-  .details__title {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-area: 1 / 1 / 2 / -1;
-    height: 16.74vw;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .details__title span {
-    margin-left: 5vw;
-    margin-top: 25vw;
-    font-size: 33.48vw;
-  }
-  .details__date {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-area: 3 / 1 / 4 / -1;
-    height: 95.04vw;
-    width: 75.68vw;
-    padding-left: 7.392vw;
-  }
-  .details__date__number {
-    font-size: 14.96vw;
-    line-height: 14.96vw;
-  }
-  .details__date__countdown {
-    font-size: 11.44vw;
-    margin-top: 2.64vw;
-  }
-  .details__date__countdown div.month {
-    margin: -2.64vw 0;
-  }
-  .details__detes {
-    -ms-grid-column-align: end;
-        justify-self: end;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-area: 2 / 1 / 3 / -1;
-    width: 100.32vw;
-    background-color: #FCF6ED;
-  }
-  .details__detes > span {
-    margin: 10.56vw 0;
-  }
-  .details__detes h3 {
-    font-size: 6.16vw;
-  }
-  .details__detes h3 .loc {
-    font-size: 2.64vw;
-  }
-  .details__detes svg {
-    height: 14.96vw;
-    padding: 0 2.112vw;
-  }
-  .details__detes button div.button_content {
-    font-size: 4.048vw;
-    padding: 0.88vw 1.408vw;
-    border: 2px solid #242A40;
-  }
-  .details__detes button div.button_content div.calendar_icon {
-    margin-right: 1.76vw;
-  }
-  .details__detes button div.button_content #date {
-    top: 2.64vw;
-  }
-  .details__detes button div.button_content svg {
-    width: 6.468vw;
-    height: 7.6032vw;
-  }
-  .details__detes button div.button_menu a svg {
-    width: 5.28vw;
-    fill: #242A40;
-  }
-}
-
-.schedule__timeline {
-  font-size: 3em;
-  background-color: #FCF6ED;
-  width: auto;
-  --padding: 2em;
-  padding: calc(2 * var(--padding)) var(--padding);
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (auto)[4];
-      grid-template-rows: repeat(4, auto);
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  row-gap: 100px;
-  text-transform: uppercase;
-}
-
-.schedule__timeline__entry__time {
-  font-size: 1em;
-  position: absolute;
-  display: none;
-}
-
-.schedule__timeline__entry__title {
-  font-size: 1em;
-  padding: 0 30px;
-}
-
-.schedule__timeline__entry__desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 0.5em;
-  line-height: 1.5em;
-  margin-top: 15px;
-  padding: 0 30px;
-}
-
-.schedule__timeline__entry__desc span {
-  font-weight: 600;
-}
-
-.schedule__timeline__entry__desc span:first-child {
-  font-weight: 300;
-}
-
-.schedule__timeline__wii {
-  font-size: 0.5em;
-  position: absolute;
-  text-transform: capitalize;
-  bottom: 15px;
-  right: 15px;
-}
-
-.schedule__timeline #schedule_line {
-  position: absolute;
-  left: 50%;
-  top: var(--padding);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 4px;
-  height: calc(100% - 2 * var(--padding));
-  background-color: #242A40;
-}
-
-.schedule__timeline #schedule_line::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: calc(100% - 2px);
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  background-color: #242A40;
-}
-
-.schedule__timeline #schedule_line::before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: calc(100% - 2px);
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  background-color: #242A40;
-}
-
-.schedule__timeline > [class*="we"] {
-  position: relative;
-}
-
-.schedule__timeline > [class*="we"] svg {
-  width: 260.7px;
-}
-
-.schedule__timeline > [class*="we"] svg line {
-  stroke-width: 1.2;
-}
-
-.schedule__timeline > [class*="we"]:nth-of-type(2n+1) {
-  text-align: right;
-}
-
-.schedule__timeline > [class*="we"]:nth-of-type(2n + 2) {
-  text-align: left;
-}
-
-.schedule__timeline > [class*="we"]:nth-of-type(2n + 2) svg {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.schedule__timeline > svg {
-  position: relative;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-  padding: 0 30px;
-  top: 0.6em;
-}
-
-.schedule__timeline > svg:nth-of-type(2n + 1) {
-  -ms-grid-column-align: start;
-      justify-self: start;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-}
-
-.schedule__timeline > svg:nth-of-type(2n + 2) {
-  -ms-grid-column-align: end;
-      justify-self: end;
-  -webkit-transform-origin: top right;
-          transform-origin: top right;
-}
-
-.schedule__timeline__wedo {
-  text-align: right;
-}
-
-.schedule__timeline__wedo__time {
-  top: 46.58px;
-  right: 280.7px;
-}
-
-.schedule__timeline #schedule_cross {
-  width: 90.38px;
-  height: 116.96px;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-.schedule__timeline__wetoast {
-  text-align: left;
-}
-
-.schedule__timeline__wetoast__time {
-  top: 46.58px;
-  left: 280.7px;
-}
-
-.schedule__timeline #schedule_champagne {
-  width: 54.2px;
-  height: 88.3px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.schedule__timeline__weeat {
-  text-align: right;
-}
-
-.schedule__timeline__weeat__time {
-  top: 46.58px;
-  right: 280.7px;
-}
-
-.schedule__timeline #schedule_tray {
-  width: 89.1px;
-  height: 57.6px;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.schedule__timeline__weparty {
-  text-align: left;
-}
-
-.schedule__timeline__weparty__time {
-  top: 46.58px;
-  left: 280.7px;
-}
-
-.schedule__timeline #schedule_disco {
-  width: 119.3px;
-  height: 100.2px;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-@media screen and (max-width: 1000px) {
-  .schedule {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .schedule__title {
-    font-size: 29vw;
-    position: relative;
-    bottom: initial;
-    right: initial;
-    left: 4vw;
-    -webkit-transform: initial;
-            transform: initial;
+    font-size: 7px;
   }
   .schedule__timeline {
-    width: 100vw;
-    padding: 7.14286vw 0;
-  }
-  .schedule__timeline__entry__time {
-    font-size: 4vw;
-  }
-  .schedule__timeline__entry__title {
-    font-size: 4vw;
-    margin-bottom: 1.71429vw;
-    padding: 0 3.42857vw;
-  }
-  .schedule__timeline__entry__desc {
-    font-size: 1.71429vw;
-    line-height: 3.28571vw;
-    margin-top: 1.88571vw;
-    padding: 0 3.42857vw;
-  }
-  .schedule__timeline__wii {
-    font-size: 1.713vw;
-    bottom: 25px;
-    right: 25px;
-  }
-  .schedule__timeline #schedule_line {
-    width: 57.55714vw;
-    height: 122.58571vw;
-  }
-  .schedule__timeline__wedo {
-    top: 15.42857vw;
-    right: 50vw;
-  }
-  .schedule__timeline__wedo svg {
-    width: 26vw;
-  }
-  .schedule__timeline__wedo__time {
-    top: 5.14286vw;
-    right: 28vw;
-  }
-  .schedule__timeline #schedule_cross {
-    top: 13vw;
-    right: initial;
-    left: 53.386vw;
-  }
-  .schedule__timeline__wetoast {
-    top: 45.14286vw;
-    left: 50vw;
-  }
-  .schedule__timeline__wetoast svg {
-    width: 26vw;
-  }
-  .schedule__timeline__wetoast__time {
-    top: 5vw;
-    left: 28vw;
-  }
-  .schedule__timeline #schedule_champagne {
-    top: 45.714vw;
-    left: initial;
-    right: 54.786vw;
-  }
-  .schedule__timeline__weeat {
-    top: 74.85714vw;
-    right: 50vw;
-  }
-  .schedule__timeline__weeat svg {
-    width: 26vw;
-  }
-  .schedule__timeline__weeat__time {
-    top: 5vw;
-    right: 28vw;
-  }
-  .schedule__timeline #schedule_tray {
-    top: 78.071vw;
-    right: initial;
-    left: 55.557vw;
-  }
-  .schedule__timeline__weparty {
-    top: 104.57143vw;
-    left: 50vw;
-  }
-  .schedule__timeline__weparty svg {
-    width: 26vw;
-  }
-  .schedule__timeline__weparty__time {
-    top: 4.85714vw;
-    left: 28vw;
-  }
-  .schedule__timeline #schedule_disco {
-    top: 103.971vw;
-    left: initial;
-    right: 52.829vw;
+    font-size: 8px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .schedule {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+@media screen and (min-width: 970px) {
+  .details__date__detes .content {
+    left: 0 !important;
   }
+}
+
+@media screen and (max-width: 970px) {
   .schedule__timeline {
-    width: 100vw;
-    padding: 7.14286vw 0;
+    z-index: -1;
+    --pdb: 200px;
   }
-  .schedule__timeline__entry__time {
-    font-size: 5.2vw;
+  .details__contentwrapper {
+    -ms-grid-columns: auto 100%;
+        grid-template-columns: auto 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    gap: 5px;
   }
-  .schedule__timeline__entry__title {
-    font-size: 5.2vw;
-    margin-bottom: 1.71429vw;
-    padding: 0 3.42857vw;
+  .details__title {
+    position: absolute;
+    right: 60px;
+    z-index: 0;
+    font-size: 8em;
   }
-  .schedule__timeline__entry__desc {
-    font-size: 2.91429vw;
-    line-height: 3.61429vw;
-    margin-top: 1.88571vw;
-    padding: 0 3.42857vw;
+  .details__date {
+    position: unset;
+    height: 100%;
   }
-  .schedule__timeline__wii {
-    font-size: 1.713vw;
-    bottom: 25px;
-    right: 25px;
+  .details__date__detes {
+    width: calc(200% - 35px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
-  .schedule__timeline #schedule_line {
-    width: 100.41429vw;
-    height: auto;
+  .details__date__detes .content {
+    -ms-grid-columns: auto 40px;
+        grid-template-columns: auto 40px;
+    left: 0;
   }
-  .schedule__timeline__wedo {
-    top: 26.22857vw;
-    right: 50vw;
+  .details__date__detes .content:not(.ui-draggable-dragging) {
+    -webkit-transition: left 200ms ease-in-out;
+    transition: left 200ms ease-in-out;
   }
-  .schedule__timeline__wedo svg {
-    width: 31vw;
+  .details__date__detes .content.over {
+    left: 4px !important;
   }
-  .schedule__timeline__wedo svg line {
-    stroke-width: 2;
+  .details__date__detes__basic {
+    background-color: #303755;
+    color: white;
+    padding-bottom: 10px;
   }
-  .schedule__timeline__wedo__time {
-    top: 7.71429vw;
-    right: 33vw;
+  .details__date__detes__countdown {
+    padding-bottom: 10px;
   }
-  .schedule__timeline #schedule_cross {
-    width: 20vw;
-    height: auto;
-    top: 23.4vw;
-    right: initial;
-    left: 55.386vw;
+  .details__date__detes #tab {
+    grid-area: 1 / 2 / -1 / -1;
+    cursor: -webkit-grab;
+    cursor: grab;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: block;
+    height: 12em;
+    width: 5.7em;
+    border-radius: 0 2em 2em 0;
+    background-color: #303755;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .schedule__timeline__wetoast {
-    top: 76.74286vw;
-    left: 50vw;
+  .details__date__detes #tab:hover {
+    background-color: #363d5f;
   }
-  .schedule__timeline__wetoast svg {
-    width: 31vw;
+  .details__date__detes #tab svg {
+    height: 60%;
+    stroke: white;
+    stroke-width: 1px;
   }
-  .schedule__timeline__wetoast svg line {
-    stroke-width: 2;
-  }
-  .schedule__timeline__wetoast__time {
-    top: 7.5vw;
-    left: 33vw;
-  }
-  .schedule__timeline #schedule_champagne {
-    width: 13vw;
-    height: auto;
-    top: 77.7138vw;
-    left: initial;
-    right: 56.786vw;
-  }
-  .schedule__timeline__weeat {
-    top: 127.25714vw;
-    right: 50vw;
-  }
-  .schedule__timeline__weeat svg {
-    width: 31vw;
-  }
-  .schedule__timeline__weeat svg line {
-    stroke-width: 2;
-  }
-  .schedule__timeline__weeat__time {
-    top: 7.5vw;
-    right: 33vw;
-  }
-  .schedule__timeline #schedule_tray {
-    width: 20vw;
-    height: auto;
-    top: 132.7207vw;
-    right: initial;
-    left: 57.557vw;
-  }
-  .schedule__timeline__weparty {
-    top: 177.77143vw;
-    left: 50vw;
-  }
-  .schedule__timeline__weparty svg {
-    width: 31vw;
-  }
-  .schedule__timeline__weparty svg line {
-    stroke-width: 2;
-  }
-  .schedule__timeline__weparty__time {
-    top: 7.28571vw;
-    left: 33vw;
-  }
-  .schedule__timeline #schedule_disco {
-    width: 30vw;
-    height: auto;
-    top: 175.19114vw;
-    left: initial;
-    right: 53.829vw;
+  .details__date button {
+    top: unset;
+    bottom: 30px;
   }
 }
 
-.travel_accommodations {
+@media screen and (max-width: 690px) {
+  .schedule__timeline {
+    z-index: -1;
+    --pdb: 200px;
+  }
+  .details {
+    font-size: 6px;
+  }
+  .details__contentwrapper {
+    -ms-grid-columns: auto 100%;
+        grid-template-columns: auto 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    gap: 5px;
+    padding: 40px 0 40px 20px;
+  }
+  .details__title {
+    right: 20px;
+  }
+  .details__date {
+    position: unset;
+    height: 100%;
+    margin-right: -20px;
+  }
+  .details__date__detes {
+    width: calc(200% - 35px);
+  }
+}
+
+.travel_accommodations__contentwrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: 420px auto auto;
-      grid-template-rows: 420px auto auto;
-      grid-template-areas: 'title title' 'map hotel1' 'map hotel2';
+  -ms-grid-columns: 5fr 4fr;
+      grid-template-columns: 5fr 4fr;
+  -ms-grid-rows: auto 1fr 1fr;
+      grid-template-rows: auto 1fr 1fr;
+      grid-template-areas: 'map title' 'map hotel1' 'map hotel2';
   gap: 40px;
-}
-
-.travel_accommodations__title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: title;
-  position: relative;
-  height: 600px;
-  background-color: #303755;
-  z-index: -1;
-}
-
-.travel_accommodations__title span {
-  font-size: 270px;
-  line-height: 210px;
-  letter-spacing: -20px;
-  color: #DDD8D1;
-  opacity: 0.29;
-  position: absolute;
-  left: 50px;
-  top: 20px;
+  padding: 0 30px;
 }
 
 .travel_accommodations__map {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: map;
-  width: 700px;
+  width: 100%;
   height: 100%;
-  -ms-grid-column-align: end;
-      justify-self: end;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  -ms-grid-rows: 80% 20%;
+      grid-template-rows: 80% 20%;
   background-color: #FCF6ED;
 }
 
-.travel_accommodations__map > img {
-  width: calc(100% - 40px);
-  padding: 40px 20px;
+.travel_accommodations__map__img {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.travel_accommodations__map__img img {
+  height: 90%;
 }
 
 .travel_accommodations__map__airplaneinfo {
@@ -2119,6 +1832,21 @@ header #nav {
   color: #b3b3b3;
 }
 
+.travel_accommodations__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+  color: #DDD8D1;
+  opacity: 0.29;
+}
+
+.travel_accommodations__title h1 {
+  font-size: 60px;
+  line-height: 50px;
+  margin: 0;
+  font-weight: 500;
+}
+
 .travel_accommodations .hotel1 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -2132,9 +1860,19 @@ header #nav {
 }
 
 .travel_accommodations__hotel {
-  width: 550px;
-  height: 550px;
+  width: 100%;
   background-color: #FCF6ED;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.travel_accommodations__hotel__content {
+  margin: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2482,62 +2220,19 @@ header #nav {
 }
 
 .follow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-}
-
-.follow__title {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  font-size: 280px;
-  line-height: 210px;
-  letter-spacing: -20px;
-  color: #DDD8D1;
-  opacity: 0.29;
-  white-space: nowrap;
-  margin: 60px -400px 100px 0;
-}
-
-.follow__title svg {
-  width: 200px;
-}
-
-.follow__title svg .cls-1, .follow__title svg .cls-2 {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.follow__title svg .cls-2 {
-  stroke: #DDD8D1;
-  stroke-width: 5px;
-}
-
-.follow__title svg .cls-3, .follow__title svg .cls-4 {
-  stroke: none;
-}
-
-.follow__title svg .cls-4 {
-  fill: #DDD8D1;
+  margin-top: 100px;
+  --grid: 240px;
 }
 
 .follow__feed {
   align-self: flex-start;
   position: relative;
-  left: calc(-240px / 2);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (240px)[7];
-      grid-template-columns: repeat(7, 240px);
-  -ms-grid-rows: (240px)[3];
-      grid-template-rows: repeat(3, 240px);
+  -ms-grid-columns: (var(--grid))[7];
+      grid-template-columns: repeat(7, var(--grid));
+  -ms-grid-rows: (var(--grid))[3];
+      grid-template-rows: repeat(3, var(--grid));
   color: #242A40;
 }
 
@@ -2685,6 +2380,7 @@ header #nav {
 
 .follow__feed__shadow {
   position: absolute;
+  z-index: 8;
   top: 0;
   left: 0;
   width: 100%;
@@ -2696,17 +2392,20 @@ header #nav {
   rotate: 90deg;
 }
 
-.follow__feed > picture {
-  grid-area: 1 / 1 / -1 / -1;
-  width: 100%;
-  height: 100%;
+.follow__feed .collage2 {
+  position: absolute;
+  z-index: 6;
+  right: 0;
+  -o-object-position: 2px;
+     object-position: 2px;
+  width: calc(var(--grid) * 4);
 }
 
-.follow__feed > picture img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.follow__feed .collage1 {
+  position: absolute;
+  z-index: 7;
+  left: 0;
+  width: var(--grid);
 }
 
 @media screen and (max-width: 1188px) {
@@ -3179,5 +2878,13 @@ header #nav {
     padding: 0.78vw 1.28vw;
     margin-bottom: 3.86vw;
   }
+}
+
+body {
+  height: 200vh;
+}
+
+header, .home, .travel_accommodations, .follow, .contact {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

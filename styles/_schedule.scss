@@ -1,12 +1,14 @@
 .schedule {
-
+  
   &__timeline {
-    font-size: 3em;
+    font-size: 10px;
     background-color: color(primary);
     width: auto;
 
-    --padding: 2em;
-    padding: calc(2 * var(--padding)) var(--padding);
+    --pd: 6em;
+    --pdt: 12em;
+    --pdb: 12em;
+    padding: var(--pdt) var(--pd) var(--pdb) var(--pd);
     position: relative;
     display: grid;
     grid-template-rows: repeat(4, auto);
@@ -14,24 +16,59 @@
     row-gap: 100px;
     text-transform: uppercase;
 
-    &__entry__time {
-      font-size: 1em;
+    #schedule_line {
       position: absolute;
-      display: none;
+      left: 50%;
+      top: var(--pd);
+      transform: translateX(-50%);
+      width: 0.4em;
+      height: calc(100% - var(--pdb));
+      background-color: color(main_text);
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-43%, -50%);
+        border-radius: 50%;
+        height: 1em; width: 1em;
+        background-color: color(main_text);
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-43%, 50%);
+        border-radius: 50%;
+        height: 1em; width: 1em;
+        background-color: color(main_text);
+      }
+    }
+
+    &__entry__line {
+      display: flex;
+      span {
+        font-size: 3em;
+      }
     }
 
     &__entry__title {
-      font-size: 1em;
-      padding: 0 30px; 
+      font-size: 3em;
+      padding: 0 1em;
+      margin-bottom: 0.33em;
     }
 
     &__entry__desc {
       display: flex;
       flex-direction: column;
-      font-size: 0.5em;
-      line-height: 1.5em;
-      margin-top: 15px;
-      padding: 0 30px;
+      font-size: 1.5em;
+      line-height: 1.7em;
+      margin-top: 0.6em;
+      padding: 0 2em;
       span {
         font-weight: 600;
       }
@@ -41,70 +78,46 @@
     }
 
     &__wii {
-      font-size: 0.5em;
+      font-size: 1.5em;
       position: absolute;
       text-transform: capitalize;
-      bottom: 15px; right: 15px;
-    }
-    
-    #schedule_line {
-      position: absolute;
-      left: 50%;
-      top: var(--padding);
-      transform: translateX(-50%);
-      width: 4px;
-      height: calc(100% - 2 * var(--padding));
-      background-color: color(main_text);
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: calc(100% - 2px);
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 50%;
-        height: 10px; width: 10px;
-        background-color: color(main_text);
-      }
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: calc(100% - 2px);
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 50%;
-        height: 10px; width: 10px;
-        background-color: color(main_text);
-      }
+      bottom: 3em; right: 3em;
     }
 
     > [class *= "we"]{
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       svg {
-        width: 260.7px;
+        width: 24em;
+        margin-left: 1.5em;
         line {
-          stroke-width: 1.2;
+          stroke-width: 0.13em;
         }
       }
 
       &:nth-of-type(2n+1) {
         text-align: right;
+        align-items: flex-end;
       }
       &:nth-of-type(2n + 2) {
         text-align: left;
+        align-items: flex-start;
 
-        svg { transform: rotate(180deg); }
+        svg { 
+          transform: rotate(180deg); 
+          margin-left: 0;
+          margin-right: 1.5em;
+        }
       }
     }
     
     > svg {
       position: relative;
       align-self: start;
-      padding: 0 30px;
-      top: 0.6em;
+      padding: 0 3em;
+      top: 1.8em;
 
       &:nth-of-type(2n + 1) {
         justify-self: start;
@@ -116,299 +129,49 @@
       }
     }
 
-    &__wedo {
-      text-align: right;
-
-      &__time {
-        top: 46.58px; right: 280.7px;
-      }
-    }
-
     #schedule_cross {
-      width: 90.38px; height: 116.96px;
+      width: 9em;
       transform: scale(0.9);
     }
 
-    &__wetoast {
-      text-align: left;
-
-      &__time {
-        top: 46.58px; left: 280.7px;
-      }
-    }
-
     #schedule_champagne {
-      width: 54.2px; height: 88.3px;
+      width: 5.5em; 
       transform: scale(1.2);
-    }
-
-    &__weeat {
-      text-align: right;
-
-      &__time {
-        top: 46.58px; right: 280.7px;
-      }
     }
 
     #schedule_tray {
-      width: 89.1px; height: 57.6px;
+      width: 9em;
       transform: scale(1.2);
     }
 
-    &__weparty {
-      text-align: left;
-
-      &__time {
-        top: 46.58px; left: 280.7px;
-      }
-    }
-
     #schedule_disco {
-      width: 119.3px; height: 100.2px;
+      width: 12em;
       transform: scale(0.9);
     }
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .schedule {
-    flex-direction: column;
-    align-items: flex-start;
+@media screen and (max-width: 690px) {
+  .schedule__timeline {
+    --pd: 5vw;
+    font-size: 1.6vw;
 
-    &__title {
-      font-size: 29vw;
-      position: relative;
-      bottom: initial; right: initial; left: 4vw;
-      transform: initial;
+    > [class *= "we"]{
+      svg {
+        width: 28vw;
+        line {
+          stroke-width: 1.3px;
+        }
+      }
     }
-    
-    &__timeline {
-      width: 70vw * (10/7);
-      padding: 5vw * (10/7) 0;
 
-      &__entry__time {
-        font-size: 2.8vw * (10/7);
-      }
+    #schedule_line {
+      width: 3px;
 
-      &__entry__title {
-        font-size: 2.8vw * (10/7);
-        margin-bottom: 2vw * (6/7);
-        padding: 0 4vw * (6/7);
-      }
-
-      &__entry__desc {
-        font-size: 1.2vw * (10/7);
-        line-height: 2.3vw * (10/7);
-        margin-top: 2.2vw * (6/7);
-        padding: 0 4vw * (6/7);
-      }
-
-      &__wii {
-        font-size: 1.713vw;
-        bottom: 25px; right: 25px;
-      }
-
-      #schedule_line {
-        width: 40.29vw * (10/7); height: 85.81vw * (10/7);
-      }
-
-      &__wedo {
-        top: 10.8vw * (10/7); right: 50vw;
-
-        svg {
-          width: 26vw;
-        }
-
-        &__time {
-          top: 3.6vw * (10/7); right: 28vw;
-        }
-      }
-
-      #schedule_cross {
-        top: 13vw;
-        right: initial;
-        left: 53.386vw;
-      }
-
-      &__wetoast {
-        top: 31.6vw * (10/7); left: 50vw;
-
-        svg {
-          width: 26vw;
-        }
-
-        &__time {
-          top: 3.5vw * (10/7); left: 28vw;
-        }
-      }
-
-      #schedule_champagne {
-        top: 45.714vw;
-        left: initial;
-        right: 54.786vw;
-      }
-
-      &__weeat {
-        top: 52.4vw * (10/7); right: 50vw;
-
-        svg {
-          width: 26vw;
-        }
-
-        &__time {
-          top: 3.5vw * (10/7); right: 28vw;
-        }
-      }
-
-      #schedule_tray {
-        top: 78.071vw;
-        right: initial;
-        left: 55.557vw;
-      }
-
-      &__weparty {
-        top: 73.2vw * (10/7); left: 50vw;
-
-        svg {
-          width: 26vw;
-        }
-
-        &__time {
-          top: 3.4vw * (10/7); left: 28vw;
-        }
-      }
-
-      #schedule_disco {
-        top: 103.971vw;
-        left: initial;
-        right: 52.829vw;
+      &::after, &::before {
+        height: 7px; width: 7px;
       }
     }
   }
-} 
+}
 
-@media screen and (max-width: 600px) {
-  .schedule {
-    flex-direction: column;
-    align-items: flex-start;
-    
-    &__timeline {
-      width: 70vw * (10/7);
-      padding: 5vw * (10/7) 0;
-
-      &__entry__time {
-        font-size: 2.8vw * (10/7) * 1.3;
-      }
-
-      &__entry__title {
-        font-size: 2.8vw * (10/7) * 1.3;
-        margin-bottom: 2vw * (6/7);
-        padding: 0 4vw * (6/7);
-      }
-
-      &__entry__desc {
-        font-size: 1.2vw * (10/7) * 1.7;
-        line-height: 2.3vw * (10/7) * 1.1;
-        margin-top: 2.2vw * (6/7);
-        padding: 0 4vw * (6/7);
-      }
-
-      &__wii {
-        font-size: 1.713vw;
-        bottom: 25px; right: 25px;
-      }
-
-      #schedule_line {
-        width: 70.29vw * (10/7); height: auto;
-      }
-
-      &__wedo {
-        top: 10.8vw * (10/7) * 1.7; right: 50vw;
-
-        svg {
-          width: 31vw;
-          line{
-            stroke-width: 2;
-          }
-        }
-
-        &__time {
-          top: 3.6vw * (10/7) * 1.5; right: 33vw;
-        }
-      }
-
-      #schedule_cross {
-        width: 20vw; height: auto;
-        top: 13vw * 1.8;
-        right: initial;
-        left: 55.386vw;
-      }
-
-      &__wetoast {
-        top: 31.6vw * (10/7) * 1.7; left: 50vw;
-
-        svg {
-          width: 31vw;
-          line{
-            stroke-width: 2;
-          }
-        }
-
-        &__time {
-          top: 3.5vw * (10/7) * 1.5; left: 33vw;
-        }
-      }
-
-      #schedule_champagne {
-        width: 13vw; height: auto;
-        top: 45.714vw * 1.7;
-        left: initial;
-        right: 56.786vw;
-      }
-
-      &__weeat {
-        top: 52.4vw * (10/7) * 1.7; right: 50vw;
-
-        svg {
-          width: 31vw;
-          line{
-            stroke-width: 2;
-          }
-        }
-
-        &__time {
-          top: 3.5vw * (10/7) * 1.5; right: 33vw;
-        }
-      }
-
-      #schedule_tray {
-        width: 20vw; height: auto;
-        top: 78.071vw * 1.7;
-        right: initial;
-        left: 57.557vw;
-      }
-
-      &__weparty {
-        top: 73.2vw * (10/7) * 1.7; left: 50vw;
-
-        svg {
-          width: 31vw;
-          line{
-            stroke-width: 2;
-          }
-        }
-        
-        &__time {
-          top: 3.4vw * (10/7) * 1.5; left: 33vw;
-        }
-      }
-
-      #schedule_disco {
-        width: 30vw; height: auto;
-        top: 103.971vw * 1.685;
-        left: initial;
-        right: 53.829vw;
-      }
-    }
-  }
-} 

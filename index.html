@@ -8,10 +8,8 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <script
-          src="https://code.jquery.com/jquery-3.5.0.min.js"
-          integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="scripts/jquery.visible.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
   <header>
@@ -19,7 +17,6 @@
     <nav>
       <li><a href="#home" id="link_home">home</a></li>
       <li><a href="#details" id="link_details">details</a></li>
-      <li><a href="#schedule" id="link_home">schedule</a></li>
       <!-- <li><a href="#travel_accommodations" id="link_travel_accommodations">travel <span>+</span> accommodations</a></li> -->
       <li><a href="#follow" id="link_follow">follow</a></li>
       <!-- <li><a href="#registry" id="link_registry">registry</a></li> -->
@@ -39,14 +36,13 @@
     <div class="shadow"></div>
     <div class="links">
       <div id="close_menu">
-        <svg viewbox="0 0 40 40">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 40 40">
           <line x1="2" y1="2" x2="38" y2="38"/>
           <line x1="38" y1="2" x2="2" y2="38"/>
         </svg>
       </div>
       <li><a href="#home" id="link_home">home</a></li>
       <li><a href="#details" id="link_details">details</a></li>
-      <li><a href="#schedule" id="link_home">schedule</a></li>
       <li><a href="#travel_accommodations" id="link_travel_accommodations"><span>travel</span><span>+</span><span>accommodations</span></a></li>
       <li><a href="#follow" id="link_follow">follow</a></li>
       <!-- <li><a href="#registry" id="link_registry">registry</a></li> -->
@@ -63,11 +59,6 @@
     <a href="#details">
       <svg viewbox="0 0 10 10">
         <circle id="circles_details" cx="5" cy="5" r="4" fill="none" />
-      </svg>
-    </a>
-    <a href="#schedule">
-      <svg viewbox="0 0 10 10">
-        <circle id="circles_schedule" cx="5" cy="5" r="4" fill="none"/>
       </svg>
     </a>
     <a href="#travel_accommodations">
@@ -221,35 +212,45 @@
             <span>details</span>
           </div>
           <div class="details__date__detes">
-            <div class="details__date__detes__basic">
-              <h3>Aug 14, 2021</h3>
-              <h3>riverside, ct</h3>
-            </div>
-            <div class="details__date__detes__countdown">
-              <div class="year">
-                <span id="years"></span>
+            <div class="content">
+              <div class="details__date__detes__basic">
+                <h3>Aug 14, 2021</h3>
+                <h3>riverside, ct</h3>
               </div>
-              <div class="month">
-                <span id="months"></span>
+              <div class="details__date__detes__countdown">
+                <div class="year">
+                  <span id="years"></span>
+                </div>
+                <div class="month">
+                  <span id="months"></span>
+                </div>
+                <div class="day">
+                  <span id="days"></span>
+                </div>
+                <script src="scripts/countdown.js"></script>
+                <script>
+                  var timerId =
+                    countdown(
+                      new Date(2021, 7, 14),
+                      function(ts) {
+                        var current = String(ts).replace(' and', ',').split(', ');
+                        document.getElementById('years').innerHTML = current[0];
+                        document.getElementById('months').innerHTML = current[1];
+                        document.getElementById('days').innerHTML = (current[2])? current[2]: '0 Days';
+                      },
+                      countdown.YEARS|countdown.MONTHS|countdown.DAYS);
+                </script>
               </div>
-              <div class="day">
-                <span id="days"></span>
+              <div id="tab">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 10 30">
+                  <line x1="2"  y1="2" x2="2"  y2="28"/>
+                  <line x1="5" y1="2" x2="5" y2="28"/>
+                  <line x1="8" y1="2" x2="8" y2="28"/>
+                </svg>
               </div>
-              <script src="scripts/countdown.js"></script>
-              <script>
-                var timerId =
-                  countdown(
-                    new Date(2021, 7, 14),
-                    function(ts) {
-                      var current = String(ts).replace(' and', ',').split(', ');
-                      document.getElementById('years').innerHTML = current[0];
-                      document.getElementById('months').innerHTML = current[1];
-                      document.getElementById('days').innerHTML = (current[2])? current[2]: '0 Days';
-                    },
-                    countdown.YEARS|countdown.MONTHS|countdown.DAYS);
-              </script>
             </div>
           </div>
+          <script src="scripts/details.js"></script>
           <button id="details_button">
             <div class="button_content">
               <div class="calendar_icon">
@@ -292,11 +293,13 @@
         <div class="schedule__timeline">
           <span class="schedule__timeline__wii">* WE, NOT Wii</span>
           <div class="schedule__timeline__wedo">
-            <div class="schedule__timeline__wedo__time schedule__timeline__entry__time">3pm</div>
             <div class="schedule__timeline__wedo__title schedule__timeline__entry__title">we do</div>
-            <svg class="schedule__timeline__wedo__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
-              <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
-            </svg>
+            <div class="schedule__timeline__entry__line">
+              <span class="schedule__timeline__entry__time">3pm</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+            </div>
             <div class="schedule__timeline__wedo__desc schedule__timeline__entry__desc">
               <span>mass wedding</span>
               <span>st michael the<br>archangel church</span>
@@ -321,21 +324,25 @@
             </g>
           </svg>
           <div class="schedule__timeline__wetoast">
-            <div class="schedule__timeline__wetoast__time schedule__timeline__entry__time">5pm</div>
             <div class="schedule__timeline__wetoast__title schedule__timeline__entry__title">we toast</div>
-            <svg class="schedule__timeline__wetoast__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
-              <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
-            </svg>
+            <div class="schedule__timeline__entry__line">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+              <span class="schedule__timeline__entry__time">5pm</span>
+            </div>
             <div class="schedule__timeline__wetoast__desc schedule__timeline__entry__desc">
               <span>champagne toast</span>
             </div>
           </div>
           <div class="schedule__timeline__weeat">
-            <div class="schedule__timeline__weeat__time schedule__timeline__entry__time">6pm</div>
             <div class="schedule__timeline__weeat__title schedule__timeline__entry__title">we eat</div>
-            <svg class="schedule__timeline__weeat__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
-              <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
-            </svg>
+            <div class="schedule__timeline__entry__line">
+              <span class="schedule__timeline__entry__time">7pm</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+            </div>
             <div class="schedule__timeline__weeat__desc schedule__timeline__entry__desc">
               <span>dinner + speeches</span>
               <span>riverside yacht club</span>
@@ -383,11 +390,13 @@
             </g>
           </svg>
           <div class="schedule__timeline__weparty">
-            <div class="schedule__timeline__weparty__time schedule__timeline__entry__time">8pm</div>
             <div class="schedule__timeline__weparty__title schedule__timeline__entry__title">we party</div>
-            <svg class="schedule__timeline__weparty__line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2">
-              <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
-            </svg>
+            <div class="schedule__timeline__entry__line">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+              <span class="schedule__timeline__entry__time">8pm</span>
+            </div>
             <div class="schedule__timeline__weparty__desc schedule__timeline__entry__desc">
               <span>music + dancing</span>
             </div>
@@ -397,97 +406,92 @@
       </div>
     </div>
     <div class="travel_accommodations" id="travel_accommodations">
-      <div class="travel_accommodations__title">
-        <span>travel +<br>accommodations</span>
-      </div>
-      <div class="travel_accommodations__map">
-        <img src="svg/travel_map.svg" alt="A map of new york and connecticut with a paht from jfk to the riverside yacht club">
-        <div class="travel_accommodations__map__airplaneinfo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.964 98.651">
-            <path id="Icon_ionic-md-airplane" data-name="Icon ionic-md-airplane" d="M91.464,68.6V59.539L55.229,35.987V10.441a7.249,7.249,0,0,0-14.494,0V35.987L4.5,59.539V68.6L40.735,57.728V83.455L29.865,90.521v7.066l18.118-3.624L66.1,97.586V90.521L55.229,83.455V57.728Z" transform="translate(-2.5 -1.375)" fill="none" stroke="#1e212c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-          </svg>
-          <span>NYC AIRPORTS</span>
-          <div>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/flights?hl=en#flt=./m/02_286.2020-07-07*/m/02_286..2020-07-11;c:USD;e:1;sd:1;t:f">google flights</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/John+F.+Kennedy+International+Airport,+Queens,+NY+11430/21+Hearthstone+Dr,+Riverside,+CT+06878/@40.8420043,-73.8626721,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89c26650d5404947:0xec4fb213489f11f0!2m2!1d-73.7781391!2d40.6413111!1m5!1m1!1s0x89c298be968f7e21:0x746b9692bd83b2f7!2m2!1d-73.5787593!2d41.035809!3e0">google maps</a>
+      <div class="travel_accommodations__contentwrapper">
+        <div class="travel_accommodations__map">
+          <div class="travel_accommodations__map__img">
+            <img src="svg/travel_map.svg" alt="A map of new york and connecticut with a path from jfk to the riverside yacht club">
+          </div>
+          <div class="travel_accommodations__map__airplaneinfo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.964 98.651">
+              <path id="Icon_ionic-md-airplane" data-name="Icon ionic-md-airplane" d="M91.464,68.6V59.539L55.229,35.987V10.441a7.249,7.249,0,0,0-14.494,0V35.987L4.5,59.539V68.6L40.735,57.728V83.455L29.865,90.521v7.066l18.118-3.624L66.1,97.586V90.521L55.229,83.455V57.728Z" transform="translate(-2.5 -1.375)" fill="none" stroke="#1e212c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+            </svg>
+            <span>NYC AIRPORTS</span>
+            <div>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/flights?hl=en#flt=./m/02_286.2020-07-07*/m/02_286..2020-07-11;c:USD;e:1;sd:1;t:f">google flights</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/John+F.+Kennedy+International+Airport,+Queens,+NY+11430/21+Hearthstone+Dr,+Riverside,+CT+06878/@40.8420043,-73.8626721,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89c26650d5404947:0xec4fb213489f11f0!2m2!1d-73.7781391!2d40.6413111!1m5!1m1!1s0x89c298be968f7e21:0x746b9692bd83b2f7!2m2!1d-73.5787593!2d41.035809!3e0">google maps</a>
+            </div>
+          </div>
+        </div>
+        <div class="travel_accommodations__title">
+          <h1>travel +<br>accommodations</h1>
+        </div>
+        <div class="travel_accommodations__hotel hotel1">
+          <div class="travel_accommodations__hotel__content">
+            <img src="svg/noun_Suitcase_-1.svg" alt="suitcase">
+            <span class="travel_accommodations__hotel__name">The Hotel Hotel</span>
+            <span class="travel_accommodations__hotel__type">Hotel</span>
+            <div class="travel_accommodations__hotel__address">
+              <span>100 Place St</span>
+              <span>Riverside, CT 06878</span>
+            </div>
+            <div class="travel_accommodations__hotel__description">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sint eum inventore enim dolorum debitis commodi dolore eveniet laborum illum fuga, pariatur atque, voluptatibus esse iste dignissimos quo? Ullam sit dolorem cum tempore libero debitis id mollitia laboriosam autem laborum.</p>
+            </div>
+            <a href="#">Make a reservation</a>
+          </div>
+        </div>
+        <div class="travel_accommodations__hotel hotel2">
+          <div class="travel_accommodations__hotel__content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+              <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+            </svg>
+            <span class="travel_accommodations__hotel__name">Places You Might Like</span>
+            <span class="travel_accommodations__hotel__type">Google Earth</span>
+            <div class="travel_accommodations__hotel__description">
+              <p>As many of you are coming from out of town, we thought you might want some recommendations to help plan your trip. So, we created a small directory of places we love around NYC Tri State Area that you might also enjoy!</p>
+            </div>
+            <a target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">Check it out</a>
           </div>
         </div>
       </div>
-      <div class="travel_accommodations__hotel hotel1">
-        <img src="svg/noun_Suitcase_-1.svg" alt="suitcase">
-        <span class="travel_accommodations__hotel__name">The Hotel Hotel</span>
-        <span class="travel_accommodations__hotel__type">Hotel</span>
-        <div class="travel_accommodations__hotel__address">
-          <span>100 Place St</span>
-          <span>Riverside, CT 06878</span>
-        </div>
-        <div class="travel_accommodations__hotel__description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sint eum inventore enim dolorum debitis commodi dolore eveniet laborum illum fuga, pariatur atque, voluptatibus esse iste dignissimos quo? Ullam sit dolorem cum tempore libero debitis id mollitia laboriosam autem laborum.</p>
-        </div>
-        <a href="#">Make a reservation</a>
-      </div>
-      <div class="travel_accommodations__hotel hotel2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-          <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
-        </svg>
-        <span class="travel_accommodations__hotel__name">Places You Might Like</span>
-        <span class="travel_accommodations__hotel__type">Google Earth</span>
-        <div class="travel_accommodations__hotel__description">
-          <p>As many of you are coming from out of town, we thought you might want some recommendations to help plan your trip. So, we created a small directory of places we love around NYC Tri State Area that you might also enjoy!</p>
-        </div>
-        <a target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">Check it out</a>
-      </div>
     </div>
     <div class="follow" id="follow">
-      <div class="follow__title">
-        <svg id="Icon_feather-instagram" data-name="Icon feather-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.784 53.784">
-          <g id="Path_56" data-name="Path 56" class="cls-1" transform="translate(-3 -3)">
-            <path class="cls-3" d="M16.446,3H43.338A13.446,13.446,0,0,1,56.784,16.446V43.338A13.446,13.446,0,0,1,43.338,56.784H16.446A13.446,13.446,0,0,1,3,43.338V16.446A13.446,13.446,0,0,1,16.446,3Z"/>
-            <path class="cls-4" d="M 16.45679473876953 7.999992370605469 C 16.45325469970703 8 16.44948577880859 8.000003814697266 16.44594573974609 8.000003814697266 C 11.78884124755859 8.000003814697266 8.000003814697266 11.78885269165039 7.999992370605469 16.44596862792969 L 8.000003814697266 43.33792114257812 C 8.000003814697266 47.99504089355469 11.78885269165039 51.78388977050781 16.44596862792969 51.78388977050781 L 43.33792114257812 51.78388977050781 C 47.99504089355469 51.78388977050781 51.78388977050781 47.99504089355469 51.78388977050781 43.33792114257812 L 51.78388977050781 16.44596862792969 C 51.78388977050781 11.78885269165039 47.99504089355469 8.000003814697266 43.33792114257812 7.999992370605469 L 16.45679473876953 7.999992370605469 M 16.44596862792969 2.999992370605469 L 43.33792114257812 2.999992370605469 C 50.76392364501953 3.000003814697266 56.78388977050781 9.019969940185547 56.78388977050781 16.44596862792969 L 56.78388977050781 43.33792114257812 C 56.78388977050781 50.76392364501953 50.76392364501953 56.78388977050781 43.33792114257812 56.78388977050781 L 16.44596862792969 56.78388977050781 C 9.019969940185547 56.78388977050781 3.000003814697266 50.76392364501953 3.000003814697266 43.33792114257812 L 2.999992370605469 16.44596862792969 C 3.000003814697266 9.020423889160156 9.020572662353516 3.000003814697266 16.44594955444336 3.000003814697266 C 16.44640350341797 3.000003814697266 16.44551849365234 3.000003814697266 16.44596862792969 3.000003814697266 L 16.44596862792969 2.999992370605469 Z"/>
-          </g>
-          <path id="Path_57" data-name="Path 57" class="cls-2" d="M33.462,21.114A10.757,10.757,0,1,1,24.4,12.052a10.757,10.757,0,0,1,9.063,9.063Z" transform="translate(4.186 4.083)"/>
-          <path id="Path_58" data-name="Path 58" class="cls-2" d="M26.25,9.75h0" transform="translate(15.433 2.351)"/>
-        </svg>
-        instagram
-      </div>
-      <div class="follow__feed">
-        <div class="follow__feed__prevw">
-          <a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer" class="follow__feed__prevw__username">
-            <svg id="Ellipse_6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
-              <circle data-name="Ellipse 6" cx="31.5" cy="31.5" r="31.5" fill="#161925"/>
+      <div class="follow__contentwrapper">
+        <div class="follow__feed">
+          <div class="follow__feed__prevw">
+            <a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer" class="follow__feed__prevw__username">
+              <svg id="Ellipse_6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
+                <circle data-name="Ellipse 6" cx="31.5" cy="31.5" r="31.5" fill="#161925"/>
+              </svg>
+              marinando2021
+            </a>
+            <a class="follow__feed__prevw__follow" href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">follow</a>
+            <a class="follow__feed__prevw__img" href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">
+              <img src="marinando_photos/07d47bbb-9fa8-4e60-bdad-f49685cca6d8.JPG" alt="">
+            </a>
+            <svg class="Icon_awesome-heart" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40.888 35.777" onclick="like(this)">
+              <path data-name="Icon awesome-heart" d="M36.918,4.694a10.92,10.92,0,0,0-14.9,1.086L20.444,7.4,18.87,5.78a10.92,10.92,0,0,0-14.9-1.086,11.467,11.467,0,0,0-.791,16.6L18.631,37.252a2.5,2.5,0,0,0,3.618,0L37.7,21.3a11.46,11.46,0,0,0-.783-16.6Z" transform="translate(1.101 -0.248), scale(0.91)"/>
             </svg>
-            marinando2021
-          </a>
-          <a class="follow__feed__prevw__follow" href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">follow</a>
-          <a class="follow__feed__prevw__img" href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">
-            <img src="marinando_photos/07d47bbb-9fa8-4e60-bdad-f49685cca6d8.JPG" alt="">
-          </a>
-          <svg class="Icon_awesome-heart" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40.888 35.777" onclick="like(this)">
-            <path data-name="Icon awesome-heart" d="M36.918,4.694a10.92,10.92,0,0,0-14.9,1.086L20.444,7.4,18.87,5.78a10.92,10.92,0,0,0-14.9-1.086,11.467,11.467,0,0,0-.791,16.6L18.631,37.252a2.5,2.5,0,0,0,3.618,0L37.7,21.3a11.46,11.46,0,0,0-.783-16.6Z" transform="translate(1.101 -0.248), scale(0.91)"/>
-          </svg>
-          <script>
-            function like(el) {
-              if (el.id == "liked") {
-                el.style.fill = "none";
-                el.style.stroke = "";
-                el.id = ""
-              } else {
-                el.style.fill = "red";
-                el.style.stroke = "red";
-                el.id = "liked";
+            <script>
+              function like(el) {
+                if (el.id == "liked") {
+                  el.style.fill = "none";
+                  el.style.stroke = "";
+                  el.id = ""
+                } else {
+                  el.style.fill = "red";
+                  el.style.stroke = "red";
+                  el.id = "liked";
+                }
+                
               }
-              
-            }
-          </script>
-          <p><a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">marinando2021</a> - Go check out our instagram for pictures of us and our shenanigans.</p>
+            </script>
+            <p><a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">marinando2021</a> - Go check out our instagram for pictures of us and our shenanigans.</p>
+          </div>
+          <img class="collage1" src="marinando_photos/Collage1.jpg" alt="">
+          <img class="collage2" src="marinando_photos/Collage2.jpg" alt="">
+          <div class="follow__feed__shadow"></div>
         </div>
-        <picture>
-          <source media="(max-width: 400px)" srcset="marinando_photos/marinando_instagram_feed_collage_phone.jpg">
-          <source media="(max-width: 619px)" srcset="marinando_photos/marinando_instagram_feed_collage_619.jpg">
-          <source media="(max-width: 726px)" srcset="marinando_photos/marinando_instagram_feed_collage_726.jpg">
-          <img src="marinando_photos/marinando_instagram_feed_collage.jpg" alt="">
-        </picture>
-        <div class="follow__feed__shadow"></div>
       </div>
     </div>
     <!-- <div class="registry" id="registry">

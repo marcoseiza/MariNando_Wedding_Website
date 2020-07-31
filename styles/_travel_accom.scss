@@ -1,41 +1,32 @@
 .travel_accommodations {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 420px auto auto;
-  grid-template-areas:  'title title'
-                        'map hotel1'
-                        'map hotel2';
-  gap: 40px;
-  
-  &__title {
-    grid-area: title;
-    position: relative;
-    height: 600px;
-    background-color: color(secondary);
-    z-index: -1;
-    span {
-      font-size: 270px;
-      line-height: 210px;
-      letter-spacing: -20px;
-      color: color(titles);
-      opacity: 0.29;
-      position: absolute;
-      left: 50px; top: 20px;
-    }
+
+  &__contentwrapper {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:  'map title'
+                          'map hotel1'
+                          'map hotel2';
+    gap: 40px;
+    padding: 0 30px;
   }
 
   &__map {
     grid-area: map;
-    width: 700px;
+    width: 100%;
     height: 100%;
-    justify-self: end;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 80% 20%;
     background-color: color(primary);
 
-    > img {
-      width: calc(100% - 40px);
-      padding: 40px 20px;
+    &__img {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 90%;
+      }
     }
 
     &__airplaneinfo {
@@ -83,6 +74,19 @@
     }
   }
 
+  &__title {
+    grid-area: title;
+    color: color(titles);
+    opacity: 0.29;
+
+    h1 {
+      font-size: 60px;
+      line-height: 50px;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
   .hotel1 {
     grid-area: hotel1;
   }
@@ -92,14 +96,21 @@
   }
 
   &__hotel {
-    width: 550px; height: 550px;
+    width: 100%;
     background-color: color(primary);
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: color(main_text);
+
+    &__content {
+      margin: 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: color(main_text);
+    }
 
     img {
       width: 35px;
