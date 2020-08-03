@@ -1,102 +1,72 @@
 .registry {
-  display: flex; 
+  margin-top: 60px;
+  width: 100%;
+  background-color: color(primary);
+  color: color(main_text);
+  font-size: 10px;
+  display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: flex-start;
+  padding: 40px;
+  padding-right: 0;
+  box-sizing: border-box;
 
-  &__title {
-    align-self: flex-start;
-    position: relative;
-    font-size: 400px;
-    line-height: 210px;
-    letter-spacing: -20px;
-    color: color(titles);
-    opacity: 0.29;
-    margin: 140px 0px -50px 15vw;
+  div {
+    padding-right: 40px;
+    margin-bottom: 1.5em;
+    span {
+      font-size: 2em;
+      font-weight: 600;
+    }
+    p {
+      max-width: 35em;
+      font-size: 1.5em;
+      margin-top: 0.5em;
+    }
   }
-
+  
   &__list {
-    position: relative;
-    align-self: center;
-    width: 91vw;
-    background-color: color(primary);
-    li {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid color(secondary);
-      padding: 25px 0;
-      margin: 0 80px;
-      &:last-of-type {
-        border: none;
-      }
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow: scroll;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+  }
 
-      span {
-        font-size: 45px;
-        font-weight: 300;
-        color: color(main_text);
-      }
-      a {
-        border: 2px solid color(main_text);
-        text-decoration: none;
-        color: color(main_text);
-        text-transform: uppercase;
-        font-size: 25px;
-        font-weight: 400;
-        padding: 6px 10px;
-        &:hover, &:focus {
-          border-color: lighten(color(main_text), 30);
-          color: lighten(color(main_text), 30);
-        }
-      }
+  li {
+    margin-right: 2em;
+    list-style: none;
+    border: 1px solid color(main_text);
+    border-radius: 0.5em;
+    padding: 1em;
+    opacity: 0.5;
+    transition: opacity 200ms ease-in-out;
+    &:hover, &:active {
+      opacity: 1;
     }
   }
-}
 
-@media screen and (max-width: 1171px) {
-  .registry {
-
-    &__title {
-      font-size: 30vw;
-      line-height: 210vw * (3/40);
-      letter-spacing: -20vw * (3/40);
-      margin: 140px 0px -50vw * (3/40) 15vw;
-    }
-  }
-}
-
-@media screen and (max-width: 938px) {
-  .registry {
-    display: flex; 
+  a {
+    height: 100%;
+    width: 9em;
+    color: color(main_text);
+    text-decoration: none;
+    display: flex;
     flex-direction: column;
-  
-    &__list {
-      li {
-        border-bottom: 2vw * (4.8/45) solid color(secondary);
-        padding: 25vw * (4.8/45) 0;
-        margin: 0 80vw * (4.8/45);
-  
-        span {
-          font-size: 45vw * (4.8/45);
-        }
-        a {
-          border: 2vw * (4.8/45) solid color(main_text);
-          font-size: 25vw * (4.8/45);
-          padding: 6vw * (4.8/45) 10vw * (4.8/45);
-        }
-      }
+    align-items: center;
+    justify-content: space-between;
+    span {
+      font-size: 0.7em;
     }
   }
-}
 
-@media screen and (max-width: 695px) {
-  .registry {
-
-    &__title {
-      font-size: 400vw * (5/40);
-      line-height: 210vw * (4/40);
-      letter-spacing: -20vw * (4/40);
-      margin: 18vw 0px 10vw 0vw;
-    }
+  img {
+    max-width: 7.5em;
+    height: 3em;
   }
+
 }
+

@@ -1,121 +1,91 @@
 .details {
   position: relative;
-  display: grid;
-  grid-template-columns: 43vw 1fr;
-  grid-template-rows: 300px 54vw;
+  font-size: 10px;
 
-  &__title{
-    grid-area: 1 / 1 / 2 / -1;
-    background-color: color(primary);
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    span {
-      font-size: 300px;
-      color: color(titles);
-      opacity: 0.29;
-    }
+  &__title {
+    color: color(titles);
+    opacity: 0.29;
+    font-size: 10em;
+  }
+
+  &__contentwrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    padding: 0 40px;
   }
 
   &__date {
-    background-color: color(secondary);
-    height: 54vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 4.2vw;
+    position: relative;
+    height: calc(100% - 100px);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 
-    &__number {
-      white-space: pre;
-      color: white;
-      font-size: 8.5vw;
-      line-height: 8.5vw;
-    }
+    &__detes {
+      align-self: start;
+      position: sticky;
+      top: 90px;
 
-    &__countdown {
-      color: #9B9B9B;
-      opacity: 0.22;
-      font-size: 6.5vw;
-      text-transform: uppercase;
-      margin-top: 1.5vw;
-      div.month {
-        margin: -1.5vw 0;
+      .content {
+        position: relative;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
       }
-    }
-  }
 
-  &__detes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+      #tab {
+        display: none;
+      }
 
-    > span {
-      display: flex;
-      justify-content: center; align-items: start;
-      margin: 6vw 0;
-
-      h3 {
+      &__basic {
         display: flex;
         flex-direction: column;
-        height: 100%;
+        justify-content: center;
+        background-color: color(primary);
+        color: color(main_text);
+        padding: 3em;
+    
+        h3 {
+          margin: 0;
+          white-space: pre;
+          font-size: 3em;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
 
-        &:first-child {
-          padding: 0;
-          & > span:first-child {
-            border-right: 0.2vw solid color(main_text);
-            padding: 0 1.7vw;
-          }
+      &__countdown {
+        background-color: color(secondary);
+        color: #9B9B9B;
+        font-size: 3.3em;
+        line-height: 1em;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1em;
+  
+        > div {
+          opacity: 0.22;
         }
       }
     }
-
-    h3 {
-      margin: 0;
-      padding: 0 1.7vw;
-      white-space: pre;
-      text-align: center;
-      font-size: 3.5vw;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: color(main_text);
-
-      > .br {
-        display: block;
-        margin: -1.5em;
-      }
-      .loc {
-        margin-top: 0.3em;
-        font-size: 1.1vw;
-        .br {
-          display: block;
-          margin: 0em;
-        }
-        .brback {
-          display: block;
-          margin: -0.6em;
-        }
-      }
-    }
-
-    svg {
-      height: 8.5vw;
-      stroke: black;
-      stroke-width: 0.8;
-      padding: 0 1.2vw;
-    }
-
 
     button {
+      align-self: flex-end;
+      justify-self: center;
+      transform: translateY(100px);
       background: none;
       border: none;
-      position: relative;
+      padding: 0;
+      overflow: hidden;
+      font-size: 0.7em;
 
       div.button_content {
         padding: 0.5vw 0.8vw;
-        border: 3px solid color(main_text);
+        border: 0.08em solid color(main_text);
         color: color(main_text);
-        font-size: 2.3vw; font-size: 300; font-family: Montserrat;
+        font-size: 4em; font-weight: 400; font-family: Montserrat;
         text-transform: uppercase;
         padding: 4px 9px;
         display: flex;
@@ -130,51 +100,65 @@
         &:hover svg .cls-1, &:focus svg .cls-1 {
           stroke: lighten(color(main_text), 15)
         }
-  
+        
+        span {
+          white-space: nowrap;
+          font-size: 0.9em;
+          opacity: 1;
+          transition: opacity 100ms ease-in-out;
+        }
+
         div.calendar_icon {
           position: relative;
-          margin-right: 1vw;
+          margin-right: 0.6em;
         }
   
         #date {
           position: absolute;
-          left: 50%; top: 1.5vw;
+          left: 50%; top: 1em;
+          font-size: 0.6em;
+          font-weight: 500;
           transform: translate(-50%, 0);
         }
   
         svg {
-          width: 3.675vw; 
-          height: 4.32vw;
+          width: 1.2em; 
+          height: 1.4em;
           padding: 0;
   
           .cls-1 {
             fill: none;
-            stroke: #161925;
+            stroke: color(main_text);
             stroke-linecap: round;
             stroke-linejoin: round;
-            stroke-width: 4px;
+            stroke-width: 4;
           }
         }
       }
 
       div.button_menu {
-        height: 0;
+        height: 100%;
+        width: 90%;
         position: absolute;
-        top: 80%; left: 0; right: 0;
+        top: 0; right: 0;
         overflow: hidden;
-        display: flex;
-        justify-content: space-around;
+        display: none;
+        justify-content: center;
         align-items: center;
+        opacity: 0;
+
         a {
-          display: none;
+          margin: 0 1.8em;
+          display: flex;
           align-items: center;
-          opacity: 0;
+          
           &:hover svg, &:focus svg {
             fill: lighten(color(main_text), 15);
             cursor: pointer;
           }
           svg {
-            width: 3vw;
+            width: 4em;
+            height: 100%;
             fill: color(main_text);
           }
         }
@@ -183,199 +167,136 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1210px) {
   .details {
-    grid-template-columns: 43vw 1fr;
-    grid-template-rows: 300vw * (33.48/300) 486px 486px;
-  
-    &__title{
-      grid-area: 1 / 1 / 2 / -1;
-      height: 150vw * (33.48/300);
-      align-items: flex-start;
-      flex-direction: row;
-      span {
-        margin-left: 5vw;
-        font-size: 300vw * (33.48/300);
-      }
-    }
-  
-    &__date {
-      grid-area: 3 / 1 / 4 / -1;
-      height: 54px * (486/54);
-      width: 43px * (486/54);
-      padding-left: 4.2px * (486/54);
-  
-      &__number {
-        font-size: 8.5px * (486/54);
-        line-height: 8.5px * (486/54);
-      }
-  
-      &__countdown {
-        font-size: 6.5px * (486/54);
-        margin-top: 1.5px * (486/54);
-        div.month {
-          margin: -1.5px * (486/54) 0;
-        }
-      }
-    }
-  
-    &__detes {
-      justify-self: end;
-      grid-area: 2 / 1 / 3 / -1;
-      width: 57px * (486/54);
-      background-color: color(primary);
-  
-      > span {
-        margin: 6px * (486/54) 0;
+    font-size: 7px;
+  }
+}
 
-        h3:first-child > span:first-child {
-          border-width: 2px;
-        }
-      }
-  
-      h3 {
-        font-size: 3.5px * (486/54);
-        > .br {
-          margin: 0em;
-        }
-        .loc {
-          font-size: 1.5px * (486/54);
-          .br {
-            margin: 0em;
+@media screen and (min-width: 970px) {
+  .details__date__detes {
+    .content {
+      left: 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+
+  .details {
+     
+    &__contentwrapper {
+      grid-template-columns: auto 100%;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+
+    &__title {
+      position: absolute;
+      right: 60px;
+      z-index: 0;
+      font-size: 8em;
+    }
+
+    &__date {
+      position: unset;
+      display: unset;
+      height: 100%;
+
+      &__detes {
+        width: calc(200% - 35px);
+        display: flex;
+        justify-content: flex-start;
+
+        .content {
+          grid-template-columns: auto 40px;
+          left: 0;
+          &:not(.ui-draggable-dragging) {
+            transition: left 200ms ease-in-out;
+          }
+          &.over {
+            left: 4px !important;
           }
         }
-      }
-  
-      svg {
-        height: 8.5px * (486/54);
-        padding: 0 1.2px * (486/54);
+
+        &__basic {
+          background-color: color(secondary);
+          color: white;
+          padding-bottom: 10px;
+        }
+
+        &__countdown {
+          padding-bottom: 10px;
+        }
+
+        #tab {
+          grid-area: 1 / 2 / -1 / -1;
+          cursor: grab;
+          align-self: center;
+          display: block;
+          height: 16em;
+          width: 5.9em;
+          margin-left: -0.2em;
+          border-radius: 0 2em 2em 0;
+          background-color: color(secondary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover, &:active {
+            background-color: lighten(color(secondary), 3);
+          }
+
+          span {
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            font-size: 2.4em;
+            color: white;
+          }
+
+          svg {
+            height: 60%;
+            stroke: white;
+            stroke-width: 1px;
+          }
+        }
       }
 
       button {
-  
-        div.button_content {
-          padding: 0.5px * (486/54) 0.8px * (486/54);
-          border: 2px solid color(main_text);
-          font-size: 2.3px * (486/54);
-    
-          div.calendar_icon {
-            margin-right: 1px * (486/54);
-          }
-    
-          #date {
-            top: 1.5px * (486/54);
-          }
-    
-          svg {
-            width: 3.675px * (486/54); 
-            height: 4.32px * (486/54);
-          }
-        }
-  
-        div.button_menu {
-          a {
-            svg {
-              width: 3px * (486/54);
-              fill: color(main_text);
-            }
-          }
-        }
+        position: absolute;
+        top: auto;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
 }
 
-@media screen and (max-width: 514px) {
+@media screen and (max-width: 690px) {
   .details {
-    grid-template-columns: 100vw;
-    grid-template-rows: 600vw * (33.48/300) 54vw * (44/25) 54vw * (44/25);
-    
-    &__title{
-      grid-area: 1 / 1 / 2 / -1;
-      height: 150vw * (33.48/300);
-      align-items: flex-start;
-      flex-direction: row;
-      span {
-        margin-left: 5vw;
-        margin-top: 25vw;
-        font-size: 300vw * (33.48/300);
-      }
+     
+    &__contentwrapper {
+      grid-template-columns: auto 100%;
+      justify-content: flex-end;
+      gap: 5px;
+      padding: 0;
+      padding-left: 20px;
+    }
+
+    &__title {
+      right: 20px;
+      font-size: 5em;
     }
 
     &__date {
-      grid-area: 3 / 1 / 4 / -1;
-      height: 54vw * (44/25);
-      width: 43vw * (44/25);
-      padding-left: 4.2vw * (44/25);
-  
-      &__number {
-        font-size: 8.5vw * (44/25);
-        line-height: 8.5vw * (44/25);
-      }
-  
-      &__countdown {
-        font-size: 6.5vw * (44/25);
-        margin-top: 1.5vw * (44/25);
-        div.month {
-          margin: -1.5vw * (44/25) 0;
-        }
-      }
-    }
-  
-    &__detes {
-      justify-self: end;
-      grid-area: 2 / 1 / 3 / -1;
-      width: 57vw * (44/25);
-      background-color: color(primary);
-  
-      > span {
-        margin: 6vw * (44/25) 0;
-      }
-  
-      h3 {
-        font-size: 3.5vw * (44/25);
-        .loc {
-          font-size: 1.5vw * (44/25);
-        }
-      }
-  
-      svg {
-        height: 8.5vw * (44/25);
-        padding: 0 1.2vw * (44/25);
-      }
+      position: unset;
+      height: 100%;
+      margin-right: -20px;
 
-      button {
-  
-        div.button_content {
-          font-size: 2.3vw * (44/25);
-          padding: 0.5vw * (44/25) 0.8vw * (44/25);
-          border: 2px solid color(main_text);
-    
-          div.calendar_icon {
-            margin-right: 1vw * (44/25);
-          }
-    
-          #date {
-            top: 1.5vw * (44/25);
-          }
-    
-          svg {
-            width: 3.675vw * (44/25); 
-            height: 4.32vw * (44/25);
-          }
-        }
-  
-        div.button_menu {
-          a {
-            svg {
-              width: 3vw * (44/25);
-              fill: color(main_text);
-            }
-          }
-        }
+      &__detes {
+        width: calc(200% - 35px);
       }
-  
-      
     }
   }
 }

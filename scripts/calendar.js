@@ -1,39 +1,64 @@
+$('#player_button').mouseleave(function() {
+  $(this).data('clicks', false);
+  window.setTimeout(function() {
+    $('#player_button .button_content > span').css({opacity: 1});
+    $('#player_button .button_menu').css({opacity: 0});
+    $('#player_button .button_menu').css({display: 'none'});
+  }, 200)
+})
+
 $('#player_button').click(function(){
-  var clicks = $(this).data('clicks_player_button');
+  var clicks = $(this).data('clicks');
   if (!clicks) {
-    $('#player_button .button_menu').css({overflow: 'visible', height: 'auto'})
-    $('#player_button .button_menu a').css({display: 'flex'})
+    $('#player_button .button_content > span').css({opacity: 0});
+    $('#player_button .button_menu').css({display: 'flex'});
     
     anime({
-      targets: '#player_button .button_menu a',
+      targets: '#player_button .button_menu',
       opacity: 1,
       duration: 100,
+      delay: 200,
       easing: 'easeInQuad'
     })
+ } else {
+    window.setTimeout(function() {
+      $('#player_button .button_content > span').css({opacity: 1});
+      $('#player_button .button_menu').css({opacity: 0});
+      $('#player_button .button_menu').css({display: 'none'});
+    }, 200)
+ }
+ $(this).data("clicks", !clicks);
+})
 
-  } else {
-    $('#player_button .button_menu').css({overflow: 'hidden', height: 0})
-    $('#player_button .button_menu a').css({display: 'flex', opacity: 0})
-  }
-  $(this).data("clicks_player_button", !clicks);
+
+$('#details_button').mouseleave(function() {
+  $(this).data('clicks', false);
+  window.setTimeout(function() {
+    $('#details_button .button_content > span').css({opacity: 1});
+    $('#details_button .button_menu').css({opacity: 0});
+    $('#details_button .button_menu').css({display: 'none'});
+  }, 200)
 })
 
 $('#details_button').click(function(){
-  var clicks = $(this).data('clicks_details_button');
+  var clicks = $(this).data('clicks');
   if (!clicks) {
-    $('#details_button .button_menu').css({overflow: 'visible', height: 'auto'})
-    $('#details_button .button_menu a').css({display: 'flex'})
-    
+    $('#details_button .button_content > span').css({opacity: 0});
+    $('#details_button .button_menu').css({display: 'flex'});
+
     anime({
-      targets: '#details_button .button_menu a',
+      targets: '#details_button .button_menu',
       opacity: 1,
       duration: 100,
+      delay: 200,
       easing: 'easeInQuad'
     })
-
-  } else {
-    $('#details_button .button_menu').css({overflow: 'hidden', height: 0})
-    $('#details_button .button_menu a').css({display: 'flex', opacity: 0})
-  }
-  $(this).data("clicks_details_button", !clicks);
+ } else {
+    window.setTimeout(function() {
+      $('#details_button .button_content > span').css({opacity: 1});
+      $('#details_button .button_menu').css({opacity: 0});
+      $('#details_button .button_menu').css({display: 'none'});
+    }, 200)
+ }
+ $(this).data("clicks", !clicks);
 })
