@@ -36,8 +36,9 @@
       flex-direction: column;
       align-items: flex-end;
       font-size: 9em;
-      color: lighten(color(main_text), 10);
+      color: color(secondary);
     }
+
     &-plus {
       margin: -15px 0;
     }
@@ -141,7 +142,7 @@
       width: 60px;
       fill: none;
       stroke: color(titles);
-      stroke-width: 8;
+      stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
@@ -247,7 +248,7 @@
         bottom: 30px;
         right: 30px;
         width: 40px;
-        stroke-width: 6;
+        stroke-width: 1.5;
       }
     }
   }
@@ -327,7 +328,7 @@
 
       p {
         font-size: 9vw;
-        align-items: end;
+        align-items: start;
       }
       &-plus {
         margin: -10vw * (15/110) * 1.19 0;
@@ -354,6 +355,7 @@
   
     &__action {
       font-size: 2vw;
+      padding-top: 0;
       
       svg {
         bottom: 6.5vw; right: 6.5vw;

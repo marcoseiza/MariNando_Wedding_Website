@@ -51,6 +51,7 @@
 
     &__entry__line {
       display: flex;
+      align-items: center;
       span {
         font-size: 3em;
       }
@@ -90,7 +91,8 @@
       flex-direction: column;
 
       svg {
-        width: 24em;
+        width: 20em;
+        max-height: 5px;
         margin-left: 1.5em;
         line {
           stroke-width: 0.13em;
@@ -151,10 +153,25 @@
   }
 }
 
+@media screen and (max-width: 1210px) {
+  .schedule__timeline {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .schedule__timeline {
+    z-index: -1;
+    --pdb: 200px;
+  }
+}
+
 @media screen and (max-width: 690px) {
   .schedule__timeline {
     --pd: 5vw;
-    font-size: 1.6vw;
+    font-size: 1.3vw;
+    z-index: -1;
+    --pdb: 200px;
 
     > [class *= "we"]{
       svg {
@@ -170,6 +187,61 @@
 
       &::after, &::before {
         height: 7px; width: 7px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .schedule__timeline {
+    font-size: 1.7vw;
+
+    &__wii {
+      display: none;
+    }
+
+    > [class *= "we"]{
+      svg {
+        width: 28vw;
+        line {
+          stroke-width: 0.2em;
+        }
+      }
+    }
+
+    #schedule_line {
+      width: 0.4em;
+
+      &::after, &::before {
+        height: 1em; width: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .schedule__timeline {
+    font-size: 1.7vw;
+
+    &__wii {
+      display: none;
+    }
+
+    > [class *= "we"]{
+      svg {
+        width: 28vw;
+        line {
+          stroke-width: 0.4em;
+        }
+      }
+    }
+
+    #schedule_line {
+      width: 0.5em;
+
+      &::after, &::before {
+        height: 1.2em; width: 1.2em;
       }
     }
   }
