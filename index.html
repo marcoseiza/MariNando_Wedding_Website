@@ -8,16 +8,15 @@
   <link rel="stylesheet" href="styles/main.css">
   <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-  <script src="scripts/jquery.visible.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-  <script src="scripts/jquery.draggableTouch.js"></script>
+  <script src="scripts/language.js"></script>
 </head>
 <body>
   <header>
     <a href="#home" id="nav_names">mariana + fernando</a>
     <nav>
-      <li><a href="#home" id="link_home">home</a></li>
-      <li><a href="#details" id="link_details">details</a></li>
+      <li><a href="#home" id="link_home" trans="1" lang="nav_home">home</a></li>
+      <li><a href="#details" id="link_details" trans="1" lang="nav_details">details</a></li>
       <li><a href="#travel_accommodations" id="link_travel_accommodations">travel</a></li>
       <li><a href="#follow" id="link_follow">follow</a></li>
       <!-- <li><a href="#registry" id="link_registry">registry</a></li> -->
@@ -96,11 +95,7 @@
         <button id="player_button">
           <div class="button_content">
             <div class="calendar_icon">
-              <span id="date_form"></span>
-              <script>
-                var d = new Date();
-                document.getElementById("date_form").innerHTML = d.getDate();
-              </script>
+              <span id="date_form">14</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
                 <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.98)">
                   <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
@@ -147,8 +142,8 @@
           </span>
           <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="rsvp_name" id="rsvp_name" placeholder="FULL NAME *" required>
           <input type="email" name="rsvp_email" id="rsvp_email" placeholder="EMAIL *" required>
-          <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="rsvp_phone" id="rsvp_phone" placeholder="PHONE *" required>
-          <input type="text" pattern="[0-9a-zA-z\s.,\-#']+" name="rsvp_address" id="rsvp_address" placeholder="ADDRESS *" required>
+          <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="rsvp_phone" id="rsvp_phone" placeholder="PHONE">
+          <input type="text" pattern="[0-9a-zA-z\s.,\-#']+" name="rsvp_address" id="rsvp_address" placeholder="ADDRESS">
           <button id="rsvp_submit">Submit
             <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
               <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
@@ -174,6 +169,13 @@
             }
 
             $("#rsvp_submit").click(function() {
+              eraseCookie("form")
+              window.setTimeout(function () {
+                $("#rsvp_submit").submit();
+              }, 300);
+            });
+
+            $("#rsvp_submit").touchstart(function() {
               eraseCookie("form")
               window.setTimeout(function () {
                 $("#rsvp_submit").submit();
@@ -256,11 +258,7 @@
           <button id="details_button">
             <div class="button_content">
               <div class="calendar_icon">
-                <span id="date"></span>
-                <script>
-                  var d = new Date();
-                  document.getElementById("date").innerHTML = d.getDate();
-                </script>
+                <span id="date">14</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
                   <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.99)">
                     <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
@@ -308,8 +306,9 @@
               <span>greenwich, ct</span>
             </div>
           </div>
-          <svg id="schedule_cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.527 155.946">
-            <path id="Icon_awesome-cross" data-name="Icon awesome-cross" d="M105.9,37.736H77.018V9.434A9.533,9.533,0,0,0,67.391,0H48.136a9.533,9.533,0,0,0-9.627,9.434v28.3H9.627A9.533,9.533,0,0,0,0,47.171V66.039a9.533,9.533,0,0,0,9.627,9.434H38.509v66.039a9.533,9.533,0,0,0,9.627,9.434H67.391a9.533,9.533,0,0,0,9.627-9.434V75.473H105.9a9.533,9.533,0,0,0,9.627-9.434V47.171A9.533,9.533,0,0,0,105.9,37.736Z" transform="translate(2.5 2.5)" fill="none" stroke="#242a40" stroke-width="5"/>
+          <svg id="schedule_rings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <circle cx="18" cy="12" r="10"/>
+            <circle cx="12" cy="18" r="10"/>
           </svg>
           <svg id="schedule_champagne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.267 117.701">
             <g id="noun_Champagne_936670" transform="translate(-1.112 1.907)">
@@ -334,7 +333,7 @@
               <span class="schedule__timeline__entry__time">5pm</span>
             </div>
             <div class="schedule__timeline__wetoast__desc schedule__timeline__entry__desc">
-              <span>champagne toast</span>
+              <span>cocktail hour</span>
             </div>
           </div>
           <div class="schedule__timeline__weeat">
@@ -411,7 +410,7 @@
       <div class="travel_accommodations__contentwrapper">
         <div class="travel_accommodations__map">
           <div class="travel_accommodations__map__img">
-            <img src="svg/travel_map.svg" alt="A map of new york and connecticut with a path from jfk to the riverside yacht club">
+            <img src="marinando_photos/map.png" alt="A map of new york and connecticut with a path from jfk to the riverside yacht club">
           </div>
           <div class="travel_accommodations__map__airplaneinfo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.964 98.651">
@@ -420,7 +419,7 @@
             <span>NYC AIRPORTS</span>
             <div>
               <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/flights?hl=en#flt=./m/02_286.2020-07-07*/m/02_286..2020-07-11;c:USD;e:1;sd:1;t:f">google flights</a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/John+F.+Kennedy+International+Airport,+Queens,+NY+11430/21+Hearthstone+Dr,+Riverside,+CT+06878/@40.8420043,-73.8626721,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89c26650d5404947:0xec4fb213489f11f0!2m2!1d-73.7781391!2d40.6413111!1m5!1m1!1s0x89c298be968f7e21:0x746b9692bd83b2f7!2m2!1d-73.5787593!2d41.035809!3e0">google maps</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir//Riverside+Yacht+Club,+Club+Road,+Riverside,+CT/@41.0221715,-73.6278332,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c298e51982c4c7:0x75841ee9f332f3c8!2m2!1d-73.5928138!2d41.022112!3e0">google maps</a>
             </div>
           </div>
         </div>
@@ -433,17 +432,31 @@
               <div>
                 <h3>Hotels in the Area</h3>
                 <h4>OUR Recommendations</h4>
-                <p>There are many hotels in the area that you can book! Here we have a few recommendations of places we like. Here is a google link to help you search.</p>
+                <p>There are many hotels in the area that you can book! Here are a few recommendations of places we like, and some links to get you started looking for more.</p>
               </div>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/Connecticut?g2lb=2502548%2C4258168%2C4260007%2C4270442%2C4274032%2C4305595%2C4306835%2C4317915%2C4319921%2C4328159%2C4364504%2C4366684%2C4367952%2C4371335%2C4381263%2C4386665%2C4393965%2C4395590%2C4398672%2C4399106%2C4401769%2C4270859%2C4284970%2C4291517%2C4316256&hl=en&gl=us&un=1&ap=KigKEgkXD7QRnYFEQBHNuJTBoGZSwBISCUPpJR2ViERAEc24lAHtYVLAMAJajgEKBQisAhAAIgNVU0QqFgoHCOQPEAcYCRIHCOQPEAcYChgBKACwAQBYAWgBigEoChIJ1TiyI05-REARzbiUeZxnUsASEgk4813iRoVEQBHNuJS56GJSwJoBFhIUUml2ZXJzaWRlIFlhY2h0IENsdWKiARcKCC9tLzAxeDczEgtDb25uZWN0aWN1dJIBAiABaAA&q=hotels%20near%20riverside%20yacht%20club&rp=ogEUUml2ZXJzaWRlIFlhY2h0IENsdWI4AUAASAI&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIrAIQACIDVVNEKhYKBwjkDxAHGAkSBwjkDxAHGAoYASgAsAEAWAFoAYoBKAoSCRcPtBGdgURAEc24lMGgZlLAEhIJQ-klHZWIREARzbiUAe1hUsCaARYSFFJpdmVyc2lkZSBZYWNodCBDbHViogEXCggvbS8wMXg3MxILQ29ubmVjdGljdXSSAQIgAQ">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
-                  <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
-                </svg>
-                Google Hotels
-              </a>
+              <span>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/Connecticut?g2lb=2502548%2C4258168%2C4260007%2C4270442%2C4274032%2C4305595%2C4306835%2C4317915%2C4319921%2C4328159%2C4364504%2C4366684%2C4367952%2C4371335%2C4381263%2C4386665%2C4393965%2C4395590%2C4398672%2C4399106%2C4401769%2C4270859%2C4284970%2C4291517%2C4316256&hl=en&gl=us&un=1&ap=KigKEgkXD7QRnYFEQBHNuJTBoGZSwBISCUPpJR2ViERAEc24lAHtYVLAMAJajgEKBQisAhAAIgNVU0QqFgoHCOQPEAcYCRIHCOQPEAcYChgBKACwAQBYAWgBigEoChIJ1TiyI05-REARzbiUeZxnUsASEgk4813iRoVEQBHNuJS56GJSwJoBFhIUUml2ZXJzaWRlIFlhY2h0IENsdWKiARcKCC9tLzAxeDczEgtDb25uZWN0aWN1dJIBAiABaAA&q=hotels%20near%20riverside%20yacht%20club&rp=ogEUUml2ZXJzaWRlIFlhY2h0IENsdWI4AUAASAI&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIrAIQACIDVVNEKhYKBwjkDxAHGAkSBwjkDxAHGAoYASgAsAEAWAFoAYoBKAoSCRcPtBGdgURAEc24lMGgZlLAEhIJQ-klHZWIREARzbiUAe1hUsCaARYSFFJpdmVyc2lkZSBZYWNodCBDbHViogEXCggvbS8wMXg3MxILQ29ubmVjdGljdXSSAQIgAQ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
+                    <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                  </svg>
+                  Google Hotels
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.airbnb.com/s/Greenwich--CT--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&query=Greenwich%2C%20CT%2C%20United%20States&source=structured_search_input_header&search_type=autocomplete_click&place_id=ChIJly5MDxGYwokR4jAEYCeuMQg">
+                  <svg version="1.1" id="airbnb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="1 0 29 30" xml:space="preserve">
+                    <path style="fill: none;" class="st0" d="M16.2,23.8c-1.2-1.3-3.1-4.3-3.5-5.1c-0.3-0.7-0.6-1.4-0.7-2.2c-0.1-0.6-0.1-1.2,0.2-1.8c0.2-0.5,0.6-1,1.1-1.3
+                      c1.1-0.7,2.8-0.7,3.8,0.2c0.5,0.4,0.8,1.1,0.9,1.8c0.1,0.9-0.1,1.8-0.4,2.6c-0.8,1.8-2.5,4.6-3.8,5.7c-0.5,0.6-1.1,1.2-1.7,1.7
+                      c-0.9,0.8-2,1.5-3.2,1.7c-1,0.2-2.1,0.1-3-0.3c-1.1-0.5-1.9-1.5-2.2-2.7c-0.2-0.8-0.2-1.7,0.1-2.6c0.2-0.7,0.5-1.3,0.8-2
+                      c2-4.4,4.2-8.8,6.4-13.2c0.3-0.6,0.7-1.3,1-1.9c0.3-0.5,0.6-1,1.1-1.4c0.5-0.4,1.2-0.6,1.8-0.6c0.7,0,1.3,0.2,1.8,0.7
+                      c0.5,0.4,0.8,1,1.2,1.6c0.7,1.3,1.4,2.6,2,3.9c1.9,3.7,3.7,7.5,5.5,11.4c0.3,0.6,0.5,1.2,0.7,1.8c0.2,0.8,0.2,1.6,0,2.4l0,0
+                      c-0.3,1.1-1,2-2,2.5c-0.9,0.5-1.9,0.6-2.8,0.5c-1.2-0.2-2.3-0.8-3.3-1.6C17.4,25.1,16.8,24.5,16.2,23.8"/>
+                  </svg>
+                  Airbnb Hotels
+                </a>
+              </span>
             </div>
             <a href="https://www.jhousegreenwich.com/" target="_blank" rel="noopener noreferrer">
-              <img src="marinando_photos/hotels/20190708-j-house-exterior-1_orig.jpg" alt="">
+              <img src="marinando_photos/hotels/20190708-j-house-exterior-1_orig.jpg" alt="" style="object-position: unset;">
               <div>
                 <h3>J House</h3> 
                 <span>$$$</span>
@@ -463,7 +476,7 @@
               </div>
             </a>
             <a href="https://www.marriott.com/hotels/travel/stfcy-courtyard-stamford-downtown/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2&y_source=1_MTA5OTc0MC03MTUtbG9jYXRpb24uZ29vZ2xlX3dlYnNpdGVfb3ZlcnJpZGU=" target="_blank" rel="noopener noreferrer">
-              <img src="marinando_photos/hotels/202414829.jpg" alt="">
+              <img src="marinando_photos/hotels/202414829.jpg" alt="" >
               <div>
                 <h3>Courtyard Marriot</h3>
                 <span>$$</span>
@@ -506,15 +519,57 @@
         </div>
         <div class="travel_accommodations__hotel hotel2">
           <div class="travel_accommodations__hotel__content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
-              <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
-            </svg>
-            <span class="travel_accommodations__hotel__name">Places You Might Like</span>
-            <span class="travel_accommodations__hotel__type">Google Earth</span>
-            <div class="travel_accommodations__hotel__description">
-              <p>As many of you are coming from out of town, we thought you might want some recommendations to help plan your trip. So, we created a small directory of places we love around NYC Tri State Area that you might also enjoy!</p>
+            <a class="carousel" target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">
+              <img id="car1" src="marinando_photos/google_earth/central_park_header.jpg" alt="">
+              <img id="car2" src="marinando_photos/google_earth/columbuscircle.jpg" alt="">
+              <img src="marinando_photos/google_earth/Smalls-Jazz-Club.jpg" alt="">
+              <img src="marinando_photos/google_earth/metart.jpg" alt="">
+              <img src="marinando_photos/google_earth/nypublic.jpg" alt="">
+              <img src="marinando_photos/google_earth/Tods.jpg" alt="">
+            </a>
+            <span id="carousel_prog"></span>
+            <script>
+              let pics = document.querySelectorAll(".carousel img")
+                  crsl = document.querySelector(".carousel"),
+                  cr1 = crsl.querySelector("#car1"),
+                  cr2 = crsl.querySelector("#car2"),
+                  prg = document.querySelector("#carousel_prog"),
+                  ipc = 0;
+
+              ipc++
+              setInterval(slide, 10000)
+              prg.classList.add("start");
+
+              function slide() {
+                cr1 = crsl.querySelector("#car1");
+                cr2 = crsl.querySelector("#car2");
+
+                cr1.style.right = "-100%";
+                cr2.style.right = "0";
+
+                setTimeout(function() {
+                  cr1.style = "";
+                  cr2.style = "";
+                  cr1.id = ""
+                  pics[ipc].id = "car1"
+                  ipc = (ipc < pics.length - 1)? ipc + 1: 0;
+                  pics[ipc].id = "car2"
+                  
+                }, 6000)
+
+              }
+            </script>
+            <div>
+              <h3 class="travel_accommodations__hotel__name">Places You Might Like</h3>
+              <h4 class="travel_accommodations__hotel__type">Google Earth</h4>
+              <p>We thought you might want some recommendations to help plan your trip, so we created a small directory of places we love around NYC Tri State Area!</p>
+              <a class="cta" target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
+                  <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                </svg>
+                Check it out
+              </a>
             </div>
-            <a target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">Check it out</a>
           </div>
         </div>
       </div>
@@ -579,9 +634,9 @@
         </a></li>
       </ul>
     </div>
-    <div class="contact" id="contact">
+    <footer class="contact" id="contact">
       <div class="contact__dropbox">
-        <a id="google_photos" href="javascript:delay('https://photos.app.goo.gl/35GeJz7AwHAFNZ7s7')">
+        <a id="google_photos" href="https://photos.app.goo.gl/35GeJz7AwHAFNZ7s7" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
             <path id="red" d="M15 1 L15 10 Q15 15 20 15 L22 15 L22 8 L16.5 13.5 L22 8 Z"/>
             <path id="blue"  d="M29 15 L20 15 Q15 15 15 20 L15 22 L22 22 L16.5 16.5 L22 22 Z"/>
@@ -597,6 +652,10 @@
         <span>have pics for us?<br>drop them here</span>
         <script src="scripts/contact_wind.js"></script>
       </div>
+      <span>
+        <a href="/index.html?tran=0">English</a>
+        <a href="/index_spanish.html?tran=0">Español</a>
+      </span>
       <div class="contact__info">
         <span class="contact__info__topic">contact us</span>
         <span class="contact__info__mail">
@@ -615,9 +674,8 @@
           }
         </script>
       </div>
-    </div>
+    </footer>
     <script src="scripts/calendar.js"></script>
   </main>
-  <script src="scripts/side_circles.js"></script>
 </body>
 </html>

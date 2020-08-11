@@ -553,6 +553,100 @@ main {
   }
 }
 
+button {
+      align-self: flex-end;
+      justify-self: center;
+      transform: translateY(100px);
+      background: none;
+      border: none;
+      padding: 0;
+      overflow: hidden;
+      font-size: 0.7em;
+
+      div.button_content {
+        padding: 0.5vw 0.8vw;
+        border: 0.08em solid color(main_text);
+        color: color(main_text);
+        font-size: 4em; font-weight: 400; font-family: Montserrat;
+        text-transform: uppercase;
+        padding: 4px 9px;
+        display: flex;
+        align-items: center;
+
+        &:hover, &:focus {
+          cursor: pointer;
+          color: lighten(color(main_text), 15);
+          border-color: lighten(color(main_text), 15);
+        }
+
+        &:hover svg .cls-1, &:focus svg .cls-1 {
+          stroke: lighten(color(main_text), 15)
+        }
+        
+        span {
+          white-space: nowrap;
+          font-size: 0.9em;
+          opacity: 1;
+          transition: opacity 100ms ease-in-out;
+        }
+
+        div.calendar_icon {
+          position: relative;
+          margin-right: 0.6em;
+        }
+  
+        #date {
+          position: absolute;
+          left: 50%; top: 1em;
+          font-size: 0.6em;
+          font-weight: 500;
+          transform: translate(-50%, 0);
+        }
+  
+        svg {
+          width: 1.2em; 
+          height: 1.4em;
+          padding: 0;
+  
+          .cls-1 {
+            fill: none;
+            stroke: color(main_text);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 4;
+          }
+        }
+      }
+
+      div.button_menu {
+        height: 100%;
+        width: 90%;
+        position: absolute;
+        top: 0; right: 0;
+        overflow: hidden;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+
+        a {
+          margin: 0 1.8em;
+          display: flex;
+          align-items: center;
+          
+          &:hover svg, &:focus svg {
+            fill: lighten(color(main_text), 15);
+            cursor: pointer;
+          }
+          svg {
+            width: 4em;
+            height: 100%;
+            fill: color(main_text);
+          }
+        }
+      }
+    }
+
 
 header{
   // overflow-x: hidden;
@@ -659,6 +753,7 @@ header{
 }
 
 .side_circles {
+  display: none;
   width: 15px;
   position: fixed;
   right: 15px;

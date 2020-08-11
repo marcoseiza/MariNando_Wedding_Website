@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MariNando Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+  <script src="scripts/language.js"></script>
+</head>
+<body>
+  <header>
+    <a href="#home" id="nav_names">mariana + fernando</a>
+    <nav>
+      <li><a href="#home" id="link_home" >início</a></li>
+      <li><a href="#details" id="link_details">detalles</a></li>
+      <li><a href="#travel_accommodations" id="link_travel_accommodations">viajar</a></li>
+      <li><a href="#follow" id="link_follow">instagram</a></li>
+      <!-- <li><a href="#registry" id="link_registry">registry</a></li> -->
+      <li><a href="#contact" id="link_contact">contactar</a></li>
+    </nav>
+    <a id="nav">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.5 20.8">
+        <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(1.25 1.25)">
+          <path id="Path_53" data-name="Path 53" d="M4.5,18h27" transform="translate(-4.5 -9)" fill="none" stroke="#a3a3a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+          <path id="Path_54" data-name="Path 54" d="M4.5,9h27" transform="translate(-4.5 -9)" fill="none" stroke="#a3a3a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+          <path id="Path_55" data-name="Path 55" d="M4.5,27h27" transform="translate(-4.5 -9)" fill="none" stroke="#a3a3a3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        </g>
+      </svg>
+    </a>
+  </header>
+  <div class="mobile_menu" id="mobile_menu">
+    <div class="shadow"></div>
+    <div class="links">
+      <div id="close_menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 40 40">
+          <line x1="2" y1="2" x2="38" y2="38"/>
+          <line x1="38" y1="2" x2="2" y2="38"/>
+        </svg>
+      </div>
+      <li><a href="#home" id="link_home" >início</a></li>
+      <li><a href="#details" id="link_details">detalles</a></li>
+      <li><a href="#travel_accommodations" id="link_travel_accommodations">viajar</a></li>
+      <li><a href="#follow" id="link_follow">instagram</a></li>
+      <!-- <li><a href="#registry" id="link_registry">registry</a></li> -->
+      <li><a href="#contact" id="link_contact">contactar</a></li>
+    </div>
+  </div>
+  <script src="scripts/mobile-menu.js"></script>
+  <div class="side_circles">
+    <a href="#home">
+      <svg viewbox="0 0 10 10">
+        <circle class="circle_active" id="circles_home" cx="5" cy="5" r="4" fill="#A3A3A3" />
+      </svg>
+    </a>
+    <a href="#details">
+      <svg viewbox="0 0 10 10">
+        <circle id="circles_details" cx="5" cy="5" r="4" fill="none" />
+      </svg>
+    </a>
+    <a href="#travel_accommodations">
+      <svg viewbox="0 0 10 10">
+        <circle id="circles_travel_accommodations" cx="5" cy="5" r="4" fill="none"/>
+      </svg>
+    </a>
+    <a href="#follow">
+      <svg viewbox="0 0 10 10">
+        <circle id="circles_follow" cx="5" cy="5" r="4" fill="none"/>
+      </svg>
+    </a>
+    <!-- <a href="#registry">
+      <svg viewbox="0 0 10 10">
+        <circle id="circles_registry" cx="5" cy="5" r="4" fill="none"/>
+      </svg>
+    </a> -->
+    <a href="#contact">
+      <svg viewbox="0 0 10 10">
+        <circle id="circles_contact" cx="5" cy="5" r="4" fill="none"/>
+      </svg>
+    </a>
+  </div>
+  <div class="player_shadow">
+    <input type="checkbox" name="rsvp" id="rsvp_checkbox">
+    <div class="player">
+      <div class="player__content">
+        <span>mariana + fernando</span>
+        <iframe id="media_player" src="https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <script>
+          let video_links = ['https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j', 'https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xelnAuTR1dwP_jXRoWLEAZuy']
+          document.getElementById('media_player').src = video_links[Math.floor(Math.random() * video_links.length)];
+        </script>
+        <button id="player_button">
+          <div class="button_content">
+            <div class="calendar_icon">
+              <span id="date_form">14</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
+                <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.98)">
+                  <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
+                  <path id="Path_4" data-name="Path 4" class="cls-1" d="M24,3V19.788" transform="translate(18.95 -3)"/>
+                  <path id="Path_5" data-name="Path 5" class="cls-1" d="M12,3V19.788" transform="translate(4.519 -3)"/>
+                  <path id="Path_6" data-name="Path 6" class="cls-1" d="M4.5,15H63.97" transform="translate(-4.5 13.221)"/>
+                </g>
+              </svg>
+            </div>
+            <span>anotalo</span>
+          </div>
+          <div class="button_menu">
+            <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
+              <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 1000 1187.198" version="1.1"  id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="Apple_1998.svg">
+                <path d="m 979.04184,925.18785 c -17.95397,41.47737 -39.20563,79.65705 -63.82824,114.75895 -33.56298,47.8528 -61.04356,80.9761 -82.22194,99.3698 -32.83013,30.192 -68.00529,45.6544 -105.67203,46.5338 -27.04089,0 -59.6512,-7.6946 -97.61105,-23.3035 -38.08442,-15.5358 -73.08371,-23.2303 -105.08578,-23.2303 -33.56296,0 -69.55888,7.6945 -108.06101,23.2303 -38.5608,15.6089 -69.62484,23.7432 -93.37541,24.5493 -36.12049,1.5389 -72.1237,-14.3632 -108.06101,-47.7796 -22.93711,-20.0059 -51.62684,-54.3017 -85.99592,-102.8874 C 92.254176,984.54592 61.937588,924.38175 38.187028,855.7902 12.750995,781.70252 0,709.95986 0,640.50361 0,560.94181 17.191859,492.32094 51.626869,434.81688 78.689754,388.62753 114.69299,352.19192 159.75381,325.44413 c 45.06086,-26.74775 93.74914,-40.37812 146.18212,-41.25019 28.68971,0 66.3125,8.8744 113.06613,26.31542 46.62174,17.49964 76.55727,26.37404 89.68198,26.37404 9.8124,0 43.06758,-10.37669 99.4431,-31.06405 53.31237,-19.18512 98.30724,-27.12887 135.16787,-23.99975 99.8828,8.06098 174.92313,47.43518 224.82789,118.37174 -89.33023,54.12578 -133.51903,129.93556 -132.63966,227.18753 0.8061,75.75115 28.28668,138.78795 82.2952,188.8393 24.47603,23.23022 51.81008,41.18421 82.22186,53.93522 -6.59525,19.12648 -13.557,37.44688 -20.95846,55.03446 z M 749.96366,23.751237 c 0,59.37343 -21.69138,114.810233 -64.92748,166.121963 -52.17652,60.99961 -115.28658,96.24803 -183.72426,90.68597 -0.87204,-7.12298 -1.37769,-14.61967 -1.37769,-22.49743 0,-56.99843 24.81315,-117.99801 68.87738,-167.873453 21.99909,-25.25281 49.978,-46.25018 83.90738,-63.00018 C 686.57507,10.688027 718.59913,1.5631274 748.71783,5.2734376e-4 749.59727,7.9378274 749.96366,15.875627 749.96366,23.750467 Z" id="path4" inkscape:connector-curvature="0"/>
+              </svg>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://calendar.google.com/calendar/r/eventedit?text=Mariana+and+Fernando%27s+Wedding+Day&dates=20210814/20210815&details=For+more+details,+vist+our+website:+https://www.marinando.com&location=Riverside,+Greenwich,+CT,+USA">            
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+                <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+              </svg>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="outlook_calendar.html">
+              <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-2.61977004 -2.61977004 92.56520808 92.83416708" id="svg8375">
+                <defs id="defs8377" />
+                <path d="M 0,12.40183 35.68737,7.5416 35.70297,41.96435 0.03321,42.16748 z m 35.67037,33.52906 0.0277,34.45332 -35.66989,-4.9041 -0.002,-29.77972 z M 39.99644,6.90595 87.31462,0 l 0,41.527 -47.31818,0.37565 z M 87.32567,46.25471 87.31457,87.59463 39.9964,80.91625 39.9301,46.17767 z" id="path13" />
+              </svg>
+            </a>
+          </div>
+        </button>
+        <label for="rsvp_checkbox" id="rsvp"><span></span>
+          <svg id="rsvp_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339">
+            <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
+              <path id="Path_9" data-name="Path 9" d="M18,7.5V107.839" transform="translate(32.169 -7.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+              <path id="Path_10" data-name="Path 10" d="M107.839,18,57.669,68.169,7.5,18" transform="translate(-7.5 32.169)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+            </g>
+          </svg>
+        </label>
+      </div>
+      <div class="player__rsvp">
+        <form action="index.html" method="POST">
+          <span>
+            ¡queremos seguir en contacto!
+          </span>
+          <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="rsvp_name" id="rsvp_name" placeholder="NOMBRE *" required>
+          <input type="email" name="rsvp_email" id="rsvp_email" placeholder="EMAIL *" required>
+          <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="rsvp_phone" id="rsvp_phone" placeholder="TELEFONO">
+          <input type="text" pattern="[0-9a-zA-z\s.,\-#']+" name="rsvp_address" id="rsvp_address" placeholder="DIRECCIÓN">
+          <button id="rsvp_submit">Enviar
+            <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
+              <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
+                <path id="Path_9" data-name="Path 9" d="M18,7.5V107.839" transform="translate(32.169 -7.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                <path id="Path_10" data-name="Path 10" d="M107.839,18,57.669,68.169,7.5,18" transform="translate(-7.5 32.169)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+              </g>
+            </svg>
+          </button>
+          <script>
+            function readCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                }
+                return null;
+            }
+
+            function eraseCookie(name) {
+              document.cookie = name + '=';
+            }
+
+            $("#rsvp_submit").click(function() {
+              eraseCookie("form")
+              window.setTimeout(function () {
+                $("#rsvp_submit").submit();
+              }, 300);
+            });
+
+            $("#rsvp_submit").touchstart(function() {
+              eraseCookie("form")
+              window.setTimeout(function () {
+                $("#rsvp_submit").submit();
+              }, 300);
+            });
+          </script>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    if (readCookie('form') != 1) {
+      document.querySelector('.player_shadow').style.display = 'none';
+    }
+  </script>
+  <main>
+    <div class="home" id="home">
+      <div class="home__contentwrapper">
+        <div class="home__img">
+          <img src="marinando_photos/IMG_0932.jpg" alt="Picture of Mariana and Fernando">
+        </div>
+        <div class="home__names">
+          <p><span class="home__names-mariana">mariana</span><span class="home__names-plus">+</span><span class="home__names-fernando">fernando</span></p>
+        </div>
+        <div class="home__action">
+          <div class="home__action__sendyourlove">
+            <span>14 AGOSOTO, 2021<br><span>Riverside, CT</span></span>
+          </div>
+          <div class="home__action__img">
+            <img src="marinando_photos/d69f5d12-e31d-4b84-89e0-ba3b798db5a8.JPG" alt="Picture of Mariana and Fernando">
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <path d="M15 2 V28 l11 -11 -11 11 -11 -11"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="details" id="details">
+      <div class="details__contentwrapper">
+        <div class="details__date">
+          <div class="details__title">
+            <span>detalles</span>
+          </div>
+          <div class="details__date__detes">
+            <div class="content">
+              <div class="details__date__detes__basic">
+                <h3>14 Ago, 2021</h3>
+                <h3>riverside, ct</h3>
+              </div>
+              <div class="details__date__detes__countdown">
+                <div class="year">
+                  <span id="years"></span>
+                </div>
+                <div class="month">
+                  <span id="months"></span>
+                </div>
+                <div class="day">
+                  <span id="days"></span>
+                </div>
+                <script src="scripts/countdown.js"></script>
+                <script>
+                  var timerId =
+                    countdown(
+                      new Date(2021, 7, 14),
+                      function(ts) {
+                        var current = String(ts).replace(' and', ',').split(', ');
+                        document.getElementById('years').innerHTML = (current[0])? current[0]: "";
+                        document.getElementById('months').innerHTML = (current[1])? current[1]: "";
+                        document.getElementById('days').innerHTML = (current[2])? current[2]: "";
+                      },
+                      countdown.YEARS|countdown.MONTHS|countdown.DAYS|countdown.HOURS);
+                </script>
+              </div>
+              <div id="tab">
+                <span>CLICK ME</span>
+              </div>
+            </div>
+          </div>
+          <script src="scripts/details.js"></script>
+          <button id="details_button">
+            <div class="button_content">
+              <div class="calendar_icon">
+                <span id="date">14</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
+                  <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.99)">
+                    <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
+                    <path id="Path_4" data-name="Path 4" class="cls-1" d="M24,3V19.788" transform="translate(18.95 -3)"/>
+                    <path id="Path_5" data-name="Path 5" class="cls-1" d="M12,3V19.788" transform="translate(4.519 -3)"/>
+                    <path id="Path_6" data-name="Path 6" class="cls-1" d="M4.5,15H63.97" transform="translate(-4.5 13.221)"/>
+                  </g>
+                </svg>
+              </div>
+              <span>anotalo</span>
+            </div>
+            <div class="button_menu">
+              <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
+                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 1000 1187.198" version="1.1"  id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="Apple_1998.svg">
+                  <path d="m 979.04184,925.18785 c -17.95397,41.47737 -39.20563,79.65705 -63.82824,114.75895 -33.56298,47.8528 -61.04356,80.9761 -82.22194,99.3698 -32.83013,30.192 -68.00529,45.6544 -105.67203,46.5338 -27.04089,0 -59.6512,-7.6946 -97.61105,-23.3035 -38.08442,-15.5358 -73.08371,-23.2303 -105.08578,-23.2303 -33.56296,0 -69.55888,7.6945 -108.06101,23.2303 -38.5608,15.6089 -69.62484,23.7432 -93.37541,24.5493 -36.12049,1.5389 -72.1237,-14.3632 -108.06101,-47.7796 -22.93711,-20.0059 -51.62684,-54.3017 -85.99592,-102.8874 C 92.254176,984.54592 61.937588,924.38175 38.187028,855.7902 12.750995,781.70252 0,709.95986 0,640.50361 0,560.94181 17.191859,492.32094 51.626869,434.81688 78.689754,388.62753 114.69299,352.19192 159.75381,325.44413 c 45.06086,-26.74775 93.74914,-40.37812 146.18212,-41.25019 28.68971,0 66.3125,8.8744 113.06613,26.31542 46.62174,17.49964 76.55727,26.37404 89.68198,26.37404 9.8124,0 43.06758,-10.37669 99.4431,-31.06405 53.31237,-19.18512 98.30724,-27.12887 135.16787,-23.99975 99.8828,8.06098 174.92313,47.43518 224.82789,118.37174 -89.33023,54.12578 -133.51903,129.93556 -132.63966,227.18753 0.8061,75.75115 28.28668,138.78795 82.2952,188.8393 24.47603,23.23022 51.81008,41.18421 82.22186,53.93522 -6.59525,19.12648 -13.557,37.44688 -20.95846,55.03446 z M 749.96366,23.751237 c 0,59.37343 -21.69138,114.810233 -64.92748,166.121963 -52.17652,60.99961 -115.28658,96.24803 -183.72426,90.68597 -0.87204,-7.12298 -1.37769,-14.61967 -1.37769,-22.49743 0,-56.99843 24.81315,-117.99801 68.87738,-167.873453 21.99909,-25.25281 49.978,-46.25018 83.90738,-63.00018 C 686.57507,10.688027 718.59913,1.5631274 748.71783,5.2734376e-4 749.59727,7.9378274 749.96366,15.875627 749.96366,23.750467 Z" id="path4" inkscape:connector-curvature="0"/>
+                </svg>
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://calendar.google.com/calendar/r/eventedit?text=Mariana+and+Fernando%27s+Wedding+Day&dates=20210814/20210815&details=For+more+details,+vist+our+website:+https://www.marinando.com&location=Riverside,+Greenwich,+CT,+USA">            
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+                  <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                </svg>
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="outlook_calendar.html">
+                <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-2.61977004 -2.61977004 92.56520808 92.83416708" id="svg8375">
+                  <defs id="defs8377" />
+                  <path d="M 0,12.40183 35.68737,7.5416 35.70297,41.96435 0.03321,42.16748 z m 35.67037,33.52906 0.0277,34.45332 -35.66989,-4.9041 -0.002,-29.77972 z M 39.99644,6.90595 87.31462,0 l 0,41.527 -47.31818,0.37565 z M 87.32567,46.25471 87.31457,87.59463 39.9964,80.91625 39.9301,46.17767 z" id="path13" />
+                </svg>
+              </a>
+            </div>
+          </button>
+        </div>
+        <div class="schedule__timeline">
+          <span class="schedule__timeline__wii">* WE, NOT Wii</span>
+          <div class="schedule__timeline__wedo">
+            <div class="schedule__timeline__wedo__title schedule__timeline__entry__title">we do</div>
+            <div class="schedule__timeline__entry__line">
+              <span class="schedule__timeline__entry__time">3pm</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+            </div>
+            <div class="schedule__timeline__wedo__desc schedule__timeline__entry__desc">
+              <span>casamiento con misa</span>
+              <span>st michael the<br>archangel church</span>
+              <span>greenwich, ct</span>
+            </div>
+          </div>
+          <svg id="schedule_rings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <circle cx="18" cy="12" r="10"/>
+            <circle cx="12" cy="18" r="10"/>
+          </svg>
+          <svg id="schedule_champagne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.267 117.701">
+            <g id="noun_Champagne_936670" transform="translate(-1.112 1.907)">
+              <g id="Glass" transform="translate(43.304 1.092)">
+                <path id="Path_39" data-name="Path 39" d="M101.706,6.578c-.9,7.075-1.36,14.491-1.6,21.267-.522,14.69.594,27.413,4.012,36.772,2.579,6.425,5.3,11.089,10.011,11.591,4.173-.051,6.9-4.621,9.893-11.4,3.27-9.26,4.871-23.026,4.037-37.787a161.931,161.931,0,0,0-1.727-20.44Z" transform="translate(-99.983 -6.578)" fill="none" stroke="#242a40" stroke-width="3.5"/>
+                <path id="Path_40" data-name="Path 40" d="M99.983,53.795c5.119,2.963,9.687,1.871,13.329-1.505,4.631-4.227,10.079-3.665,14.335.239" transform="translate(-99.983 -26.074)" fill="none" stroke="#242a40" stroke-width="3.5"/>
+                <path id="Path_41" data-name="Path 41" d="M116.42,134.584l.059,41.683,11.963.013-23.524-.025" transform="translate(-102.432 -64.377)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+              </g>
+              <g id="Glass-2" data-name="Glass" transform="matrix(0.996, 0.087, -0.087, 0.996, 9.762, 0)">
+                <path id="Path_39-2" data-name="Path 39" d="M1.548,0C.695,7.064.28,14.473.083,21.244c-.427,14.678.771,27.4,4.252,36.779,2.622,6.44,5.374,11.12,10.092,11.654,4.175-.022,6.87-4.57,9.825-11.327,3.212-9.232,4.726-22.979,3.8-37.738A162.211,162.211,0,0,0,26.187.172Z" fill="none" stroke="#242a40" stroke-width="3.5"/>
+                <path id="Path_40-2" data-name="Path 40" d="M0,4.3c5.141,3,9.7,1.938,13.328-1.411,4.607-4.193,10.062-3.593,14.345.339" transform="translate(0.002 23.394)" fill="none" stroke="#242a40" stroke-width="3.5"/>
+                <path id="Path_41-2" data-name="Path 41" d="M11.24,0l.328,41.66,11.97.1L0,41.567" transform="translate(3.033 70.253)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+              </g>
+            </g>
+          </svg>
+          <div class="schedule__timeline__wetoast">
+            <div class="schedule__timeline__wetoast__title schedule__timeline__entry__title">we toast</div>
+            <div class="schedule__timeline__entry__line">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+              <span class="schedule__timeline__entry__time">5pm</span>
+            </div>
+            <div class="schedule__timeline__wetoast__desc schedule__timeline__entry__desc">
+              <span>aperativos + cóctels</span>
+            </div>
+          </div>
+          <div class="schedule__timeline__weeat">
+            <div class="schedule__timeline__weeat__title schedule__timeline__entry__title">we eat</div>
+            <div class="schedule__timeline__entry__line">
+              <span class="schedule__timeline__entry__time">7pm</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+            </div>
+            <div class="schedule__timeline__weeat__desc schedule__timeline__entry__desc">
+              <span>cena + brindis</span>
+              <span>riverside yacht club</span>
+              <span>riverside, ct</span>
+            </div>
+          </div>
+          <svg id="schedule_tray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.851 76.75">
+            <g id="noun_Food_2882419" transform="translate(1.75 -0.178)">
+              <g id="Path_35" data-name="Path 35" transform="translate(11.946 11.37)" fill="none">
+                <path d="M45.967,0C71.353,0,91.933,21.322,91.933,47.623H0C0,21.322,20.58,0,45.967,0Z" stroke="none"/>
+                <path d="M 45.96673583984375 3.499996185302734 C 40.24778366088867 3.499996185302734 34.70058059692383 4.660137176513672 29.47918319702148 6.948196411132812 C 24.42573547363281 9.16265869140625 19.88450622558594 12.33572006225586 15.98162841796875 16.37925910949707 C 12.07039642333984 20.43144416809082 8.998970031738281 25.15176582336426 6.8526611328125 30.40910530090332 C 5.065216064453125 34.78739166259766 3.985763549804688 39.38636779785156 3.630500793457031 44.12338256835938 L 88.30297088623047 44.12338256835938 C 87.94770812988281 39.38636779785156 86.86825561523438 34.78739166259766 85.080810546875 30.40910530090332 C 82.93450927734375 25.15176582336426 79.86307525634766 20.43144416809082 75.95184326171875 16.37925910949707 C 72.04896545410156 12.33572006225586 67.50773620605469 9.16265869140625 62.45429229736328 6.948196411132812 C 57.23289108276367 4.660137176513672 51.68568801879883 3.499996185302734 45.96673583984375 3.499996185302734 M 45.96673583984375 -3.814697265625e-06 C 71.35345458984375 -3.814697265625e-06 91.9334716796875 21.32172012329102 91.9334716796875 47.62338256835938 L 0 47.62338256835938 C 0 21.32172012329102 20.58000946044922 -3.814697265625e-06 45.96673583984375 -3.814697265625e-06 Z" stroke="none" fill="#242a40"/>
+              </g>
+              <path id="Path_36" data-name="Path 36" d="M-136.052-55c.405-11.467,13.867-19.086,17.7-19.3" transform="translate(165.071 100.985)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="3.5"/>
+              <path id="Path_37" data-name="Path 37" d="M-190.312-22.788H-74.961" transform="translate(190.312 80.483)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="3.5"/>
+              <path id="Path_38" data-name="Path 38" d="M-164.825-5.288l77.794-.044,10.667-17.416-98.931.136Z" transform="translate(183.87 80.466)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+              <g id="Ellipse_10" data-name="Ellipse 10" transform="translate(51.045 0.178)" fill="none" stroke="#242a40" stroke-width="3.5">
+                <ellipse cx="7" cy="6.5" rx="7" ry="6.5" stroke="none"/>
+                <ellipse cx="7" cy="6.5" rx="5.25" ry="4.75" fill="none"/>
+              </g>
+            </g>
+          </svg>
+          <svg id="schedule_disco" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.105 133.579">
+            <g id="Disco" transform="translate(4.6 2.3)">
+              <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(27 20.032)" fill="none" stroke="#242a40" stroke-width="4.6">
+                <ellipse cx="47.5" cy="50" rx="47.5" ry="50" stroke="none"/>
+                <ellipse cx="47.5" cy="50" rx="45.2" ry="47.7" fill="none"/>
+              </g>
+              <line id="Line_13" data-name="Line 13" y2="116.28" transform="translate(75.15)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_23" data-name="Path 23" d="M0,0C31.58,9,32.419,86.369,0,94.413" transform="translate(74.254 21.867)" fill="none" stroke="#242a40" stroke-width="4.6"/>
+              <path id="Path_24" data-name="Path 24" d="M22.851,0c-30.067,8.933-30.866,85.724,0,93.708" transform="translate(52.309 22.572)" fill="none" stroke="#242a40" stroke-width="4.6"/>
+              <line id="Line_14" data-name="Line 14" x2="91.872" transform="translate(27.882 69.127)" fill="none" stroke="#242a40" stroke-width="4.6"/>
+              <line id="Line_15" data-name="Line 15" x2="77.892" transform="translate(35.871 93.815)" fill="none" stroke="#242a40" stroke-width="4.6"/>
+              <line id="Line_16" data-name="Line 16" x2="77.892" transform="translate(35.871 44.439)" fill="none" stroke="#242a40" stroke-width="4.6"/>
+              <path id="Path_25" data-name="Path 25" d="M6659.619,11252.856l13.882-14.709" transform="translate(-6547.109 -11227.815)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_26" data-name="Path 26" d="M0,14.406,13.722,0" transform="translate(130.308 30.659) rotate(17)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_27" data-name="Path 27" d="M0,13.882,13.882,0" transform="translate(140.089 59.363) rotate(45)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_28" data-name="Path 28" d="M0,0,13.722,14.406" transform="translate(126.096 93.922) rotate(-17)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_29" data-name="Path 29" d="M6659.619,11238.147l13.882,14.709" transform="translate(-6545.777 -11124.83)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_30" data-name="Path 30" d="M6673.5,11252.856l-13.882-14.709" transform="translate(-6636.106 -11227.815)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_31" data-name="Path 31" d="M0,0,13.722,14.406" transform="translate(23.808 44.435) rotate(163)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_32" data-name="Path 32" d="M0,0,13.882,13.882" transform="translate(19.632 69.179) rotate(135)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_33" data-name="Path 33" d="M0,14.406,13.722,0" transform="translate(19.597 107.699) rotate(-163)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <path id="Path_34" data-name="Path 34" d="M6673.5,11238.147l-13.882,14.709" transform="translate(-6637.438 -11124.83)" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="4.6"/>
+              <rect id="Rectangle_23" data-name="Rectangle 23" width="25" height="6" rx="3" transform="translate(62 18.032)" fill="#242a40"/>
+            </g>
+          </svg>
+          <div class="schedule__timeline__weparty">
+            <div class="schedule__timeline__weparty__title schedule__timeline__entry__title">we party</div>
+            <div class="schedule__timeline__entry__line">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
+                <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
+              </svg>
+              <span class="schedule__timeline__entry__time">8pm</span>
+            </div>
+            <div class="schedule__timeline__weparty__desc schedule__timeline__entry__desc">
+              <span>música + baile</span>
+            </div>
+          </div>
+          <div id="schedule_line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="travel_accommodations" id="travel_accommodations">
+      <div class="travel_accommodations__contentwrapper">
+        <div class="travel_accommodations__map">
+          <div class="travel_accommodations__map__img">
+            <img src="marinando_photos/map.png" alt="A map of new york and connecticut with a path from jfk to the riverside yacht club">
+          </div>
+          <div class="travel_accommodations__map__airplaneinfo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.964 98.651">
+              <path id="Icon_ionic-md-airplane" data-name="Icon ionic-md-airplane" d="M91.464,68.6V59.539L55.229,35.987V10.441a7.249,7.249,0,0,0-14.494,0V35.987L4.5,59.539V68.6L40.735,57.728V83.455L29.865,90.521v7.066l18.118-3.624L66.1,97.586V90.521L55.229,83.455V57.728Z" transform="translate(-2.5 -1.375)" fill="none" stroke="#1e212c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+            </svg>
+            <span>AEROPUERTOS NYC</span>
+            <div>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/flights?hl=en#flt=./m/02_286.2020-07-07*/m/02_286..2020-07-11;c:USD;e:1;sd:1;t:f">google flights</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir//Riverside+Yacht+Club,+Club+Road,+Riverside,+CT/@41.0221715,-73.6278332,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c298e51982c4c7:0x75841ee9f332f3c8!2m2!1d-73.5928138!2d41.022112!3e0">google maps</a>
+            </div>
+          </div>
+        </div>
+        <div class="travel_accommodations__title">
+          <h1>viajar</h1>
+        </div>
+        <div class="travel_accommodations__hotel hotel1">
+          <div class="travel_accommodations__hotel__content">
+            <div>
+              <div>
+                <h3>Hoteles en la Zona</h3>
+                <h4>Nuestras Recomendaciones</h4>
+                <p>¡Hay muchos hoteles en la area que puedes reservar! Aquí te damos algunas recomendaciones de hoteles que nos gustan a nosotros, y algunos enlaces para ayudar en tu busqueda.</p>
+              </div>
+              <span>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/Connecticut?g2lb=2502548%2C4258168%2C4260007%2C4270442%2C4274032%2C4305595%2C4306835%2C4317915%2C4319921%2C4328159%2C4364504%2C4366684%2C4367952%2C4371335%2C4381263%2C4386665%2C4393965%2C4395590%2C4398672%2C4399106%2C4401769%2C4270859%2C4284970%2C4291517%2C4316256&hl=en&gl=us&un=1&ap=KigKEgkXD7QRnYFEQBHNuJTBoGZSwBISCUPpJR2ViERAEc24lAHtYVLAMAJajgEKBQisAhAAIgNVU0QqFgoHCOQPEAcYCRIHCOQPEAcYChgBKACwAQBYAWgBigEoChIJ1TiyI05-REARzbiUeZxnUsASEgk4813iRoVEQBHNuJS56GJSwJoBFhIUUml2ZXJzaWRlIFlhY2h0IENsdWKiARcKCC9tLzAxeDczEgtDb25uZWN0aWN1dJIBAiABaAA&q=hotels%20near%20riverside%20yacht%20club&rp=ogEUUml2ZXJzaWRlIFlhY2h0IENsdWI4AUAASAI&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIrAIQACIDVVNEKhYKBwjkDxAHGAkSBwjkDxAHGAoYASgAsAEAWAFoAYoBKAoSCRcPtBGdgURAEc24lMGgZlLAEhIJQ-klHZWIREARzbiUAe1hUsCaARYSFFJpdmVyc2lkZSBZYWNodCBDbHViogEXCggvbS8wMXg3MxILQ29ubmVjdGljdXSSAQIgAQ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
+                    <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                  </svg>
+                  Google Hotels
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.airbnb.com/s/Greenwich--CT--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&query=Greenwich%2C%20CT%2C%20United%20States&source=structured_search_input_header&search_type=autocomplete_click&place_id=ChIJly5MDxGYwokR4jAEYCeuMQg">
+                  <svg version="1.1" id="airbnb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="1 0 29 30" xml:space="preserve">
+                    <path style="fill: none;" class="st0" d="M16.2,23.8c-1.2-1.3-3.1-4.3-3.5-5.1c-0.3-0.7-0.6-1.4-0.7-2.2c-0.1-0.6-0.1-1.2,0.2-1.8c0.2-0.5,0.6-1,1.1-1.3
+                      c1.1-0.7,2.8-0.7,3.8,0.2c0.5,0.4,0.8,1.1,0.9,1.8c0.1,0.9-0.1,1.8-0.4,2.6c-0.8,1.8-2.5,4.6-3.8,5.7c-0.5,0.6-1.1,1.2-1.7,1.7
+                      c-0.9,0.8-2,1.5-3.2,1.7c-1,0.2-2.1,0.1-3-0.3c-1.1-0.5-1.9-1.5-2.2-2.7c-0.2-0.8-0.2-1.7,0.1-2.6c0.2-0.7,0.5-1.3,0.8-2
+                      c2-4.4,4.2-8.8,6.4-13.2c0.3-0.6,0.7-1.3,1-1.9c0.3-0.5,0.6-1,1.1-1.4c0.5-0.4,1.2-0.6,1.8-0.6c0.7,0,1.3,0.2,1.8,0.7
+                      c0.5,0.4,0.8,1,1.2,1.6c0.7,1.3,1.4,2.6,2,3.9c1.9,3.7,3.7,7.5,5.5,11.4c0.3,0.6,0.5,1.2,0.7,1.8c0.2,0.8,0.2,1.6,0,2.4l0,0
+                      c-0.3,1.1-1,2-2,2.5c-0.9,0.5-1.9,0.6-2.8,0.5c-1.2-0.2-2.3-0.8-3.3-1.6C17.4,25.1,16.8,24.5,16.2,23.8"/>
+                  </svg>
+                  Airbnb Hotels
+                </a>
+              </span>
+            </div>
+            <a href="https://www.jhousegreenwich.com/" target="_blank" rel="noopener noreferrer">
+              <img src="marinando_photos/hotels/20190708-j-house-exterior-1_orig.jpg" alt="" style="object-position: unset;">
+              <div>
+                <h3>J House</h3> 
+                <span>$$$</span>
+                <svg class="suitcase" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.127 99.932">
+                  <g id="noun_Suitcase_1429467" transform="translate(0.501 1.5)">
+                    <path id="Path_45" data-name="Path 45" d="M329.447,17.08c-.014-.024-.021-10.086,0-16.894.009-2.816,0-5.121,0-5.691a7.9,7.9,0,0,1,.217-2.157,6.176,6.176,0,0,1,5.806-4.628c3.826.008,5.7.02,8.053.022.618,0,1.353,0,2.193,0a6.126,6.126,0,0,1,5.826,4.47,13.3,13.3,0,0,1-2.835.135c-3.358.036-19.043,0-19.043,0h21.878s.231.066.263,1.633,0,23.11,0,23.11S329.467,17.115,329.447,17.08Z" transform="translate(-317.062 12.29)" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Path_46" data-name="Path 46" d="M294.677,96.09c-2.46,0-7.547,1.865-7.547,8.243s.005,43.574.005,47.346,3.439,7.495,7.22,7.495l30.229,0a7.706,7.706,0,0,0,7.648-7.561c0-3.437,0-40.884,0-47.3a7.81,7.81,0,0,0-7.887-8.253C321.578,96.062,297.137,96.09,294.677,96.09Z" transform="translate(-286.11 -66.696)"/>
+                    <path id="Path_47" data-name="Path 47" d="M286.854,107.358c11.341.511,10.124-10.8,8.723-11.057" transform="translate(-285.908 -66.871)"/>
+                    <path id="Path_48" data-name="Path 48" d="M420.646,95.582c-2.022,3.1-.013,11.609,8.481,10.942" transform="translate(-383.344 -66.076)"/>
+                    <path id="Path_49" data-name="Path 49" d="M.6,0S.317.034.319.03C-1.386,6.278,4,11.535,10.336,10.024" transform="matrix(-0.995, -0.105, 0.105, -0.995, 10.279, 92.486)"/>
+                    <path id="Path_50" data-name="Path 50" d="M1.168,12.185C-1.635,7.326.576.154,8.123,0" transform="translate(38.016 80.319) rotate(9)"/>
+                    <path id="Path_51" data-name="Path 51" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(6.068 86.714)"/>
+                    <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
+                  </g>
+                </svg> 
+                <p>Cerca a la fiesta pero un poco mas</p>
+              </div>
+            </a>
+            <a href="https://www.marriott.com/hotels/travel/stfcy-courtyard-stamford-downtown/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2&y_source=1_MTA5OTc0MC03MTUtbG9jYXRpb24uZ29vZ2xlX3dlYnNpdGVfb3ZlcnJpZGU=" target="_blank" rel="noopener noreferrer">
+              <img src="marinando_photos/hotels/202414829.jpg" alt="" >
+              <div>
+                <h3>Courtyard Marriot</h3>
+                <span>$$</span>
+                <svg class="suitcase" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.127 99.932">
+                  <g id="noun_Suitcase_1429467" transform="translate(0.501 1.5)">
+                    <path id="Path_45" data-name="Path 45" d="M329.447,17.08c-.014-.024-.021-10.086,0-16.894.009-2.816,0-5.121,0-5.691a7.9,7.9,0,0,1,.217-2.157,6.176,6.176,0,0,1,5.806-4.628c3.826.008,5.7.02,8.053.022.618,0,1.353,0,2.193,0a6.126,6.126,0,0,1,5.826,4.47,13.3,13.3,0,0,1-2.835.135c-3.358.036-19.043,0-19.043,0h21.878s.231.066.263,1.633,0,23.11,0,23.11S329.467,17.115,329.447,17.08Z" transform="translate(-317.062 12.29)" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Path_46" data-name="Path 46" d="M294.677,96.09c-2.46,0-7.547,1.865-7.547,8.243s.005,43.574.005,47.346,3.439,7.495,7.22,7.495l30.229,0a7.706,7.706,0,0,0,7.648-7.561c0-3.437,0-40.884,0-47.3a7.81,7.81,0,0,0-7.887-8.253C321.578,96.062,297.137,96.09,294.677,96.09Z" transform="translate(-286.11 -66.696)"/>
+                    <path id="Path_47" data-name="Path 47" d="M286.854,107.358c11.341.511,10.124-10.8,8.723-11.057" transform="translate(-285.908 -66.871)"/>
+                    <path id="Path_48" data-name="Path 48" d="M420.646,95.582c-2.022,3.1-.013,11.609,8.481,10.942" transform="translate(-383.344 -66.076)"/>
+                    <path id="Path_49" data-name="Path 49" d="M.6,0S.317.034.319.03C-1.386,6.278,4,11.535,10.336,10.024" transform="matrix(-0.995, -0.105, 0.105, -0.995, 10.279, 92.486)"/>
+                    <path id="Path_50" data-name="Path 50" d="M1.168,12.185C-1.635,7.326.576.154,8.123,0" transform="translate(38.016 80.319) rotate(9)"/>
+                    <path id="Path_51" data-name="Path 51" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(6.068 86.714)"/>
+                    <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
+                  </g>
+                </svg> 
+                <p>En el centro, con muchos restaurantes</p>
+              </div>
+            </a>
+            <a href="https://www.hilton.com/en/hotels/bdrsthf-hilton-stamford-hotel-and-executive-meeting-center/?SEO_id=GMB-HI-BDRSTHF" target="_blank" rel="noopener noreferrer">
+              <img src="marinando_photos/hotels/hf_entrance_5_675x359_FitToBoxSmallDimension_Center.jpg" alt="">
+              <div>
+                <h3>Hilton</h3>
+                <span>$</span>
+                <svg class="suitcase" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.127 99.932">
+                  <g id="noun_Suitcase_1429467" transform="translate(0.501 1.5)">
+                    <path id="Path_45" data-name="Path 45" d="M329.447,17.08c-.014-.024-.021-10.086,0-16.894.009-2.816,0-5.121,0-5.691a7.9,7.9,0,0,1,.217-2.157,6.176,6.176,0,0,1,5.806-4.628c3.826.008,5.7.02,8.053.022.618,0,1.353,0,2.193,0a6.126,6.126,0,0,1,5.826,4.47,13.3,13.3,0,0,1-2.835.135c-3.358.036-19.043,0-19.043,0h21.878s.231.066.263,1.633,0,23.11,0,23.11S329.467,17.115,329.447,17.08Z" transform="translate(-317.062 12.29)" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Path_46" data-name="Path 46" d="M294.677,96.09c-2.46,0-7.547,1.865-7.547,8.243s.005,43.574.005,47.346,3.439,7.495,7.22,7.495l30.229,0a7.706,7.706,0,0,0,7.648-7.561c0-3.437,0-40.884,0-47.3a7.81,7.81,0,0,0-7.887-8.253C321.578,96.062,297.137,96.09,294.677,96.09Z" transform="translate(-286.11 -66.696)"/>
+                    <path id="Path_47" data-name="Path 47" d="M286.854,107.358c11.341.511,10.124-10.8,8.723-11.057" transform="translate(-285.908 -66.871)"/>
+                    <path id="Path_48" data-name="Path 48" d="M420.646,95.582c-2.022,3.1-.013,11.609,8.481,10.942" transform="translate(-383.344 -66.076)"/>
+                    <path id="Path_49" data-name="Path 49" d="M.6,0S.317.034.319.03C-1.386,6.278,4,11.535,10.336,10.024" transform="matrix(-0.995, -0.105, 0.105, -0.995, 10.279, 92.486)"/>
+                    <path id="Path_50" data-name="Path 50" d="M1.168,12.185C-1.635,7.326.576.154,8.123,0" transform="translate(38.016 80.319) rotate(9)"/>
+                    <path id="Path_51" data-name="Path 51" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(6.068 86.714)"/>
+                    <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
+                  </g>
+                </svg> 
+                <p>Bueno para el bolsillo</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="travel_accommodations__hotel hotel2">
+          <div class="travel_accommodations__hotel__content">
+            <a class="carousel" target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">
+              <img id="car1" src="marinando_photos/google_earth/central_park_header.jpg" alt="">
+              <img id="car2" src="marinando_photos/google_earth/columbuscircle.jpg" alt="">
+              <img src="marinando_photos/google_earth/Smalls-Jazz-Club.jpg" alt="">
+              <img src="marinando_photos/google_earth/metart.jpg" alt="">
+              <img src="marinando_photos/google_earth/nypublic.jpg" alt="">
+              <img src="marinando_photos/google_earth/Tods.jpg" alt="">
+            </a>
+            <span id="carousel_prog"></span>
+            <script>
+              let pics = document.querySelectorAll(".carousel img")
+                  crsl = document.querySelector(".carousel"),
+                  cr1 = crsl.querySelector("#car1"),
+                  cr2 = crsl.querySelector("#car2"),
+                  prg = document.querySelector("#carousel_prog"),
+                  ipc = 0;
+
+              ipc++
+              setInterval(slide, 10000)
+              prg.classList.add("start");
+
+              function slide() {
+                cr1 = crsl.querySelector("#car1");
+                cr2 = crsl.querySelector("#car2");
+
+                cr1.style.right = "-100%";
+                cr2.style.right = "0";
+
+                setTimeout(function() {
+                  cr1.style = "";
+                  cr2.style = "";
+                  cr1.id = ""
+                  pics[ipc].id = "car1"
+                  ipc = (ipc < pics.length - 1)? ipc + 1: 0;
+                  pics[ipc].id = "car2"
+                  
+                }, 6000)
+
+              }
+            </script>
+            <div>
+              <h3 class="travel_accommodations__hotel__name">Lugares Interesantes</h3>
+              <h4 class="travel_accommodations__hotel__type">Google Earth</h4>
+              <p>Pensamos que podrian querer algunas recomendaciones para planiar su viaje. ¡Asi que creamos una guía de lugares por la zona que nos gustan a nosotros!</p>
+              <a class="cta" target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
+                  <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                </svg>
+                Check it out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="follow" id="follow">
+      <div class="follow__contentwrapper">
+        <div class="follow__feed">
+          <div class="follow__feed__prevw">
+            <div class="follow__feed__prevw__header">
+              <a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer" class="follow__feed__prevw__username">
+                <svg id="Ellipse_6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
+                  <circle data-name="Ellipse 6" cx="31.5" cy="31.5" r="31.5" fill="#161925"/>
+                </svg>
+                <span>marinando2021 • <span class="follow__feed__prevw__header__follow"> follow</span></span>
+              </a>
+            </div>
+            <a class="follow__feed__prevw__img" href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">
+              <img src="marinando_photos/07d47bbb-9fa8-4e60-bdad-f49685cca6d8.JPG" alt="">
+            </a>
+            <svg class="Icon_awesome-heart" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40.888 35.777" onclick="like(this)">
+              <path data-name="Icon awesome-heart" d="M36.918,4.694a10.92,10.92,0,0,0-14.9,1.086L20.444,7.4,18.87,5.78a10.92,10.92,0,0,0-14.9-1.086,11.467,11.467,0,0,0-.791,16.6L18.631,37.252a2.5,2.5,0,0,0,3.618,0L37.7,21.3a11.46,11.46,0,0,0-.783-16.6Z" transform="translate(1.3 -0.248), scale(0.91)"/>
+            </svg>
+            <script>
+              function like(el) {
+                if (el.id == "liked") {
+                  el.id = ""
+                } else {
+                  el.id = "liked";
+                }
+                
+              }
+            </script>
+            <p>Les gusta a <span>TODOS</span> y <span>10 personas más</span></p>
+            <p><a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">marinando2021</a> Siganos en Instagram para ver fotos de nosotros y nuestras taradeces</p>
+          </div>
+          <img class="collage1" src="marinando_photos/Collage1.jpg" alt="">
+          <picture>
+            <source media="(max-width: 519px)" srcset="marinando_photos/Collage2-XL.jpg">
+            <source media="(max-width: 777px)" srcset="marinando_photos/Collage2-L.jpg">
+            <img class="collage2" src="marinando_photos/Collage2.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="registry" id="registry">
+      <div class="registry__title">
+        <span>Nuestro Registro de Boda</span>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit laboriosam, officia fuga repellat itaque iure corrupti sequi nesciunt optio architecto.</p>
+      </div>
+      <ul class="registry__list">
+        <li><a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="marinando_photos/registry_logos/amazon-logo.svg" alt="">
+        </a></li>
+        <li><a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="marinando_photos/registry_logos/bbb-logo.svg" alt="">
+        </a></li>
+        <li><a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="marinando_photos/registry_logos/potbarn-logo.svg" alt="">
+        </a></li>
+        <li><a href="http://" target="_blank" rel="noopener noreferrer">
+          <img src="marinando_photos/registry_logos/willson-logo.svg" alt="">
+        </a></li>
+      </ul>
+    </div>
+    <div class="contact" id="contact">
+      <div class="contact__dropbox">
+        <a id="google_photos" href="https://photos.app.goo.gl/35GeJz7AwHAFNZ7s7" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <path id="red" d="M15 1 L15 10 Q15 15 20 15 L22 15 L22 8 L16.5 13.5 L22 8 Z"/>
+            <path id="blue"  d="M29 15 L20 15 Q15 15 15 20 L15 22 L22 22 L16.5 16.5 L22 22 Z"/>
+            <path id="green" d="M15 29 L15 20 Q15 15 10 15 L8 15 L8 22 L13.5 16.5 L8 22 Z"/>
+            <path id="yellow" d="M1 15 L10 15 Q15 15 15 10 L15 8 L8 8 L13.5 13.5 L8 8 Z"/>
+          </svg>
+        </a>
+        <svg id="wind" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 30">
+          <path class="gust1" d="M2 10 c0 3 2 5 5 5 c10 1 17 -10 60 -10 h20"/>
+          <path class="gust2" d="M4 6 c0 7 7 5.5 11 4 s6 -2 10 -4 c2.5 -1.5 1 -5 -2 -4"/>
+          <path class="gust3" d="M58 8 h20 c4 0 4 4 0 4"/>
+        </svg>
+        <span>tienes fotos para nosotros?<br>mandalos aquí</span>
+        <script src="scripts/contact_wind.js"></script>
+      </div>
+      <span>
+        <a href="/index.html?tran=0">English</a>
+        <a href="/index_spanish.html?tran=0">Español</a>
+      </span>
+      <div class="contact__info">
+        <span class="contact__info__topic">contact us</span>
+        <span class="contact__info__mail">
+          <a href="mailto:marinando2021@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 23">
+              <path d="M2 5 c0 -2 1 -3 3 -3 H25 c2 0 3 1 3 3 v13 c0 2 -1 3 -3 3 H5 c-2 0 -3 -1 -3 -3 Z M3 3 L15 12 L27 3"/>
+            </svg>
+            marinando2021@gmail.com
+          </a>
+        </span>
+        <span class="contact__info__topic">se le olvido rsvp?</span>
+        <a class="contact__info__rsvp" href="index.html" name="invitation" value="1" onclick="setCookie()">hazlo aquí!</a>
+        <script>
+          function setCookie() {
+            document.cookie = 'form=1'
+          }
+        </script>
+      </div>
+    </div>
+    <script src="scripts/calendar.js"></script>
+  </main>
+</body>
+</html>

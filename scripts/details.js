@@ -13,23 +13,9 @@ $("#tab").one("mousedown", function() {
     cancel: ".details__date__detes__basic, .details__date__detes__countdown",
     containment: "parent"
   });
-  $( ".details__date__detes .content" ).draggableTouch({
-    axis: "x",
-    cancel: ".details__date__detes__basic, .details__date__detes__countdown",
-    containment: "parent"
-  });
 });
 $("#tab").one("touchstart", function() {
-  $( ".details__date__detes .content" ).draggable({
-    axis: "x",
-    cancel: ".details__date__detes__basic, .details__date__detes__countdown",
-    containment: "parent"
-  });
-  $( ".details__date__detes .content" ).draggableTouch({
-    axis: "x",
-    cancel: ".details__date__detes__basic, .details__date__detes__countdown",
-    containment: "parent"
-  });
+  $("#tab").mouseout(tap)
 });
 
 function tap() {
@@ -50,7 +36,6 @@ function tap() {
     
   }
 }
-
 $("#tab").mouseup(tap)
 
 $("#tab").bind("touchend", tap)

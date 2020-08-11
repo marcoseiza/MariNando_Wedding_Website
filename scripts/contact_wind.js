@@ -1,5 +1,5 @@
 function delay (URL) {
   window.setTimeout( function() { 
-    window.open(URL, '_blank');
+    window.open(URL);
   }, 1000 );
 }

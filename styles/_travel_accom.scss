@@ -5,14 +5,14 @@
     position: relative;
     display: grid;
     grid-template-columns: 3fr minmax(30vw, 2fr);
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr 1fr;
     gap: 40px;
     padding: 0 40px;
   }
 
   a {
     margin-top: 1em;
-    border: 0.1em solid color(main_text);
+    border: 1px solid color(main_text);
     color: color(main_text);
     text-decoration: none;
     text-transform: uppercase;
@@ -38,8 +38,10 @@
       align-items: center;
       justify-content: center;
       img {
-        height: 95%;
-        max-width: 95%;
+        width: 100%;
+        height: 100%;
+        image-rendering: crisp-edges;
+        object-fit: scale-down;
       }
     }
 
@@ -105,19 +107,27 @@
 
     .travel_accommodations__hotel__content {
       height: 100%;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
 
+      > * {
+        padding: 3em;
+      }
+      
       > div {
-        padding: 2em;
+        max-height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        > div {
+          margin-bottom: 1em;
+        }
+
         h3 {
           color: color(secondary);
-          font-size: 2.3em;
+          font-size: 3em;
+          font-weight: 400;
           margin: 0;
+          margin-left: -0.05em;
         }
         h4 {
           text-transform: uppercase;
@@ -128,52 +138,85 @@
         }
         p {
           margin-top: 0.6em;
-          font-size: 1.7em;
+          font-size: 1.5em;
         }
+
+        span {
+          display: flex;
+          // justify-content: center;
+        }
+
         a {
-          align-self: center;
-          font-weight: 400;
           margin: 0;
-          padding: 0.4em 0.6em;
           background: none;
           display: flex;
           align-items: center;
           justify-content: center;
+          white-space: nowrap;
           svg {
             fill: color(main_text);
             width: 1em;
             margin-right: 0.5em;
+            &#airbnb {
+              stroke: color(main_text);
+              stroke-width: 4;
+              width: 1.2em;
+            }
           }
-          &:hover svg{
-            fill: lighten(color(main_text), 30);
+          &:hover, &:active, &:focus {
+            svg, svg#airbnb {
+              fill: lighten(color(main_text), 30);
+              stroke: lighten(color(main_text), 30);
+            }
+          }
+          &:first-of-type {
+            margin-right: 1em;
           }
         }
       }
 
       > a {
+        overflow: hidden;
+        height: 6.5em;
+        background-color: color(primary);
         font-size: unset;
         margin: 0;
-        padding: 2em;
         border: none;
         position: relative;
-        transition: box-shadow 50ms ease-in-out;
-        display: grid;
-        grid-template-rows: 2fr 1fr;
-        gap: 1.5em;
+        display: flex;
+        flex-direction: column;
         
         &:hover {
           cursor: pointer;
           color: inherit;
           img {
-            filter: brightness(80%);
+            opacity: 1;
           }
         }
 
         > div {
-          height: 40%;
           position: relative;
           display: flex;
           flex-direction: column;
+        }
+
+        img {
+          mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+          opacity: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 60%;
+          height: 100%;
+          object-fit: cover;
+          object-position: bottom;
+          transition: opacity 200ms ease-in-out;
+        }
+
+        @media (pointer: coarse) {
+          img {
+            opacity: 1;
+          }
         }
 
         h3 {
@@ -188,14 +231,9 @@
           opacity: 0.5;
           margin: 0.2em 0;
         }
-        img {
-          align-self: stretch;
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-          transition: filter 50ms ease-in-out;
-        }
+        
         p {
+          overflow: hidden;
           text-transform: initial;
           margin: 0;
           font-size: 1.5em;
@@ -210,7 +248,8 @@
           fill: none;
           stroke: color(main_text);
         }
-        &:nth-of-type(1), &:nth-of-type(2) {
+
+        &:nth-of-type(1), &:nth-of-type(3) {
           background-color: color(secondary);
           color: white;
           svg {
@@ -222,59 +261,120 @@
   }
 
   .hotel2 {
+    height: 100%;
     background-color: color(primary);
     position: relative;
-    display: flex; align-items: center;
+    display: flex; 
+    align-items: flex-start;
     color: color(main_text);
 
     .travel_accommodations__hotel__content {
+      position: relative;
+      box-sizing: border-box;
       height: 100%;
-      margin: 5em 0;
-      padding: 0 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    img {
-      width: 3.5em;
-    }
-
-    svg {
-      width: 5em;
-      fill: color(main_text);
-    }
-
-    .suitcase {
-      width: 4em;
-      fill: none;
-      stroke: color(main_text);
-      stroke-width: 3;
-    }
-
-    .travel_accommodations__hotel__name {
-      font-size: 4em;
-      margin-top: 0.22em;
-    }
-
-    .travel_accommodations__hotel__type, 
-    .travel_accommodations__hotel__address, 
-    .travel_accommodations__hotel__description {
+      text-align: left;
       display: flex; flex-direction: column;
-      font-size: 1.8em;
-      font-weight: 300;
-      margin-top: 0.6em;
+      align-items: flex-start;
+
+      div {
+        padding: 3em;
+        padding-top: 2.4em;
+        background: color(primary);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
-    .travel_accommodations__hotel__type {
+    .carousel {
+      font-size: unset;
+      border: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 100%;
+      height: 60%;
+      overflow: hidden;
+      background-color: black;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        opacity: 0;
+        transition: right 700ms;
+
+        &#car1 {
+          opacity: 1;
+          right: 0;
+        }
+        &#car2 {
+          opacity: 1;
+          right: 100%;
+        }
+      }
+
+      &:hover #car1, &:focus #car1,
+      &:hover #car2, &:focus #car2  {
+        opacity: 0.8;
+      }
+    }
+
+    span {
+      height: 0.6em;
+      background-color: color(secondary);
+
+      &.start {
+        animation: prg 10s linear infinite;
+      }
+    }
+
+    @keyframes prg {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    
+
+    h3 {
+      color: color(secondary);
+      font-size: 3em;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    h4 {
       text-transform: uppercase;
+      font-size: 1.4em;
+      margin: 0;
+      margin-top: 0.3em;
       font-weight: 200;
     }
+    p {
+      margin-top: 0.6em;
+      font-size: 1.5em;
+    }
 
-    .travel_accommodations__hotel__description {
-      padding: 0 2em;
+    .cta {
+      margin-top: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      svg {
+        fill: color(main_text);
+        width: 1em;
+        margin-right: 0.5em;
+      }
+      &:hover, &:active, &:focus {
+        svg {
+          fill: lighten(color(main_text), 30); 
+        }
+      }
     }
   }
 }
@@ -285,7 +385,7 @@
   }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
   .travel_accommodations__contentwrapper {
     font-size: 7px;
   }
@@ -295,7 +395,7 @@
   .travel_accommodations {
 
     &__contentwrapper {
-      grid-template-rows: 120vw auto;
+      grid-template-rows: 120vw 1fr;
       grid-template-columns: 1fr 1fr;
     }
     
@@ -329,16 +429,21 @@
         }
       }
     }
+
     &__title {
       font-size: 6px;
       grid-area: 1 / 1 / -1 / -1;
       position: absolute;
       padding: 5em;
     }
+
+    &__hotel {
+      font-size: 8px;
+    }
   }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 900px) {
   .travel_accommodations {
 
     &__contentwrapper {
@@ -349,25 +454,6 @@
     &__map {
       &__airplaneinfo {
         font-size: 6px;
-      }
-    }
-
-    .hotel2 {
-      background: color(secondary);
-      color: white;
-
-      svg {
-        fill: none;
-        stroke: white;
-        stroke-width: 20;
-        path {
-          transform: translate(10px, 5px);
-        }
-      }
-
-      a {
-        color: white;
-        border-color: white;
       }
     }
 
