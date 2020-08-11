@@ -1210,6 +1210,7 @@ header #nav {
     -ms-grid-rows: 86vw 370px;
         grid-template-rows: 86vw 370px;
     padding: 0;
+    padding-bottom: 40px;
   }
   .home__img {
     width: 80vw;
@@ -1218,6 +1219,12 @@ header #nav {
   }
   .home__names, .home__action {
     width: 70vw;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .home__contentwrapper {
+    padding-bottom: 20px;
   }
 }
 

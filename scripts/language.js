@@ -8,7 +8,7 @@ if (URLparam.get("tran") != "0") {
   if (en) {
     window.location.href = "/index?tran=0";
   } else {
-    window.location.href = "/index_spanish?tran=0";
+    window.location.href = "/spanish?tran=0";
   }
 }
 
