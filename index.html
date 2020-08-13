@@ -13,11 +13,14 @@
   <script src="scripts/language.js"></script>
 </head>
 <body>
+
   <script>
     var formAction = "/";
   </script>
   <script src="scripts/player.js"></script>
   <link rel="stylesheet" href="styles/player.css">
+
+
   <header>
     <a href="#home" id="nav_names">mariana + fernando</a>
     <nav>
@@ -88,6 +91,8 @@
       </svg>
     </a>
   </div>
+
+
   <main>
     <div class="home" id="home">
       <div class="home__contentwrapper">
@@ -203,9 +208,26 @@
               greenwich, ct</span>
             </div>
           </div>
-          <svg id="schedule_rings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-            <circle cx="18" cy="12" r="10"/>
-            <circle cx="12" cy="18" r="10"/>
+          <svg id="schedule_rings" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+            <defs>
+              <clipPath id="clip-path">
+                <rect class="cls-1" x="16.3903" y="7.9803" width="5.7466" height="5.7466"/>
+              </clipPath>
+              <clipPath id="clip-path-2">
+                <rect class="cls-1" x="7.6056" y="16.5077" width="6.219" height="6.219"/>
+              </clipPath>
+            </defs>
+            <circle class="cls-2" cx="17.7583" cy="17.7583" r="7.4478"/>
+            <g class="cls-3">
+              <circle class="cls-4" cx="12.2417" cy="12.2417" r="7.4478"/>
+            </g>
+            <circle class="cls-2" cx="12.2417" cy="12.2417" r="7.4478"/>
+            <g class="cls-5">
+              <g>
+                <circle class="cls-4" cx="17.7583" cy="17.7583" r="7.4478"/>
+                <circle class="cls-2" cx="17.7583" cy="17.7583" r="7.4478"/>
+              </g>
+            </g>
           </svg>
           <svg id="schedule_champagne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.267 117.701">
             <g id="noun_Champagne_936670" transform="translate(-1.112 1.907)">
@@ -575,12 +597,14 @@
         </script>
         <span class="contact__info__topic">language</span>
         <span class="contact__info__language contact__info__link">
-          <a href="/index?tran=0">English</a>
-          <a href="/spanish?tran=0">Español</a>
+          <a href="/?tran=0">English</a>
+          <a href="/spanish.html?tran=0">Español</a>
         </span>
       </div>
     </footer>
     <script src="scripts/calendar.js"></script>
   </main>
+
+  
 </body>
 </html>

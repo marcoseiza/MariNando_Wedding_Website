@@ -137,15 +137,31 @@
     }
 
     #schedule_rings {
+      transform: translateY(-25%);
       stroke: color(main_text);
       fill: none;
-      width: 9em;
-      stroke-width: 1.2;
+      width: 11em;
+      stroke-width: 1;
+      .cls-1 {
+        fill: none;
+      }
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        stroke: color(primary);
+        stroke-width: 3;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
     }
 
     #schedule_champagne {
       width: 5.5em; 
-      transform: scale(1.2);
+      transform: scale(1.2) translateY(-25%);
     }
 
     #schedule_tray {
@@ -155,7 +171,7 @@
 
     #schedule_disco {
       width: 12em;
-      transform: scale(0.9);
+      transform: scale(0.9) translateY(-16%);
     }
   }
 }

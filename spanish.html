@@ -13,10 +13,18 @@
   <script src="scripts/language.js"></script>
 </head>
 <body>
+
+  <script>
+    var formAction = "/";
+  </script>
+  <script src="scripts/player.js"></script>
+  <link rel="stylesheet" href="styles/player.css">
+
+
   <header>
     <a href="#home" id="nav_names">mariana + fernando</a>
     <nav>
-      <li><a href="#home" id="link_home" >início</a></li>
+      <li><a href="#home" id="link_home">inicio</a></li>
       <li><a href="#details" id="link_details">detalles</a></li>
       <li><a href="#travel_accommodations" id="link_travel_accommodations">viajar</a></li>
       <li><a href="#follow" id="link_follow">instagram</a></li>
@@ -42,7 +50,7 @@
           <line x1="38" y1="2" x2="2" y2="38"/>
         </svg>
       </div>
-      <li><a href="#home" id="link_home" >início</a></li>
+      <li><a href="#home" id="link_home">inicio</a></li>
       <li><a href="#details" id="link_details">detalles</a></li>
       <li><a href="#travel_accommodations" id="link_travel_accommodations">viajar</a></li>
       <li><a href="#follow" id="link_follow">instagram</a></li>
@@ -83,115 +91,8 @@
       </svg>
     </a>
   </div>
-  <div class="player_shadow">
-    <input type="checkbox" name="rsvp" id="rsvp_checkbox">
-    <div class="player">
-      <div class="player__content">
-        <span>mariana + fernando</span>
-        <iframe id="media_player" src="https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <script>
-          let video_links = ['https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j', 'https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xelnAuTR1dwP_jXRoWLEAZuy']
-          document.getElementById('media_player').src = video_links[Math.floor(Math.random() * video_links.length)];
-        </script>
-        <button id="player_button">
-          <div class="button_content">
-            <div class="calendar_icon">
-              <span id="date_form">14</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
-                <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.98)">
-                  <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
-                  <path id="Path_4" data-name="Path 4" class="cls-1" d="M24,3V19.788" transform="translate(18.95 -3)"/>
-                  <path id="Path_5" data-name="Path 5" class="cls-1" d="M12,3V19.788" transform="translate(4.519 -3)"/>
-                  <path id="Path_6" data-name="Path 6" class="cls-1" d="M4.5,15H63.97" transform="translate(-4.5 13.221)"/>
-                </g>
-              </svg>
-            </div>
-            <span>anotalo</span>
-          </div>
-          <div class="button_menu">
-            <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
-              <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 1000 1187.198" version="1.1"  id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="Apple_1998.svg">
-                <path d="m 979.04184,925.18785 c -17.95397,41.47737 -39.20563,79.65705 -63.82824,114.75895 -33.56298,47.8528 -61.04356,80.9761 -82.22194,99.3698 -32.83013,30.192 -68.00529,45.6544 -105.67203,46.5338 -27.04089,0 -59.6512,-7.6946 -97.61105,-23.3035 -38.08442,-15.5358 -73.08371,-23.2303 -105.08578,-23.2303 -33.56296,0 -69.55888,7.6945 -108.06101,23.2303 -38.5608,15.6089 -69.62484,23.7432 -93.37541,24.5493 -36.12049,1.5389 -72.1237,-14.3632 -108.06101,-47.7796 -22.93711,-20.0059 -51.62684,-54.3017 -85.99592,-102.8874 C 92.254176,984.54592 61.937588,924.38175 38.187028,855.7902 12.750995,781.70252 0,709.95986 0,640.50361 0,560.94181 17.191859,492.32094 51.626869,434.81688 78.689754,388.62753 114.69299,352.19192 159.75381,325.44413 c 45.06086,-26.74775 93.74914,-40.37812 146.18212,-41.25019 28.68971,0 66.3125,8.8744 113.06613,26.31542 46.62174,17.49964 76.55727,26.37404 89.68198,26.37404 9.8124,0 43.06758,-10.37669 99.4431,-31.06405 53.31237,-19.18512 98.30724,-27.12887 135.16787,-23.99975 99.8828,8.06098 174.92313,47.43518 224.82789,118.37174 -89.33023,54.12578 -133.51903,129.93556 -132.63966,227.18753 0.8061,75.75115 28.28668,138.78795 82.2952,188.8393 24.47603,23.23022 51.81008,41.18421 82.22186,53.93522 -6.59525,19.12648 -13.557,37.44688 -20.95846,55.03446 z M 749.96366,23.751237 c 0,59.37343 -21.69138,114.810233 -64.92748,166.121963 -52.17652,60.99961 -115.28658,96.24803 -183.72426,90.68597 -0.87204,-7.12298 -1.37769,-14.61967 -1.37769,-22.49743 0,-56.99843 24.81315,-117.99801 68.87738,-167.873453 21.99909,-25.25281 49.978,-46.25018 83.90738,-63.00018 C 686.57507,10.688027 718.59913,1.5631274 748.71783,5.2734376e-4 749.59727,7.9378274 749.96366,15.875627 749.96366,23.750467 Z" id="path4" inkscape:connector-curvature="0"/>
-              </svg>
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://calendar.google.com/calendar/r/eventedit?text=Mariana+and+Fernando%27s+Wedding+Day&dates=20210814/20210815&details=For+more+details,+vist+our+website:+https://www.marinando.com&location=Riverside,+Greenwich,+CT,+USA">            
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-                <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
-              </svg>
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="outlook_calendar.html">
-              <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-2.61977004 -2.61977004 92.56520808 92.83416708" id="svg8375">
-                <defs id="defs8377" />
-                <path d="M 0,12.40183 35.68737,7.5416 35.70297,41.96435 0.03321,42.16748 z m 35.67037,33.52906 0.0277,34.45332 -35.66989,-4.9041 -0.002,-29.77972 z M 39.99644,6.90595 87.31462,0 l 0,41.527 -47.31818,0.37565 z M 87.32567,46.25471 87.31457,87.59463 39.9964,80.91625 39.9301,46.17767 z" id="path13" />
-              </svg>
-            </a>
-          </div>
-        </button>
-        <label for="rsvp_checkbox" id="rsvp"><span></span>
-          <svg id="rsvp_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339">
-            <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
-              <path id="Path_9" data-name="Path 9" d="M18,7.5V107.839" transform="translate(32.169 -7.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-              <path id="Path_10" data-name="Path 10" d="M107.839,18,57.669,68.169,7.5,18" transform="translate(-7.5 32.169)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-            </g>
-          </svg>
-        </label>
-      </div>
-      <div class="player__rsvp">
-        <form action="index.html" method="POST">
-          <span>
-            ¡queremos seguir en contacto!
-          </span>
-          <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="rsvp_name" id="rsvp_name" placeholder="NOMBRE *" required>
-          <input type="email" name="rsvp_email" id="rsvp_email" placeholder="EMAIL *" required>
-          <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="rsvp_phone" id="rsvp_phone" placeholder="TELEFONO">
-          <input type="text" pattern="[0-9a-zA-z\s.,\-#']+" name="rsvp_address" id="rsvp_address" placeholder="DIRECCIÓN">
-          <button id="rsvp_submit">Enviar
-            <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
-              <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
-                <path id="Path_9" data-name="Path 9" d="M18,7.5V107.839" transform="translate(32.169 -7.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-                <path id="Path_10" data-name="Path 10" d="M107.839,18,57.669,68.169,7.5,18" transform="translate(-7.5 32.169)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-              </g>
-            </svg>
-          </button>
-          <script>
-            function readCookie(name) {
-                var nameEQ = name + "=";
-                var ca = document.cookie.split(';');
-                for(var i=0;i < ca.length;i++) {
-                    var c = ca[i];
-                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-                }
-                return null;
-            }
 
-            function eraseCookie(name) {
-              document.cookie = name + '=';
-            }
 
-            $("#rsvp_submit").click(function() {
-              eraseCookie("form")
-              window.setTimeout(function () {
-                $("#rsvp_submit").submit();
-              }, 300);
-            });
-
-            $("#rsvp_submit").touchstart(function() {
-              eraseCookie("form")
-              window.setTimeout(function () {
-                $("#rsvp_submit").submit();
-              }, 300);
-            });
-          </script>
-        </form>
-      </div>
-    </div>
-  </div>
-  <script>
-    if (readCookie('form') != 1) {
-      document.querySelector('.player_shadow').style.display = 'none';
-    }
-  </script>
   <main>
     <div class="home" id="home">
       <div class="home__contentwrapper">
@@ -203,7 +104,7 @@
         </div>
         <div class="home__action">
           <div class="home__action__sendyourlove">
-            <span>14 AGOSOTO, 2021<br><span>Riverside, CT</span></span>
+            <span>14 AGOSTO, 2021<br><span>Riverside, CT</span></span>
           </div>
           <div class="home__action__img">
             <img src="marinando_photos/d69f5d12-e31d-4b84-89e0-ba3b798db5a8.JPG" alt="Picture of Mariana and Fernando">
@@ -223,7 +124,7 @@
           <div class="details__date__detes">
             <div class="content">
               <div class="details__date__detes__basic">
-                <h3>14 Ago, 2021</h3>
+                <h3>AGO 14, 2021</h3>
                 <h3>riverside, ct</h3>
               </div>
               <div class="details__date__detes__countdown">
@@ -269,7 +170,7 @@
                   </g>
                 </svg>
               </div>
-              <span>anotalo</span>
+              <span>anótalo</span>
             </div>
             <div class="button_menu">
               <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
@@ -292,9 +193,9 @@
           </button>
         </div>
         <div class="schedule__timeline">
-          <span class="schedule__timeline__wii">* WE, NOT Wii</span>
+          <!-- <span class="schedule__timeline__wii">* WE, NOT Wii</span> -->
           <div class="schedule__timeline__wedo">
-            <div class="schedule__timeline__wedo__title schedule__timeline__entry__title">we do</div>
+            <div class="schedule__timeline__wedo__title schedule__timeline__entry__title">sí quiero</div>
             <div class="schedule__timeline__entry__line">
               <span class="schedule__timeline__entry__time">3pm</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
@@ -302,14 +203,31 @@
               </svg>
             </div>
             <div class="schedule__timeline__wedo__desc schedule__timeline__entry__desc">
-              <span>casamiento con misa</span>
-              <span>st michael the<br>archangel church</span>
-              <span>greenwich, ct</span>
+              casamiento + misa<br>
+              <span>st michael the<br>archangel church<br>
+              greenwich, ct</span>
             </div>
           </div>
-          <svg id="schedule_rings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-            <circle cx="18" cy="12" r="10"/>
-            <circle cx="12" cy="18" r="10"/>
+          <svg id="schedule_rings" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+            <defs>
+              <clipPath id="clip-path">
+                <rect class="cls-1" x="16.3903" y="7.9803" width="5.7466" height="5.7466"/>
+              </clipPath>
+              <clipPath id="clip-path-2">
+                <rect class="cls-1" x="7.6056" y="16.5077" width="6.219" height="6.219"/>
+              </clipPath>
+            </defs>
+            <circle class="cls-2" cx="17.7583" cy="17.7583" r="7.4478"/>
+            <g class="cls-3">
+              <circle class="cls-4" cx="12.2417" cy="12.2417" r="7.4478"/>
+            </g>
+            <circle class="cls-2" cx="12.2417" cy="12.2417" r="7.4478"/>
+            <g class="cls-5">
+              <g>
+                <circle class="cls-4" cx="17.7583" cy="17.7583" r="7.4478"/>
+                <circle class="cls-2" cx="17.7583" cy="17.7583" r="7.4478"/>
+              </g>
+            </g>
           </svg>
           <svg id="schedule_champagne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.267 117.701">
             <g id="noun_Champagne_936670" transform="translate(-1.112 1.907)">
@@ -326,7 +244,7 @@
             </g>
           </svg>
           <div class="schedule__timeline__wetoast">
-            <div class="schedule__timeline__wetoast__title schedule__timeline__entry__title">we toast</div>
+            <div class="schedule__timeline__wetoast__title schedule__timeline__entry__title">sí bebo</div>
             <div class="schedule__timeline__entry__line">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
                 <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
@@ -334,11 +252,11 @@
               <span class="schedule__timeline__entry__time">5pm</span>
             </div>
             <div class="schedule__timeline__wetoast__desc schedule__timeline__entry__desc">
-              <span>aperativos + cóctels</span>
+              aperitivos + cócteles
             </div>
           </div>
           <div class="schedule__timeline__weeat">
-            <div class="schedule__timeline__weeat__title schedule__timeline__entry__title">we eat</div>
+            <div class="schedule__timeline__weeat__title schedule__timeline__entry__title">sí como</div>
             <div class="schedule__timeline__entry__line">
               <span class="schedule__timeline__entry__time">7pm</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
@@ -346,9 +264,9 @@
               </svg>
             </div>
             <div class="schedule__timeline__weeat__desc schedule__timeline__entry__desc">
-              <span>cena + brindis</span>
-              <span>riverside yacht club</span>
-              <span>riverside, ct</span>
+              cena + brindis<br>
+              <span>riverside yacht club<br>
+              riverside, ct</span>
             </div>
           </div>
           <svg id="schedule_tray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.851 76.75">
@@ -392,7 +310,7 @@
             </g>
           </svg>
           <div class="schedule__timeline__weparty">
-            <div class="schedule__timeline__weparty__title schedule__timeline__entry__title">we party</div>
+            <div class="schedule__timeline__weparty__title schedule__timeline__entry__title">sí bailo</div>
             <div class="schedule__timeline__entry__line">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 2" >
                 <line id="Line_17" data-name="Line 17" x1="1" y1="1" x2="80" y2="1" fill="none" stroke="#242a40" stroke-linecap="round" stroke-width="1" stroke-dasharray="3.5"/>
@@ -431,9 +349,9 @@
           <div class="travel_accommodations__hotel__content">
             <div>
               <div>
-                <h3>Hoteles en la Zona</h3>
-                <h4>Nuestras Recomendaciones</h4>
-                <p>¡Hay muchos hoteles en la area que puedes reservar! Aquí te damos algunas recomendaciones de hoteles que nos gustan a nosotros, y algunos enlaces para ayudar en tu busqueda.</p>
+                <h3>Hotels en la Zona</h3>
+                <h4>Nuestras recomendaciones</h4>
+                <p>Te puedes quedar en NYC, a menos de 1 hora en tren, pero si prefieres algo más cercano, aquí van algunas recomendaciones.</p>
               </div>
               <span>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/Connecticut?g2lb=2502548%2C4258168%2C4260007%2C4270442%2C4274032%2C4305595%2C4306835%2C4317915%2C4319921%2C4328159%2C4364504%2C4366684%2C4367952%2C4371335%2C4381263%2C4386665%2C4393965%2C4395590%2C4398672%2C4399106%2C4401769%2C4270859%2C4284970%2C4291517%2C4316256&hl=en&gl=us&un=1&ap=KigKEgkXD7QRnYFEQBHNuJTBoGZSwBISCUPpJR2ViERAEc24lAHtYVLAMAJajgEKBQisAhAAIgNVU0QqFgoHCOQPEAcYCRIHCOQPEAcYChgBKACwAQBYAWgBigEoChIJ1TiyI05-REARzbiUeZxnUsASEgk4813iRoVEQBHNuJS56GJSwJoBFhIUUml2ZXJzaWRlIFlhY2h0IENsdWKiARcKCC9tLzAxeDczEgtDb25uZWN0aWN1dJIBAiABaAA&q=hotels%20near%20riverside%20yacht%20club&rp=ogEUUml2ZXJzaWRlIFlhY2h0IENsdWI4AUAASAI&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&hrf=CgUIrAIQACIDVVNEKhYKBwjkDxAHGAkSBwjkDxAHGAoYASgAsAEAWAFoAYoBKAoSCRcPtBGdgURAEc24lMGgZlLAEhIJQ-klHZWIREARzbiUAe1hUsCaARYSFFJpdmVyc2lkZSBZYWNodCBDbHViogEXCggvbS8wMXg3MxILQ29ubmVjdGljdXSSAQIgAQ">
@@ -452,7 +370,7 @@
                       c0.5,0.4,0.8,1,1.2,1.6c0.7,1.3,1.4,2.6,2,3.9c1.9,3.7,3.7,7.5,5.5,11.4c0.3,0.6,0.5,1.2,0.7,1.8c0.2,0.8,0.2,1.6,0,2.4l0,0
                       c-0.3,1.1-1,2-2,2.5c-0.9,0.5-1.9,0.6-2.8,0.5c-1.2-0.2-2.3-0.8-3.3-1.6C17.4,25.1,16.8,24.5,16.2,23.8"/>
                   </svg>
-                  Airbnb Hotels
+                  Airbnb
                 </a>
               </span>
             </div>
@@ -473,7 +391,7 @@
                     <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
                   </g>
                 </svg> 
-                <p>Cerca a la fiesta pero un poco mas</p>
+                <p>Cerca de la fiesta, pero un poco mas caro.</p>
               </div>
             </a>
             <a href="https://www.marriott.com/hotels/travel/stfcy-courtyard-stamford-downtown/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2&y_source=1_MTA5OTc0MC03MTUtbG9jYXRpb24uZ29vZ2xlX3dlYnNpdGVfb3ZlcnJpZGU=" target="_blank" rel="noopener noreferrer">
@@ -493,7 +411,7 @@
                     <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
                   </g>
                 </svg> 
-                <p>En el centro, con muchos restaurantes</p>
+                <p>En el centro de Stamford, cerca de muchos restaurantes.</p>
               </div>
             </a>
             <a href="https://www.hilton.com/en/hotels/bdrsthf-hilton-stamford-hotel-and-executive-meeting-center/?SEO_id=GMB-HI-BDRSTHF" target="_blank" rel="noopener noreferrer">
@@ -513,7 +431,7 @@
                     <path id="Path_52" data-name="Path 52" d="M6.825,7.307a2.812,2.812,0,0,1-2.8,2.91,2.9,2.9,0,0,1-2.853-3v-1.5l5.657.07Z" transform="translate(33.047 86.714)"/>
                   </g>
                 </svg> 
-                <p>Bueno para el bolsillo</p>
+                <p>También en Stamford. Económico.</p>
               </div>
             </a>
           </div>
@@ -561,9 +479,9 @@
               }
             </script>
             <div>
-              <h3 class="travel_accommodations__hotel__name">Lugares Interesantes</h3>
+              <h3 class="travel_accommodations__hotel__name">Luagres Interesantes</h3>
               <h4 class="travel_accommodations__hotel__type">Google Earth</h4>
-              <p>Pensamos que podrian querer algunas recomendaciones para planiar su viaje. ¡Asi que creamos una guía de lugares por la zona que nos gustan a nosotros!</p>
+              <p>Con tanto que hacer, es facíl perderse.¡Así que creamos una guía de lugares por la zona que nos gustan a nosotros!</p>
               <a class="cta" target="_blank" rel="noopener noreferrer" href="https://earth.google.com/web/data=Mj8KPQo7CiExMnA4RzdOcU9fQlNUWnBlZFYwQnFLajJRekp3RjFGb3cSFgoUMEVGQjgxRTdGRDEzMjY4RUE4MjU?authuser=1">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520">
                   <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
@@ -604,7 +522,7 @@
               }
             </script>
             <p>Les gusta a <span>TODOS</span> y <span>10 personas más</span></p>
-            <p><a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">marinando2021</a> Siganos en Instagram para ver fotos de nosotros y nuestras taradeces</p>
+            <p><a href="https://www.instagram.com/marinando2021/" target="_blank" rel="noopener noreferrer">marinando2021</a> Síguenos en Instagram para ver fotos de nuestras y de nuestras taradeces</p>
           </div>
           <img class="collage1" src="marinando_photos/Collage1.jpg" alt="">
           <picture>
@@ -617,7 +535,7 @@
     </div>
     <div class="registry" id="registry">
       <div class="registry__title">
-        <span>Nuestro Registro de Boda</span>
+        <span>Nuestra Lisa de Boda</span>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit laboriosam, officia fuga repellat itaque iure corrupti sequi nesciunt optio architecto.</p>
       </div>
       <ul class="registry__list">
@@ -634,8 +552,14 @@
           <img src="marinando_photos/registry_logos/willson-logo.svg" alt="">
         </a></li>
       </ul>
+      <span>
+        scroll
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 20">
+          <path d="M2 10 H23 l-8 -8 l8 8 l-8 8"/>
+        </svg>
+      </span>
     </div>
-    <div class="contact" id="contact">
+    <footer class="contact" id="contact">
       <div class="contact__dropbox">
         <a id="google_photos" href="https://photos.app.goo.gl/35GeJz7AwHAFNZ7s7" target="_blank" rel="noopener noreferrer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -650,16 +574,13 @@
           <path class="gust2" d="M4 6 c0 7 7 5.5 11 4 s6 -2 10 -4 c2.5 -1.5 1 -5 -2 -4"/>
           <path class="gust3" d="M58 8 h20 c4 0 4 4 0 4"/>
         </svg>
-        <span>tienes fotos para nosotros?<br>mandalos aquí</span>
+        <span>tienes fotos para nosotros?<br>mándalas aquí</span>
         <script src="scripts/contact_wind.js"></script>
       </div>
-      <span>
-        <a href="/index?tran=0">English</a>
-        <a href="/spanish?tran=0">Español</a>
-      </span>
+      
       <div class="contact__info">
-        <span class="contact__info__topic">contact us</span>
-        <span class="contact__info__mail">
+        <span class="contact__info__topic">contáctanos</span>
+        <span class="contact__info__mail contact__info__link">
           <a href="mailto:marinando2021@gmail.com">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 23">
               <path d="M2 5 c0 -2 1 -3 3 -3 H25 c2 0 3 1 3 3 v13 c0 2 -1 3 -3 3 H5 c-2 0 -3 -1 -3 -3 Z M3 3 L15 12 L27 3"/>
@@ -667,16 +588,23 @@
             marinando2021@gmail.com
           </a>
         </span>
-        <span class="contact__info__topic">se le olvido rsvp?</span>
-        <a class="contact__info__rsvp" href="index.html" name="invitation" value="1" onclick="setCookie()">hazlo aquí!</a>
+        <span class="contact__info__topic">se te olvidó rsvp?</span>
+        <a class="contact__info__rsvp contact__info__link" href="/?exit=1" name="invitation" value="1" onclick="setCookie()">¡hazlo aquí!</a>
         <script>
           function setCookie() {
             document.cookie = 'form=1'
           }
         </script>
+        <span class="contact__info__topic">language</span>
+        <span class="contact__info__language contact__info__link">
+          <a href="/?tran=0">English</a>
+          <a href="/spanish.html?tran=0">Español</a>
+        </span>
       </div>
-    </div>
+    </footer>
     <script src="scripts/calendar.js"></script>
   </main>
+
+  
 </body>
 </html>

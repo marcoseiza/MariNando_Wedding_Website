@@ -817,16 +817,37 @@ header #nav {
 }
 
 .schedule__timeline #schedule_rings {
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
   stroke: #242A40;
   fill: none;
-  width: 9em;
-  stroke-width: 1.2;
+  width: 11em;
+  stroke-width: 1;
+}
+
+.schedule__timeline #schedule_rings .cls-1 {
+  fill: none;
+}
+
+.schedule__timeline #schedule_rings .cls-3 {
+  -webkit-clip-path: url(#clip-path);
+          clip-path: url(#clip-path);
+}
+
+.schedule__timeline #schedule_rings .cls-4 {
+  stroke: #FCF6ED;
+  stroke-width: 3;
+}
+
+.schedule__timeline #schedule_rings .cls-5 {
+  -webkit-clip-path: url(#clip-path-2);
+          clip-path: url(#clip-path-2);
 }
 
 .schedule__timeline #schedule_champagne {
   width: 5.5em;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.2) translateY(-25%);
+          transform: scale(1.2) translateY(-25%);
 }
 
 .schedule__timeline #schedule_tray {
@@ -837,8 +858,8 @@ header #nav {
 
 .schedule__timeline #schedule_disco {
   width: 12em;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-transform: scale(0.9) translateY(-16%);
+          transform: scale(0.9) translateY(-16%);
 }
 
 @media screen and (max-width: 1210px) {
@@ -1008,7 +1029,7 @@ header #nav {
 
 .details__date button div.button_content {
   padding: 0.5vw 0.8vw;
-  border: 0.07em solid #242A40;
+  border: 0.1em solid #242A40;
   color: #242A40;
   font-size: 4em;
   font-weight: 400;
@@ -1036,6 +1057,7 @@ header #nav {
 .details__date button div.button_content span {
   white-space: nowrap;
   font-size: 0.9em;
+  font-weight: 500;
   opacity: 1;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
@@ -1051,7 +1073,7 @@ header #nav {
   left: 50%;
   top: 1em;
   font-size: 0.6em;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
 }
@@ -1475,7 +1497,6 @@ header #nav {
 
 .travel_accommodations .hotel1 .travel_accommodations__hotel__content > a {
   overflow: hidden;
-  height: 6.5em;
   background-color: #FCF6ED;
   font-size: unset;
   margin: 0;
@@ -1531,7 +1552,7 @@ header #nav {
 
 @media (pointer: coarse) {
   .travel_accommodations .hotel1 .travel_accommodations__hotel__content > a img {
-    opacity: 1;
+    opacity: 0.3;
   }
 }
 

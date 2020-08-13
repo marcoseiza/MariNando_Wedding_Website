@@ -181,7 +181,6 @@
 
       > a {
         overflow: hidden;
-        height: 6.5em;
         background-color: color(primary);
         font-size: unset;
         margin: 0;
@@ -219,7 +218,7 @@
 
         @media (pointer: coarse) {
           img {
-            opacity: 1;
+            opacity: 0.3;
           }
         }
 
