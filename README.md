@@ -5,7 +5,7 @@
 <br>
 
 ## OVERVIEW
-This is a personal project I coded from scratch for my sister's wedding, designed by me and coded entirely on html, css and javascript. In this project I forced myself not to use PHP, partially to explore other possibilities on javascript, and partially to be able to post the site on [Netlify](https://netlify.com) for free. I also tried to explore some javascript libraries like [Jquery](https://jquery.com) and [Anime.js](https://animejs.com/). 
+This is a personal project I coded from scratch for my sister's wedding, designed by me and coded entirely on html, css and javascript. In this project I forced myself not to use PHP, partially to explore other possibilities on javascript, and partially to be able to post the site on [Netlify](https://netlify.com) for free. I also tried to explore some javascript libraries like [Jquery](https://jquery.com) and [Anime.js](https://animejs.com/), and tried to incorporate Adobe Suite as much as possible to get more comfortable with the programs.
   
 **LIVE LINK:** [marinando2021.com](https://marinando2021.com)
 
