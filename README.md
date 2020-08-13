@@ -5,15 +5,14 @@
 <br>
 
 ## OVERVIEW
-This is a personal project I coded from scratch for my sister's wedding, designed by me and coded entirely on html, css and javascript. In this project I forced myself not to use PHP, partially to explore other possibilities on javascript, and partially to be able to post the site on [Netlify](https://netlify.com) for free. I also tried to explore some javascript libraries like [Jquery](https://jquery.com) and [Anime.js](https://animejs.com/), and tried to incorporate Adobe Suite as much as possible to get more comfortable with the programs.
+This is a personal project I coded from scratch for my sister's wedding, designed by me and coded entirely on html, css and javascript. In this project I forced myself not to use PHP, partially to explore other possibilities on javascript, and partially to be able to post the site on [Netlify](https://netlify.com) for free. I also tried to explore some javascript libraries like [Jquery](https://jquery.com) and [Anime.js](https://animejs.com/), and tried to incorporate Adobe Suite as much as possible to get more comfortable with the programs. Additionally, as my family is bilingual, I had to translate the entire website to spanish to make it accesible to all invitees (options for language are at the footer of the website).
   
 **LIVE LINK:** [marinando2021.com](https://marinando2021.com)
-
 
 <br>
 
 ## PROCESS
-I will take you through my process of designing and developing this website.
+I will take you through my process of designing this website.
 
 
 ### DESIGN
