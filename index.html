@@ -530,6 +530,12 @@
           <img src="marinando_photos/registry_logos/willson-logo.svg" alt="">
         </a></li>
       </ul>
+      <span>
+        scroll
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 20">
+          <path d="M2 10 H23 l-8 -8 l8 8 l-8 8"/>
+        </svg>
+      </span>
     </div>
     <footer class="contact" id="contact">
       <div class="contact__dropbox">
@@ -549,13 +555,10 @@
         <span>have pics for us?<br>drop them here</span>
         <script src="scripts/contact_wind.js"></script>
       </div>
-      <span>
-        <a href="/index?tran=0">English</a>
-        <a href="/spanish?tran=0">Español</a>
-      </span>
+      
       <div class="contact__info">
         <span class="contact__info__topic">contact us</span>
-        <span class="contact__info__mail">
+        <span class="contact__info__mail contact__info__link">
           <a href="mailto:marinando2021@gmail.com">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 23">
               <path d="M2 5 c0 -2 1 -3 3 -3 H25 c2 0 3 1 3 3 v13 c0 2 -1 3 -3 3 H5 c-2 0 -3 -1 -3 -3 Z M3 3 L15 12 L27 3"/>
@@ -564,12 +567,17 @@
           </a>
         </span>
         <span class="contact__info__topic">forgot to rsvp?</span>
-        <a class="contact__info__rsvp" href="/?exit=1" name="invitation" value="1" onclick="setCookie()">do it here!</a>
+        <a class="contact__info__rsvp contact__info__link" href="/?exit=1" name="invitation" value="1" onclick="setCookie()">do it here!</a>
         <script>
           function setCookie() {
             document.cookie = 'form=1'
           }
         </script>
+        <span class="contact__info__topic">language</span>
+        <span class="contact__info__language contact__info__link">
+          <a href="/index?tran=0">English</a>
+          <a href="/spanish?tran=0">Español</a>
+        </span>
       </div>
     </footer>
     <script src="scripts/calendar.js"></script>
