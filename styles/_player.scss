@@ -1,0 +1,432 @@
+.player_shadow{  
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 9998;
+  display: flex;
+  align-items: center; justify-content: center;
+  background-color: rgba(0,0,0,0.4);
+
+  input#rsvp_checkbox {
+    display: none;
+
+    &:checked ~ .player .player__rsvp {
+      width: auto;
+    }
+    &:checked ~ .player .player__content label {
+      svg {
+        transform: rotate(90deg);
+      }
+      span::after {
+        content: 'back';
+      }
+    }
+  }
+}
+
+.player {
+  padding: 40px;
+  font-size: 10px;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__content {
+    background-color: color(primary);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:  'names names'
+                          'video video'
+                          'calender next';
+    align-items: center;
+    position: relative;
+    padding: 3em;
+    gap: 3em;
+
+    > span {
+      grid-area: names;
+      align-self: flex-start;
+      font-size: 3em;
+      color: #9B9B9B;
+      text-transform: uppercase;
+    }
+
+    #close_rsvp {
+      cursor: pointer;
+      width: 2em;
+      position: absolute;
+      top: 3.5em;
+      right: 3.5em;
+      svg {
+        stroke: color(main_text);
+        stroke-width: 6;
+        stroke-linecap: round;
+        fill: none;
+      }
+    }
+
+    iframe {
+      grid-area: video;
+      width: 56em; height: 31.5em;
+    }
+
+    button {
+      margin-left: -0.7em;
+      font-size: unset;
+      grid-area: calender;
+      align-self: center;
+      justify-self: flex-start;
+      background: none;
+      border: none;
+      position: relative;
+
+      div.button_content {
+        color: color(secondary);
+        font-size: 2.5em; font-size: 400; font-family: Montserrat;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        > span {
+          opacity: 1;
+          transition: opacity 100ms ease-in-out;
+        }
+
+        &:hover, &:focus {
+          cursor: pointer;
+          color: lighten(color(secondary), 15)
+        }
+
+        &:hover svg .cls-1, &:focus svg .cls-1 {
+          stroke: lighten(color(secondary), 15)
+        }
+  
+        div.calendar_icon {
+          position: relative;
+          margin-right: 0.5em;
+        }
+  
+        #date_form {
+          font-size: 0.7em;
+          font-weight: 500;
+          position: absolute;
+          left: 50%; top: 0.9em;
+          transform: translate(-50%, 0);
+        }
+  
+        svg {
+          width: 1.3em; 
+          height: auto;
+          padding: 0;
+  
+          .cls-1 {
+            fill: none;
+            stroke: color(secondary);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 4;
+          }
+        }
+      }
+
+      div.button_menu {
+        height: 100%;
+        width: 20em;
+        position: absolute;
+        right: 0; top: 0;
+        overflow: hidden;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+
+        a {
+          display: flex;
+          align-items: center;
+
+          &:nth-of-type(2) {
+            margin: 0 2em;
+          }
+          
+          &:hover svg, &:focus svg {
+            fill: lighten(color(main_text), 15);
+            cursor: pointer;
+          }
+          svg {
+            width: 2.3em;
+            height: 100%;
+            fill: color(main_text);
+          }
+        }
+      }
+    }
+
+    #rsvp {
+      grid-area: next;
+      align-self: center;
+      justify-self: flex-end;
+      color: color(secondary);
+      text-transform: uppercase;
+      font-size: 2.5em;
+      font-weight: 400;
+      margin-right: 0.1em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      span::after {
+        content: 'next';
+      }
+
+      svg {
+        margin-left: 0.4em;
+        width: 0.8em; height: 0.8em;
+        transform: rotate(-90deg);
+        path {
+          stroke: color(secondary);
+          stroke-width: 9;
+        }
+      }
+    }
+  }
+
+  &__rsvp {
+    width: 0;
+    height: auto;
+    overflow: hidden;
+    background-color: color(secondary);
+    display: flex;
+    flex-direction: column;
+    
+    form {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+
+      span {
+        font-size: 2.5em;
+        margin-bottom: 1.2em;
+        width: 17em;
+        overflow: hidden;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+      }
+
+      input, button {
+        padding: 0.8em 1em;
+        font-size: 1.5em;
+        margin-bottom: 1.3em;
+        border: none;
+        color: white;
+      }
+
+      input {
+        background-color: lighten(color(secondary), 3);
+        &:hover, &:focus {
+          background-color: lighten(color(secondary), 15);
+        }
+      }
+
+      button {
+        align-self: flex-start;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        background-color: color(back);
+
+        &:hover {
+          background-color: darken(color(back), 4);
+          cursor: pointer;
+        }
+
+        svg {
+          margin-left: 0.7em;
+          width: 0.7em;
+          path {
+            stroke: white;
+            stroke-width: 12;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1185px) {
+  .player {
+    font-size: 9px
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  .player {
+    font-size: 8px
+  }
+}
+
+@media screen and (max-width: 964px) {
+  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+    transform: rotate(180deg);
+  }
+
+  .player {
+    &__content {
+      #rsvp svg {
+        transform: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 964px) {
+  .player {
+    &__rsvp {
+      form {
+        width: 62em;
+      }
+      form span {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 964px) and (max-height: 849px) {
+  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+    transform: rotate(180deg);
+  }
+
+  .player {
+    &__content {
+      #rsvp svg {
+        transform: unset;
+      }
+    }
+
+    &__rsvp {
+      form {
+        width: 62em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto repeat(3, 1fr);
+        gap: 2em;
+        span {
+          grid-area: 1 / 1 / 2 / -1;
+          width: auto;
+          margin: 0;
+        }
+        input,button {
+          font-size: 1.7em;
+        }
+        input {
+          margin: 0;
+        }
+        button {
+          grid-area: 4 / 1 / 5 / 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 614px) and (max-height: 849px){
+  .player {
+    font-size: 1vmax;
+    width: 100vw; height: auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    &__content {
+      box-sizing: border-box;
+      width: 100vw;
+      height: auto;
+      gap: 2vh;
+
+      #rsvp {
+        display: none;
+      }
+      iframe {
+        width: 100%;
+        height: 50vw;
+      }
+    }
+
+    &__rsvp {
+      width: 100%;
+      form {
+        width: auto;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(6, auto);
+
+        span {
+          width: auto;
+          font-size: 2.3em;
+        }
+
+        button {
+          grid-area: -2 / 1 / -1 / -1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 964px) and (min-width: 614px) and (max-height: 737px) {
+  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+    transform: rotate(90deg);
+  }
+
+  .player {
+    font-size: 0.8vmax;
+    width: auto; height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__content {
+      box-sizing: border-box;
+      width: auto;
+      height: auto;
+      gap: 2vh;
+
+      #rsvp {
+        display: block;
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+      iframe {
+        width: 56em; 
+        height: 31.5em;
+      }
+    }
+
+    &__rsvp {
+      width: 0;
+
+      form {
+        width: auto;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(6, auto);
+
+        span {
+          width: auto;
+          font-size: 2.5em;
+        }
+
+        button {
+          grid-area: -2 / 1 / -1 / -1;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

@@ -73,6 +73,7 @@
         display: flex;
 
         a {
+          font-weight: 500;
           border-color: white;
           color: white;
 
@@ -102,6 +103,27 @@
     }
   }
 
+  &__hotel {
+    h3 {
+      color: color(secondary);
+      font-size: 3.3em;
+      font-weight: 400;
+      margin: 0;
+      margin-left: -0.05em;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-size: 1.8em;
+      margin: 0;
+      margin-top: 0.3em;
+      font-weight: 200;
+    }
+    p {
+      margin-top: 0.6em;
+      font-size: 1.8em;
+    }
+  }
+
   .hotel1 {
     background-color: color(primary);
 
@@ -122,25 +144,6 @@
           margin-bottom: 1em;
         }
 
-        h3 {
-          color: color(secondary);
-          font-size: 3em;
-          font-weight: 400;
-          margin: 0;
-          margin-left: -0.05em;
-        }
-        h4 {
-          text-transform: uppercase;
-          font-size: 1.4em;
-          margin: 0;
-          margin-top: 0.3em;
-          font-weight: 200;
-        }
-        p {
-          margin-top: 0.6em;
-          font-size: 1.5em;
-        }
-
         span {
           display: flex;
           // justify-content: center;
@@ -148,6 +151,7 @@
 
         a {
           margin: 0;
+          font-weight: 500;
           background: none;
           display: flex;
           align-items: center;
@@ -220,10 +224,11 @@
         }
 
         h3 {
+          color: inherit;
           text-transform: capitalize;
           margin: 0;
           margin-right: 1.5em;
-          font-size: 2em;
+          font-size: 2.3em;
           font-weight: 600;
         }
         span {
@@ -233,12 +238,10 @@
         }
         
         p {
-          overflow: hidden;
           text-transform: initial;
           margin: 0;
-          font-size: 1.5em;
-          font-weight: 400;
         }
+
         svg {
           position: absolute;
           top: 0;
@@ -338,28 +341,9 @@
         width: 100%;
       }
     }
-    
-
-    h3 {
-      color: color(secondary);
-      font-size: 3em;
-      font-weight: 400;
-      margin: 0;
-    }
-
-    h4 {
-      text-transform: uppercase;
-      font-size: 1.4em;
-      margin: 0;
-      margin-top: 0.3em;
-      font-weight: 200;
-    }
-    p {
-      margin-top: 0.6em;
-      font-size: 1.5em;
-    }
 
     .cta {
+      font-weight: 500;
       margin-top: 0.5em;
       display: flex;
       align-items: center;
@@ -382,12 +366,6 @@
 @media screen and (max-width: 1400px) {
   .travel_accommodations__contentwrapper {
     font-size: 8px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .travel_accommodations__contentwrapper {
-    font-size: 7px;
   }
 }
 
@@ -450,13 +428,6 @@
       grid-template-rows: 125vw 1fr 1fr;
       grid-template-columns: auto;
     }
-    
-    &__map {
-      &__airplaneinfo {
-        font-size: 6px;
-      }
-    }
-
     &__hotel {
       font-size: 9px;
     }
@@ -482,7 +453,6 @@
       margin-right: 20px;
 
       &__airplaneinfo {
-        font-size: 6px;
         padding: 0 4em;
       }
     }
@@ -497,11 +467,11 @@
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 590px) {
   .travel_accommodations {
 
     &__contentwrapper {
-      grid-template-rows: 165vw 1fr 1fr;
+      grid-template-rows: 180vw 1fr 1fr;
     }
 
     &__title {
@@ -523,7 +493,7 @@
         align-self: stretch;
         height: auto;
         padding: 3em 0;
-        font-size: 1.5vw;
+        font-size: 1.8vw;
 
 
         span {

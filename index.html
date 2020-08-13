@@ -88,6 +88,12 @@
     <div class="player">
       <div class="player__content">
         <span>mariana + fernando</span>
+        <a id="close_rsvp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 40 40">
+            <line x1="2" y1="2" x2="38" y2="38"/>
+            <line x1="38" y1="2" x2="2" y2="38"/>
+          </svg>
+        </a>
         <iframe id="media_player" src="https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <script>
           let video_links = ['https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j', 'https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xelnAuTR1dwP_jXRoWLEAZuy']
@@ -106,7 +112,7 @@
                 </g>
               </svg>
             </div>
-            <span>jot it down</span>
+            <span>jot it down</span> 
           </div>
           <div class="button_menu">
             <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
@@ -176,10 +182,10 @@
               }, 300);
             });
 
-            $("#rsvp_submit").touchstart(function() {
+            $("#close_rsvp").click(function() {
               eraseCookie("form")
               window.setTimeout(function () {
-                $("#rsvp_submit").submit();
+                location.href = "/"
               }, 300);
             });
           </script>
@@ -190,6 +196,9 @@
   <script>
     if (readCookie('form') != 1) {
       document.querySelector('.player_shadow').style.display = 'none';
+    }
+    if (URLparam.get("exit") != "1") {
+      document.getElementById("close_rsvp").style.display = 'none';
     }
   </script>
   <main>
@@ -302,9 +311,9 @@
               </svg>
             </div>
             <div class="schedule__timeline__wedo__desc schedule__timeline__entry__desc">
-              <span>wedding + mass</span>
-              <span>st michael the<br>archangel church</span>
-              <span>greenwich, ct</span>
+              wedding + mass<br>
+              <span>st michael the<br>archangel church<br>
+              greenwich, ct</span>
             </div>
           </div>
           <svg id="schedule_rings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -334,7 +343,7 @@
               <span class="schedule__timeline__entry__time">5pm</span>
             </div>
             <div class="schedule__timeline__wetoast__desc schedule__timeline__entry__desc">
-              <span>cocktail hour</span>
+              cocktail hour
             </div>
           </div>
           <div class="schedule__timeline__weeat">
@@ -346,9 +355,9 @@
               </svg>
             </div>
             <div class="schedule__timeline__weeat__desc schedule__timeline__entry__desc">
-              <span>dinner + speeches</span>
-              <span>riverside yacht club</span>
-              <span>riverside, ct</span>
+              dinner + speeches<br>
+              <span>riverside yacht club<br>
+              riverside, ct</span>
             </div>
           </div>
           <svg id="schedule_tray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.851 76.75">
@@ -452,7 +461,7 @@
                       c0.5,0.4,0.8,1,1.2,1.6c0.7,1.3,1.4,2.6,2,3.9c1.9,3.7,3.7,7.5,5.5,11.4c0.3,0.6,0.5,1.2,0.7,1.8c0.2,0.8,0.2,1.6,0,2.4l0,0
                       c-0.3,1.1-1,2-2,2.5c-0.9,0.5-1.9,0.6-2.8,0.5c-1.2-0.2-2.3-0.8-3.3-1.6C17.4,25.1,16.8,24.5,16.2,23.8"/>
                   </svg>
-                  Airbnb Hotels
+                  Airbnb
                 </a>
               </span>
             </div>
@@ -668,7 +677,7 @@
           </a>
         </span>
         <span class="contact__info__topic">forgot to rsvp?</span>
-        <a class="contact__info__rsvp" href="index.html" name="invitation" value="1" onclick="setCookie()">do it here!</a>
+        <a class="contact__info__rsvp" href="/?exit=1" name="invitation" value="1" onclick="setCookie()">do it here!</a>
         <script>
           function setCookie() {
             document.cookie = 'form=1'

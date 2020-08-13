@@ -13,7 +13,7 @@
     position: relative;
     display: grid;
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     row-gap: 100px;
     text-transform: uppercase;
 
@@ -73,11 +73,9 @@
       font-size: 1.5em;
       line-height: 1.7em;
       padding: 0 2em;
+      white-space: nowrap;
       span {
         font-weight: 600;
-      }
-      span:first-child {
-        font-weight: 300;
       }
     }
 
@@ -204,18 +202,23 @@
   }
 }
 
-@media screen and (max-width: 400px) {
-
+@media screen and (max-width: 550px) {
   .schedule__timeline {
     font-size: 1.7vw;
-    
   }
-
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
   .schedule__timeline {
-    font-size: 1.7vw;
+    &__entry__title {
+      font-size: 3.2em;
+    }
+    &__entry__line {
+      margin: 1.7em 0;
+    }
+    &__entry__desc {
+      font-size: 1.6em;
+    }
   }
 }
 
