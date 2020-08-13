@@ -144,6 +144,16 @@
                       new Date(2021, 7, 14),
                       function(ts) {
                         var current = String(ts).replace(' and', ',').split(', ');
+                        for (let i = 0; i < current.length; i++) {
+                          if (current[i]) {
+                            current[i] = current[i].replace("year", "año")
+                            current[i] = current[i].replace("months", "meses")
+                            current[i] = current[i].replace("month", "mes")
+                            current[i] = current[i].replace("das", "dias")
+                            current[i] = current[i].replace("day", "día")
+                            current[i] = current[i].replace("hour", "hora")
+                          }
+                        }
                         document.getElementById('years').innerHTML = (current[0])? current[0]: "";
                         document.getElementById('months').innerHTML = (current[1])? current[1]: "";
                         document.getElementById('days').innerHTML = (current[2])? current[2]: "";
@@ -574,7 +584,7 @@
           <path class="gust2" d="M4 6 c0 7 7 5.5 11 4 s6 -2 10 -4 c2.5 -1.5 1 -5 -2 -4"/>
           <path class="gust3" d="M58 8 h20 c4 0 4 4 0 4"/>
         </svg>
-        <span>tienes fotos para nosotros?<br>mándalas aquí</span>
+        <span>¿tienes fotos para nosotros?<br>¡mándalas aquí!</span>
         <script src="scripts/contact_wind.js"></script>
       </div>
       
@@ -588,7 +598,7 @@
             marinando2021@gmail.com
           </a>
         </span>
-        <span class="contact__info__topic">se te olvidó rsvp?</span>
+        <span class="contact__info__topic">¿se te olvidó rsvp?</span>
         <a class="contact__info__rsvp contact__info__link" href="/?exit=1" name="invitation" value="1" onclick="setCookie()">¡hazlo aquí!</a>
         <script>
           function setCookie() {

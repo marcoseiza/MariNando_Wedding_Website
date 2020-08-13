@@ -34,6 +34,10 @@
   content: 'back';
 }
 
+.player_shadow input#rsvp_checkbox:checked ~ .player .player__content label span.es::after {
+  content: 'volver';
+}
+
 .player {
   padding: 40px;
   font-size: 10px;
@@ -134,6 +138,7 @@
   opacity: 1;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
+  min-width: 7em;
 }
 
 .player__content button div.button_content:hover, .player__content button div.button_content:focus {
@@ -238,6 +243,10 @@
 
 .player__content #rsvp span::after {
   content: 'next';
+}
+
+.player__content #rsvp span.es::after {
+  content: 'seguir';
 }
 
 .player__content #rsvp svg {

@@ -22,6 +22,9 @@
       span::after {
         content: 'back';
       }
+      span.es::after {
+        content: 'volver'
+      }
     }
   }
 }
@@ -94,6 +97,7 @@
         > span {
           opacity: 1;
           transition: opacity 100ms ease-in-out;
+          min-width: 7em;
         }
 
         &:hover, &:focus {
@@ -180,6 +184,9 @@
 
       span::after {
         content: 'next';
+      }
+      span.es::after {
+        content: 'seguir'
       }
 
       svg {

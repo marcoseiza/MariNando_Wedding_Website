@@ -1029,7 +1029,7 @@ header #nav {
 
 .details__date button div.button_content {
   padding: 0.5vw 0.8vw;
-  border: 0.1em solid #242A40;
+  border: 0.08em solid #242A40;
   color: #242A40;
   font-size: 4em;
   font-weight: 400;
@@ -1058,6 +1058,7 @@ header #nav {
   white-space: nowrap;
   font-size: 0.9em;
   font-weight: 500;
+  min-width: 7em;
   opacity: 1;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
