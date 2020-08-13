@@ -59,14 +59,14 @@ let player = `
     </label>
   </div>
   <div class="player__rsvp">
-    <form action="/" method="POST" id="rsvp_form">
+    <form id="rsvp_form" name="rsvp_form">
       <span>
         we want to stay in contact with you!
       </span>
-      <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="rsvp_name" id="rsvp_name" placeholder="FULL NAME *" required>
-      <input type="email" name="rsvp_email" id="rsvp_email" placeholder="EMAIL *" required>
-      <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="rsvp_phone" id="rsvp_phone" placeholder="PHONE">
-      <input type="text" pattern="[0-9a-zA-z\s.,\-#']+" name="rsvp_address" id="rsvp_address" placeholder="ADDRESS">
+      <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="name" id="rsvp_name" placeholder="FULL NAME *" required>
+      <input type="email" name="email" id="rsvp_email" placeholder="EMAIL *" required>
+      <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*" name="phone" id="rsvp_phone" placeholder="PHONE">
+      <input type="text" pattern="[0-9a-zA-Z\s.,\-#']+" name="address" id="rsvp_address" placeholder="ADDRESS">
       <button id="rsvp_submit" type="submit">Submit
         <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
           <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
@@ -97,6 +97,8 @@ function eraseCookie(name) {
   document.cookie = name + '=';
 }
 
+// https://script.google.com/macros/s/AKfycbyQrQRwWpG4ZmNVqlpYp1MG5GiCZw1PazVL9IWp9i4SiVMlQX4/exec
+
 function placePlayer() {
   if (readCookie('form') == 1 || URLhash == "#form") {
     document.body.insertAdjacentHTML("afterbegin", player)
@@ -108,6 +110,14 @@ function placePlayer() {
     document.getElementById("rsvp_form").addEventListener("submit", function(e) {
       e.preventDefault();
       eraseCookie("form");
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyQrQRwWpG4ZmNVqlpYp1MG5GiCZw1PazVL9IWp9i4SiVMlQX4/exec';
+      const form = document.forms['rsvp_form'];
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+
       window.setTimeout(function () {
         location.href = document.getElementById("rsvp_form").action;
       }, 300);
