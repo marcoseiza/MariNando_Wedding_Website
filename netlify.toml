@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/invitation form=:form"
+  to = "/invitation/:form"
+
+[[redirects]]
+  from = "/ tran=:tran"
+  to = "/:tran"
+
+[[redirects]]
+  from = "/ exit=:exit"
+  to = "/:exit"
+
+[[redirects]]
+  from = "/ tran=:tran exit=:exit"
+  to = "/:tran/:exit"
