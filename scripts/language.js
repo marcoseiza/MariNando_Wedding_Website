@@ -1,8 +1,7 @@
 let lang = window.navigator.userLanguage || window.navigator.language,
     en = (lang.includes("en"))? true: (lang.includes("es"))? false : true;
 
-var URLparam = new URLSearchParams(window.location.search);
-console.log(URLparam.toString())
+let URLparam = new URLSearchParams(window.location.search);
 
 if (URLparam.get("tran") != "0") {
   if (en) {

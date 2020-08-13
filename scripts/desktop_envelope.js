@@ -1,4 +1,5 @@
 var animationEnvelope__flap = document.getElementById("animationEnvelope__flap__path");
+let URLparam = new URLSearchParams(window.location.search);
 
 animationEnvelope__flap.addEventListener('click', function animateEnvelope() {
   
@@ -9,9 +10,9 @@ animationEnvelope__flap.addEventListener('click', function animateEnvelope() {
   card.add({
     targets: '#animationEnvelope__flap__path',
     d: [
-      { value: 'M960,1494l960,-546.629v-200h-1920v200Z', duration: 10 },
-      { value: 'M960,1600l960,-577v-276h-1920v276Z', duration: 200 },
-      { value: 'M960,0l960,546.629v200h-1920v-200Z', duration: 600 }
+      { value: 'M0 50 v15 L50 95 L100 65 v-15 Z', duration: 200 },
+      { value: 'M0 50 v-15 L50 0 L100 35 v15 Z', duration: 300 },
+      { value: 'M0 50 v-15 L50 10 L100 35 v15 Z', duration: 200 }
     ],
     easing: 'easeOutQuad',
     direction: 'normal'
@@ -51,3 +52,23 @@ animationEnvelope__flap.addEventListener('click', function animateEnvelope() {
 window.setTimeout(function() {
   document.querySelector(".dummy").style.opacity = 1;
 }, 5000)
+
+
+let lang = window.navigator.userLanguage || window.navigator.language,
+    en = (lang.includes("en"))? true: (lang.includes("es"))? false : true;
+
+if (en) {
+  document.getElementById("es").style.display = "none";
+}
+else {
+  document.getElementById("en").style.display = "none";
+}
+
+if (URLparam.get("form") == "1") {
+  document.getElementById("en").href = "#form"
+  document.getElementById("es").href = "#form"
+}
+
+function setCookie() {
+  document.cookie = 'form=1'
+}

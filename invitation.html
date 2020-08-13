@@ -7,78 +7,49 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles/invitation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-    <div class="dummy">
-      <h2>OPEN ME</h2>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-        <path d="M 5 25 l 20 20 v -40 v 40 l 20 -20"/>
+  <div class="dummy">
+    <h2>OPEN ME</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+      <path d="M 5 25 l 20 20 v -40 v 40 l 20 -20"/>
+    </svg>
+  </div>
+
+  <div class="animationEnvelope">
+    <div class="animationEnvelope__flap" id="animationEnvelope__flap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path class="animationEnvelope__flap__path" id="animationEnvelope__flap__path" d="M0 50 v15 L50 90 L100 65 v-15 Z"/>
       </svg>
     </div>
+    <div class="animationEnvelope__body"></div>
+  </div>
 
-    <div class="animationEnvelope">
-      <div class="animationEnvelope__flap" id="animationEnvelope__flap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1777">
-            <path class="animationEnvelope__flap__path" id="animationEnvelope__flap__path" d="M960,1494l960,-546.629v-200h-1920v200Z"/>
-        </svg>
-      </div>
-      <div class="animationEnvelope__body"></div>
+  <div class="envelope">
+    <div class="envelope__content">
+      <a id="en" class="rsvp" href="/" onclick="setCookie()">
+        <picture>
+          <source media="(orientation: portrait)" srcset="invitations/portrait-en.png">
+          <img src="invitations/landscape-en.png" alt="Mariana and Fernando are getting married on August 14, 2021 in Riverside, Connecticut. We invite you to celebrate this great joy with us.">
+        </picture>
+      </a>
+      <a id="es" class="rsvp" href="/" onclick="setCookie()">
+        <picture>
+          <source media="(orientation: portrait)" srcset="invitations/portrait-es.png">
+          <img src="invitations/landscape-es.png" alt="Mariana y Fernando se están casando el 14 de Agosto de 2021 en Riverside, Connecicut. ¡Te invitamos a celebrar con nosotros esta gran alegría!">
+        </picture>
+      </a>
     </div>
+  </div>
 
-    <div class="envelope">
-        <div class="envelope__content">
-          <div class="envelope__content__circle">
-            <picture class="envelope__content__circle__img1">
-              <source media="(max-width: 618px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1.png">
-              <source media="(max-width: 1235px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1@2x.png">
-              <img src="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1@3x.png" alt="Water Color Orchid">
-            </picture>
-            <picture class="envelope__content__circle__img2">
-              <source media="(max-width: 1138px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2.png">
-              <source media="(max-width: 2276px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2@2x.png">
-              <img src="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2@3x.png" alt="Water Color Orchid">
-            </picture>
-            <picture class="envelope__content__circle__img3">
-              <source media="(max-width: 618px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1.png">
-              <source media="(max-width: 1235px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1@2x.png">
-              <img src="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-1@3x.png" alt="Water Color Orchid"> 
-            </picture>
-            <picture class="envelope__content__circle__img4">
-              <source media="(max-width: 1138px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2.png">
-              <source media="(max-width: 2276px)" srcset="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2@2x.png">
-              <img src="Marinando_photos/Invitation_flowers/orchid-watercolor-painting-2@3x.png" alt="Water Color Orchid">
-            </picture>
-            
-            <div class="envelope__content__circle__text">
-              <h2>JOIN US FOR THE</h2>
-              <h1 class="wedding">WEDDING</h1>
-              <h2>OF</h2>
-              <h1 class="names">MARIANA
-+
-FERNANDO</h1>
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 40">
-                  <path d="M 2.5 0 v 40"/>
-                </svg>
-                <h3>CEREMONY<br>3:00PM</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 40">
-                  <path d="M 2.5 0 v 40"/>
-                </svg>
-              </div>
-              <h3>RIVERSIDE, CT</h3>
-              <a href="index.html" name="invitation" value="1" onclick="setCookie()">CLICK HERE</a>
-              <script>
-                function setCookie() {
-                  document.cookie = 'form=1'
-                }
-              </script>
-            </div>
-
-          </div>
-        </div>
-    </div>
-
-    <script src="scripts/desktop_envelope.js"></script>
+  <script src="scripts/desktop_envelope.js"></script>
+  <script>
+    if (URLparam.get("form") == "1") {
+      formAction = "invitation.html?form=1"
+    }
+  </script>
+  <script src="scripts/player.js"></script>
+  <link rel="stylesheet" href="styles/player.css">
 </body>
 </html>
