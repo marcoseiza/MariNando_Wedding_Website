@@ -30,7 +30,7 @@
       .content {
         position: relative;
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
       }
 
       #tab {
@@ -56,17 +56,17 @@
 
       &__countdown {
         background-color: color(secondary);
-        color: #9B9B9B;
-        font-size: 3.3em;
+        color: white;
+        font-size: 3em;
         line-height: 1em;
         text-transform: uppercase;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 1em;
+        padding: 1em;
   
         > div {
-          opacity: 0.22;
+          opacity: 0.5;
         }
       }
     }
@@ -209,6 +209,7 @@
         width: calc(200% - 35px);
         display: flex;
         justify-content: flex-start;
+        z-index: 9;
 
         .content {
           grid-template-columns: auto 40px;
@@ -224,11 +225,11 @@
         &__basic {
           background-color: color(secondary);
           color: white;
-          padding-bottom: 10px;
+          padding-bottom: 0.5em;
         }
 
         &__countdown {
-          padding-bottom: 10px;
+          padding-top: 0.5;
         }
 
         #tab {

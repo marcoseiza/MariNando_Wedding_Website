@@ -957,8 +957,8 @@ header #nav {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
 }
 
 .details__date__detes #tab {
@@ -991,8 +991,8 @@ header #nav {
 
 .details__date__detes__countdown {
   background-color: #141c42;
-  color: #9B9B9B;
-  font-size: 3.3em;
+  color: white;
+  font-size: 3em;
   line-height: 1em;
   text-transform: uppercase;
   display: -webkit-box;
@@ -1005,11 +1005,11 @@ header #nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 1em;
+  padding: 1em;
 }
 
 .details__date__detes__countdown > div {
-  opacity: 0.22;
+  opacity: 0.5;
 }
 
 .details__date button {
@@ -1170,6 +1170,7 @@ header #nav {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    z-index: 9;
   }
   .details__date__detes .content {
     -ms-grid-columns: auto 40px;
@@ -1186,10 +1187,10 @@ header #nav {
   .details__date__detes__basic {
     background-color: #141c42;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 0.5em;
   }
   .details__date__detes__countdown {
-    padding-bottom: 10px;
+    padding-top: 0.5;
   }
   .details__date__detes #tab {
     grid-area: 1 / 2 / -1 / -1;
