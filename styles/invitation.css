@@ -51,7 +51,7 @@ body {
 }
 
 .dummy svg path {
-  stroke: #161925;
+  stroke: #303855;
   stroke-width: 2;
   fill: none;
   stroke-linecap: round;
@@ -97,7 +97,7 @@ body {
 }
 
 .animationEnvelope__flap__path {
-  fill: #161925;
+  fill: #303855;
 }
 
 .animationEnvelope__flap__path:hover {
