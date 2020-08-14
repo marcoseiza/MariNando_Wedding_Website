@@ -42,7 +42,9 @@ body {
 }
 
 .dummy h2 {
+  color: #242A40;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .dummy svg {
@@ -51,7 +53,7 @@ body {
 }
 
 .dummy svg path {
-  stroke: #303855;
+  stroke: #242A40;
   stroke-width: 2;
   fill: none;
   stroke-linecap: round;

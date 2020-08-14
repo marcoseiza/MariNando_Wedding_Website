@@ -62,6 +62,7 @@ if (en) {
 }
 else {
   document.getElementById("en").style.display = "none";
+  document.getElementById("openme").innerText = "Ábreme";
 }
 
 if (URLparam.get("form") == "1") {
