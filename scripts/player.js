@@ -66,7 +66,7 @@ let player = `
       <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="name" id="rsvp_name" placeholder="FULL NAME *" required>
       <input type="email" name="email" id="rsvp_email" placeholder="EMAIL *" required>
       <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[- ./0-9]*" name="phone" id="rsvp_phone" placeholder="PHONE">
-      <input type="text" pattern="[0-9a-zA-Z .,#';\\-º/]+" name="address" id="rsvp_address" placeholder="ADDRESS">
+      <input type="text" pattern="[0-9a-zA-Z .,#'&:;()\\-º/]+" name="address" id="rsvp_address" placeholder="ADDRESS">
       <button id="rsvp_submit" type="submit">Submit
         <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
           <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
@@ -145,7 +145,7 @@ let playeres = `
       <input type="text" pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*" name="name" id="rsvp_name" placeholder="NOMBRE *" required>
       <input type="email" name="email" id="rsvp_email" placeholder="EMAIL *" required>
       <input type="tel" pattern="[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[- ./0-9]*" name="phone" id="rsvp_phone" placeholder="TELÉFONO">
-      <input type="text" pattern="[0-9a-zA-Z .,#';\\-º/]+" name="address" id="rsvp_address" placeholder="DIRECCIÓN">
+      <input type="text" pattern="[0-9a-zA-Z .,#'&:;()\\-º/]+" name="address" id="rsvp_address" placeholder="DIRECCIÓN">
       <button id="rsvp_submit" type="submit">Enviar
         <svg id="rsvp_submit_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.996 104.339" style="transform: rotate(-90deg);">
           <g data-name="Icon feather-arrow-down" transform="translate(2.828 2)">
