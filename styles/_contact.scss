@@ -26,6 +26,16 @@
     color: inherit;
   }
 
+  #signature {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    right: 0;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+  }
+
   &__dropbox {
     justify-self: start;
     display: grid;
@@ -240,7 +250,7 @@
 @media screen and (max-width: 690px) {
   .contact {
     padding: 40px 20px;
-
+    padding-bottom: 60px;
   }
 }
 

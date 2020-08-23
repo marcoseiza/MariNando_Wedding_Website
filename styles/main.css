@@ -2342,6 +2342,16 @@ header #nav {
   color: inherit;
 }
 
+.contact #signature {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+}
+
 .contact__dropbox {
   -ms-grid-column-align: start;
       justify-self: start;
@@ -2646,6 +2656,7 @@ header #nav {
 @media screen and (max-width: 690px) {
   .contact {
     padding: 40px 20px;
+    padding-bottom: 60px;
   }
 }
 
