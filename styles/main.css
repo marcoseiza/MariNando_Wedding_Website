@@ -2187,7 +2187,6 @@ header #nav {
   padding-right: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: none;
 }
 
 .registry div {
@@ -2309,7 +2308,6 @@ header #nav {
 }
 
 .contact {
-  margin-top: 60px;
   display: -ms-grid;
   display: grid;
   font-size: 10px;
@@ -2580,7 +2578,8 @@ header #nav {
           align-items: flex-end;
 }
 
-.contact__info span, .contact__info > a {
+.contact__info span,
+.contact__info > a {
   position: relative;
   font-size: 2em;
   text-transform: lowercase;
