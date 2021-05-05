@@ -1,27 +1,33 @@
 @import '_colors.scss';
 
-.player_shadow{  
+.player_shadow {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 9998;
   display: flex;
-  align-items: center; justify-content: center;
-  background-color: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
 
   input#rsvp_checkbox {
     display: none;
 
-    &:checked ~ .player .player__rsvp {
+    &:checked~.player .player__rsvp {
       width: auto;
     }
-    &:checked ~ .player .player__content label {
+
+    &:checked~.player .player__content label {
       svg {
         transform: rotate(90deg);
       }
+
       span::after {
         content: 'back';
       }
+
       span.es::after {
         content: 'volver'
       }
@@ -42,15 +48,15 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: repeat(3, auto);
-    grid-template-areas:  'names names'
-                          'video video'
-                          'calender next';
+    grid-template-areas: 'names names'
+      'video video'
+      'calender next';
     align-items: center;
     position: relative;
     padding: 3em;
     gap: 3em;
 
-    > span {
+    >span {
       grid-area: names;
       align-self: flex-start;
       font-size: 3em;
@@ -64,6 +70,7 @@
       position: absolute;
       top: 3.5em;
       right: 3.5em;
+
       svg {
         stroke: color(main_text);
         stroke-width: 6;
@@ -74,10 +81,12 @@
 
     iframe {
       grid-area: video;
-      width: 56em; height: 31.5em;
+      width: 56em;
+      height: 31.5em;
     }
 
     button {
+      display: none;
       margin-left: -0.7em;
       font-size: unset;
       grid-area: calender;
@@ -89,44 +98,53 @@
 
       div.button_content {
         color: color(secondary);
-        font-size: 2.5em; font-size: 400; font-family: Montserrat;
+        font-size: 2.5em;
+        font-weight: 400;
+        font-family: Montserrat;
         text-transform: uppercase;
         display: flex;
         align-items: center;
 
-        > span {
+        >span {
           opacity: 1;
           transition: opacity 100ms ease-in-out;
           min-width: 7em;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           cursor: pointer;
-          color: lighten(color(secondary), 15)
+          color: lighten(color(secondary), 15);
+
+          >span {
+            opacity: 0;
+          }
         }
 
-        &:hover svg .cls-1, &:focus svg .cls-1 {
+        &:hover svg .cls-1,
+        &:focus svg .cls-1 {
           stroke: lighten(color(secondary), 15)
         }
-  
+
         div.calendar_icon {
           position: relative;
           margin-right: 0.5em;
         }
-  
+
         #date_form {
           font-size: 0.7em;
           font-weight: 500;
           position: absolute;
-          left: 50%; top: 0.9em;
+          left: 50%;
+          top: 0.9em;
           transform: translate(-50%, 0);
         }
-  
+
         svg {
-          width: 1.3em; 
+          width: 1.3em;
           height: auto;
           padding: 0;
-  
+
           .cls-1 {
             fill: none;
             stroke: color(secondary);
@@ -141,12 +159,21 @@
         height: 100%;
         width: 20em;
         position: absolute;
-        right: 0; top: 0;
+        right: 0;
+        top: 0;
         overflow: hidden;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         opacity: 0;
+
+        &:hover {
+          opacity: 1;
+
+          +div.button_content>span {
+            opacity: 0;
+          }
+        }
 
         a {
           display: flex;
@@ -155,11 +182,13 @@
           &:nth-of-type(2) {
             margin: 0 2em;
           }
-          
-          &:hover svg, &:focus svg {
+
+          &:hover svg,
+          &:focus svg {
             fill: lighten(color(main_text), 15);
             cursor: pointer;
           }
+
           svg {
             width: 2.3em;
             height: 100%;
@@ -185,14 +214,17 @@
       span::after {
         content: 'next';
       }
+
       span.es::after {
         content: 'seguir'
       }
 
       svg {
         margin-left: 0.4em;
-        width: 0.8em; height: 0.8em;
+        width: 0.8em;
+        height: 0.8em;
         transform: rotate(-90deg);
+
         path {
           stroke: color(secondary);
           stroke-width: 9;
@@ -208,7 +240,7 @@
     background-color: color(secondary);
     display: flex;
     flex-direction: column;
-    
+
     form {
       box-sizing: border-box;
       display: flex;
@@ -225,7 +257,8 @@
         color: white;
       }
 
-      input, button {
+      input,
+      button {
         padding: 0.8em 1em;
         font-size: 1.5em;
         margin-bottom: 1.3em;
@@ -235,7 +268,9 @@
 
       input {
         background-color: lighten(color(secondary), 3);
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           background-color: lighten(color(secondary), 15);
         }
       }
@@ -254,6 +289,7 @@
         svg {
           margin-left: 0.7em;
           width: 0.7em;
+
           path {
             stroke: white;
             stroke-width: 12;
@@ -279,7 +315,7 @@
 }
 
 @media screen and (max-width: 964px) {
-  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+  .player_shadow input#rsvp_checkbox:checked+.player .player__content #rsvp svg {
     transform: rotate(180deg);
   }
 
@@ -298,6 +334,7 @@
       form {
         width: 62em;
       }
+
       form span {
         width: auto;
       }
@@ -306,7 +343,7 @@
 }
 
 @media screen and (max-width: 964px) and (max-height: 849px) {
-  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+  .player_shadow input#rsvp_checkbox:checked+.player .player__content #rsvp svg {
     transform: rotate(180deg);
   }
 
@@ -324,17 +361,22 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto repeat(3, 1fr);
         gap: 2em;
+
         span {
           grid-area: 1 / 1 / 2 / -1;
           width: auto;
           margin: 0;
         }
-        input,button {
+
+        input,
+        button {
           font-size: 1.7em;
         }
+
         input {
           margin: 0;
         }
+
         button {
           grid-area: 4 / 1 / 5 / 2;
         }
@@ -343,15 +385,16 @@
   }
 }
 
-@media screen and (max-width: 614px) and (max-height: 849px){
-  
+@media screen and (max-width: 614px) and (max-height: 849px) {
+
   .player_shadow {
     align-items: flex-start;
   }
 
   .player {
     font-size: 1vmax;
-    width: 100vw; height: auto;
+    width: 100vw;
+    height: auto;
     padding: 0;
     display: grid;
     grid-template-rows: auto 1fr;
@@ -365,6 +408,7 @@
       #rsvp {
         display: none;
       }
+
       iframe {
         width: 100%;
         height: 45vw;
@@ -373,6 +417,7 @@
 
     &__rsvp {
       width: 100%;
+
       form {
         width: auto;
         grid-template-columns: 1fr;
@@ -391,12 +436,13 @@
   }
 }
 
-@media screen and (max-width: 400px) and (max-height: 849px){
-  
+@media screen and (max-width: 400px) and (max-height: 849px) {
+
   .player {
 
     &__rsvp {
       width: 100%;
+
       form {
         width: auto;
         grid-template-columns: 1fr;
@@ -416,13 +462,14 @@
 }
 
 @media screen and (max-width: 964px) and (min-width: 614px) and (max-height: 737px) {
-  .player_shadow input#rsvp_checkbox:checked + .player .player__content #rsvp svg {
+  .player_shadow input#rsvp_checkbox:checked+.player .player__content #rsvp svg {
     transform: rotate(90deg);
   }
 
   .player {
     font-size: 0.8vmax;
-    width: auto; height: auto;
+    width: auto;
+    height: auto;
     display: flex;
     flex-wrap: nowrap;
 
@@ -434,12 +481,14 @@
 
       #rsvp {
         display: block;
+
         svg {
           transform: rotate(-90deg);
         }
       }
+
       iframe {
-        width: 56em; 
+        width: 56em;
         height: 31.5em;
       }
     }
@@ -464,8 +513,3 @@
     }
   }
 }
-
-
-
-
-

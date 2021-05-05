@@ -106,6 +106,7 @@
 }
 
 .player__content button {
+  display: none;
   margin-left: -0.7em;
   font-size: unset;
   -ms-grid-row: 3;
@@ -123,7 +124,7 @@
 .player__content button div.button_content {
   color: #141c42;
   font-size: 2.5em;
-  font-size: 400;
+  font-weight: 400;
   font-family: Montserrat;
   text-transform: uppercase;
   display: -webkit-box;
@@ -146,7 +147,12 @@
   color: #26357d;
 }
 
-.player__content button div.button_content:hover svg .cls-1, .player__content button div.button_content:focus svg .cls-1 {
+.player__content button div.button_content:hover > span, .player__content button div.button_content:focus > span {
+  opacity: 0;
+}
+
+.player__content button div.button_content:hover svg .cls-1,
+.player__content button div.button_content:focus svg .cls-1 {
   stroke: #26357d;
 }
 
@@ -186,13 +192,23 @@
   right: 0;
   top: 0;
   overflow: hidden;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
+}
+
+.player__content button div.button_menu:hover {
+  opacity: 1;
+}
+
+.player__content button div.button_menu:hover + div.button_content > span {
   opacity: 0;
 }
 
@@ -209,7 +225,8 @@
   margin: 0 2em;
 }
 
-.player__content button div.button_menu a:hover svg, .player__content button div.button_menu a:focus svg {
+.player__content button div.button_menu a:hover svg,
+.player__content button div.button_menu a:focus svg {
   fill: #404a71;
   cursor: pointer;
 }
@@ -299,7 +316,8 @@
   color: white;
 }
 
-.player__rsvp form input, .player__rsvp form button {
+.player__rsvp form input,
+.player__rsvp form button {
   padding: 0.8em 1em;
   font-size: 1.5em;
   margin-bottom: 1.3em;
@@ -396,7 +414,8 @@
     width: auto;
     margin: 0;
   }
-  .player__rsvp form input, .player__rsvp form button {
+  .player__rsvp form input,
+  .player__rsvp form button {
     font-size: 1.7em;
   }
   .player__rsvp form input {

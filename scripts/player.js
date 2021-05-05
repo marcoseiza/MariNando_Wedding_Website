@@ -16,20 +16,6 @@ let player = `
     </a>
     <iframe id="media_player" src="https://www.youtube.com/embed/videoseries?list=PLPVHEo5j6xenrnHfc6SRx3VmafRPsbU_j" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <button id="player_button">
-      <div class="button_content">
-        <div class="calendar_icon">
-          <span id="date_form">14</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
-            <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.98)">
-              <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
-              <path id="Path_4" data-name="Path 4" class="cls-1" d="M24,3V19.788" transform="translate(18.95 -3)"/>
-              <path id="Path_5" data-name="Path 5" class="cls-1" d="M12,3V19.788" transform="translate(4.519 -3)"/>
-              <path id="Path_6" data-name="Path 6" class="cls-1" d="M4.5,15H63.97" transform="translate(-4.5 13.221)"/>
-            </g>
-          </svg>
-        </div>
-        <span>jot it down</span> 
-      </div>
       <div class="button_menu">
         <a target="_blank" rel="noopener noreferrer" href="Mariana and Fernando's Wedding_pd59r2s2qm7sl2hicrtpm2rrs4@group.calendar.google.com.ics">
           <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 1000 1187.198" version="1.1"  id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="Apple_1998.svg">
@@ -47,6 +33,20 @@ let player = `
             <path d="M 0,12.40183 35.68737,7.5416 35.70297,41.96435 0.03321,42.16748 z m 35.67037,33.52906 0.0277,34.45332 -35.66989,-4.9041 -0.002,-29.77972 z M 39.99644,6.90595 87.31462,0 l 0,41.527 -47.31818,0.37565 z M 87.32567,46.25471 87.31457,87.59463 39.9964,80.91625 39.9301,46.17767 z" id="path13" />
           </svg>
         </a>
+      </div>
+      <div class="button_content">
+        <div class="calendar_icon">
+          <span id="date_form">14</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.47 74.553">
+            <g id="Icon_feather-calendar" transform="translate(2 2) scale(0.98)">
+              <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.108,6H57.362a6.762,6.762,0,0,1,6.608,6.907V61.253a6.762,6.762,0,0,1-6.608,6.907H11.108A6.762,6.762,0,0,1,4.5,61.253V12.907A6.762,6.762,0,0,1,11.108,6Z" transform="translate(-4.5 2.394)"/>
+              <path id="Path_4" data-name="Path 4" class="cls-1" d="M24,3V19.788" transform="translate(18.95 -3)"/>
+              <path id="Path_5" data-name="Path 5" class="cls-1" d="M12,3V19.788" transform="translate(4.519 -3)"/>
+              <path id="Path_6" data-name="Path 6" class="cls-1" d="M4.5,15H63.97" transform="translate(-4.5 13.221)"/>
+            </g>
+          </svg>
+        </div>
+        <span>jot it down</span> 
       </div>
     </button>
     <label for="rsvp_checkbox" id="rsvp"><span></span>
