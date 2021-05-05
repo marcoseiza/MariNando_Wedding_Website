@@ -175,7 +175,7 @@ function eraseCookie(name) {
   document.cookie = name + '=';
 }
 
-// https://script.google.com/macros/s/AKfycbyQrQRwWpG4ZmNVqlpYp1MG5GiCZw1PazVL9IWp9i4SiVMlQX4/exec
+// https://script.google.com/macros/s/AKfycbzzS84stO729shAgLYHMODz3Kfvn1U3zLVSgJIxjZQ8SRy17gjE5MomvP4SuVMcFbCH/exec
 
 function placePlayer() {
   if (readCookie('form') == 1 || URLhash == "#form") {
@@ -196,7 +196,7 @@ function placePlayer() {
       e.preventDefault();
       eraseCookie("form");
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbyQrQRwWpG4ZmNVqlpYp1MG5GiCZw1PazVL9IWp9i4SiVMlQX4/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzzS84stO729shAgLYHMODz3Kfvn1U3zLVSgJIxjZQ8SRy17gjE5MomvP4SuVMcFbCH/exec';
       const form = document.forms['rsvp_form'];
 
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
