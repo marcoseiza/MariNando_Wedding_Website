@@ -5,9 +5,14 @@ let URLparam = new URLSearchParams(window.location.search);
 
 if (URLparam.get("tran") != "0") {
   if (en) {
-    window.location.href = "/?" + URLparam.toString() + "&tran=0";
+    var href = new URL(window.location.href);
+    href.searchParams.set('tran', '0');
+    window.location.href = href;
   } else {
-    window.location.href = "/spanish?" + URLparam.toString() + "&tran=0";
+    var href = new URL(window.location.href);
+    href.searchParams.set('tran', '0');
+    href.pathname = "spanish"
+    window.location.href = href;
   }
 }
 
