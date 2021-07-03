@@ -900,6 +900,12 @@ header #nav {
   .schedule__timeline {
     font-size: 1.7vw;
   }
+  .schedule__timeline__entry__line svg {
+    margin-left: 1em !important;
+  }
+  .schedule__timeline__entry__line span {
+    font-size: 2.3em;
+  }
 }
 
 @media screen and (max-width: 450px) {
